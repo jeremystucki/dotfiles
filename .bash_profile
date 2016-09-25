@@ -1,3 +1,5 @@
+if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+
 # general
 alias ll="ls -la"
 alias clera="clear"
