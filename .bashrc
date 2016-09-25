@@ -1,1 +1,2 @@
+source ~/git-completion.bash
 
