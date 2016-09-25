@@ -5,6 +5,7 @@ alias vi=vim
 alias clipboard="pbcopy"
 
 export CLICOLOR=1
+export export GPG_TTY=$(tty)
 
 # git
 alias pull="git pull"
