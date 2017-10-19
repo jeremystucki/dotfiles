@@ -1,7 +1,9 @@
 export ZSH="$HOME/.oh-my-zsh"
 export PATH="$HOME/.fastlane/bin:$PATH"
 
-ZSH_THEME="robbyrussell"
+autoload zmv
+
+ZSH_THEME="agnoster"
 ENABLE_CORRECTION="true"
 
 plugins=(git brew)
