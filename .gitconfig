@@ -1,0 +1,28 @@
+[user]
+	name = Jeremy Stucki
+	email = stucki.jeremy@gmail.com
+	signingkey = 8F548A5A2ED13F58
+[core]
+	excludesfile = /Users/jeremy/.gitignore
+[commit]
+    gpgsign = true
+    verbose = true
+	template = /Users/jeremy/.gitmessage
+[gpg]
+	program = gpg
+[alias]
+    unstage = "reset HEAD"
+    housekeep = "!git fetch --prune && git branch --merged master | grep -v master | xargs git branch -d"
+[pull]
+    default = current
+    rebase = true
+[rebase]
+    autoStash = true
+[merge]
+    ff = false
+[log]
+    decorate = full
+[pager]
+    log = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
