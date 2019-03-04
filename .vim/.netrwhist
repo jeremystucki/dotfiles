@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/jeremy/dotfiles/.vim'
+let g:netrw_dirhist_2='/Users/jeremy/dotfiles/.git'
+let g:netrw_dirhist_3='/Users/jeremy/Library/Caches/tools.fastlane/screenshots'
+let g:netrw_dirhist_4='/Users/jeremy/Downloads/grundwissen'
+let g:netrw_dirhist_5='/Users/jeremy/kopacsy/.git/refs'
+let g:netrw_dirhist_6='/Users/jeremy/latex-templates/scientific-paper/resources'
+let g:netrw_dirhist_7='/Users/jeremy/GitHub/myelin-ai/nphysics/build/nphysics2d'

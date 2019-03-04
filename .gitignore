@@ -1,2 +1,12 @@
-.vim/.netrwhist
+# custom files
+custom/
+!custom/plugins/example
+!custom/example.zsh
 
+# temp files directories
+cache/
+log/
+.DS_Store
+
+.idea/
+.vscode/

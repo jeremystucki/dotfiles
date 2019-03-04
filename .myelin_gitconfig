@@ -1,0 +1,8 @@
+[user]
+	name = Jeremy Stucki
+	email = jeremy@myelin.ch
+	signingkey = 6FBAAA51EA742855
+[core]
+	excludesfile = /Users/jeremy/.gitignore
+[commit]
+	gpgsign = true
