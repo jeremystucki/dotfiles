@@ -10,7 +10,7 @@ export GPG_TTY=$(tty)
 
 autoload zmv
 
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster-customized"
 # ENABLE_CORRECTION="true"
 
 plugins=(git brew)
