@@ -5,7 +5,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=vim
 export LANG="en_US.UTF-8"
 
-export PATH="$PATH:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin";
+export PATH="$PATH:$HOME/.cargo/bin:$HOME/.poetry/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin";
 export GPG_TTY=$(tty)
 
 autoload zmv
