@@ -1,0 +1,29 @@
+[user]
+    name = Jeremy Stucki
+
+[includeIf "gitdir:~/Documents/Code/Valora/"]
+    path = ~/.gitconfig-valora
+
+[includeIf "gitdir:~/Documents/Code/GitHub/"]
+    path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/Documents/Code/aur/"]
+    path = ~/.gitconfig-github
+
+[commit]
+    gpgsign = true
+
+[core]
+	editor = vim
+
+[diff]
+	algorithm = patience
+
+[merge]
+	ff = no
+
+[push]
+	default = upstream
+
+[rerere]
+	enabled = true
