@@ -1,6 +1,6 @@
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1000000
+SAVEHIST=1000000
 
 setopt autocd extendedglob notify
 unsetopt beep
@@ -29,3 +29,7 @@ alias cat='bat'
 autoload -Uz promptinit
 promptinit
 prompt spaceship
+
+if [ "$(hostname)" = "volt" ]; then
+    bindkey "^[[3~" delete-char
+fi
