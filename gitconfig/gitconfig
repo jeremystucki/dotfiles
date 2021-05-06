@@ -19,7 +19,10 @@
 	ff = no
 
 [push]
-	default = upstream
+	default = current
+
+[pull]
+	rebase = true
 
 [rerere]
 	enabled = true
