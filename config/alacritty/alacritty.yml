@@ -1,9 +1,15 @@
 font:
   normal:
-    family: Source Code Pro for Powerline
+    family: JetBrains Mono
     style: Regular 
 
-  size: 10.0
+  bold:
+    style: Regular
+
+  size: 15.0
+
+  offset:
+    y: 4
 
 live_config_reload: true
 
@@ -132,51 +138,108 @@ live_config_reload: true
 #     cyan:       '#56b6c2'
 #     white:      '#828997' # mono-2
 
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2c2c2c'
+#     foreground: '#f2f2f2'
+#
+#     dim_foreground:    '#dbdbdb'
+#     bright_foreground: '#d9d9d9'
+#     dim_background:    '#202020' # not sure
+#     bright_background: '#3a3a3a' # not sure
+#
+#   # Cursor colors
+#   cursor:
+#     text:   '#2c2c2c'
+#     cursor: '#d9d9d9'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#1c1c1c'
+#     red:     '#e56964'
+#     green:   '#909d63'
+#     yellow:  '#ebc17a'
+#     blue:    '#88b8d8'
+#     magenta: '#aa6292'
+#     cyan:    '#86d3ce'
+#     white:   '#cacaca'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#636363'
+#     red:     '#bc5653'
+#     green:   '#909d63'
+#     yellow:  '#ebc17a'
+#     blue:    '#7eaac7'
+#     magenta: '#aa6292'
+#     cyan:    '#86d3ce'
+#     white:   '#f7f7f7'
+#
+#   # Dim colors
+#   dim:
+#     black:   '#232323'
+#     red:     '#74423f'
+#     green:   '#5e6547'
+#     yellow:  '#8b7653'
+#     blue:    '#556b79'
+#     magenta: '#6e4962'
+#     cyan:    '#5c8482'
+#     white:   '#828282'
+
+# # Colors (Dracula)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#282a36'
+#     foreground: '#f8f8f2'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#000000'
+#     red:     '#ff5555'
+#     green:   '#50fa7b'
+#     yellow:  '#f1fa8c'
+#     blue:    '#caa9fa'
+#     magenta: '#ff79c6'
+#     cyan:    '#8be9fd'
+#     white:   '#bfbfbf'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#575b70'
+#     red:     '#ff6e67'
+#     green:   '#5af78e'
+#     yellow:  '#f4f99d'
+#     blue:    '#caa9fa'
+#     magenta: '#ff92d0'
+#     cyan:    '#9aedfe'
+#     white:   '#e6e6e6'
+
 colors:
-  # Default colors
-  primary:
-    background: '#2c2c2c'
-    foreground: '#f2f2f2'
+   # Default colors
+   primary:
+     background: '#2b2b2b'
+     foreground: '#bbbbbb'
 
-    dim_foreground:    '#dbdbdb'
-    bright_foreground: '#d9d9d9'
-    dim_background:    '#202020' # not sure
-    bright_background: '#3a3a3a' # not sure
+   # Normal colors
+   normal:
+     black:   '#ffffff'
+     red:     '#ff6b68'
+     green:   '#a8c023'
+     yellow:  '#d6bf55'
+     blue:    '#5394ec'
+     magenta: '#ae8abe'
+     cyan:    '#299999'
+     white:   '#1f1f1f'
 
-  # Cursor colors
-  cursor:
-    text:   '#2c2c2c'
-    cursor: '#d9d9d9'
-
-  # Normal colors
-  normal:
-    black:   '#1c1c1c'
-    red:     '#e56964'
-    green:   '#909d63'
-    yellow:  '#ebc17a'
-    blue:    '#88b8d8'
-    magenta: '#aa6292'
-    cyan:    '#86d3ce'
-    white:   '#cacaca'
-
-  # Bright colors
-  bright:
-    black:   '#636363'
-    red:     '#bc5653'
-    green:   '#909d63'
-    yellow:  '#ebc17a'
-    blue:    '#7eaac7'
-    magenta: '#aa6292'
-    cyan:    '#86d3ce'
-    white:   '#f7f7f7'
-
-  # Dim colors
-  dim:
-    black:   '#232323'
-    red:     '#74423f'
-    green:   '#5e6547'
-    yellow:  '#8b7653'
-    blue:    '#556b79'
-    magenta: '#6e4962'
-    cyan:    '#5c8482'
-    white:   '#828282'
+   # Bright colors
+   bright:
+     black:   '#575b70'
+     red:     '#ff8785'
+     green:   '#a8ca23'
+     yellow:  '#ffff00'
+     blue:    '#7eaef1'
+     magenta: '#ff99ff'
+     cyan:    '#6cdada'
+     white:   '#e6e6e6'
