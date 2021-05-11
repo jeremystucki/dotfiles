@@ -5,6 +5,7 @@ SAVEHIST=1000000
 setopt autocd extendedglob notify
 unsetopt beep
 
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' 'r:|[._-]=** r:|=**'
 zstyle :compinstall filename '/home/jeremy/.zshrc'
 autoload -Uz compinit
 compinit
