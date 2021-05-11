@@ -1,3 +1,6 @@
+import:
+  - ~/.config/alacritty/machine-specific-config.yml
+
 font:
   normal:
     family: JetBrains Mono
@@ -5,11 +8,6 @@ font:
 
   bold:
     style: Regular
-
-  size: 15.0
-
-  offset:
-    y: 4
 
 live_config_reload: true
 
