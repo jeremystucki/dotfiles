@@ -35,6 +35,8 @@ alias ssh='TERM=xterm-256color ssh'
 
 alias cat='bat'
 
+export PATH=$PATH:$HOME/.cargo/bin
+
 SPACESHIP_GIT_STATUS_STASHED=''
 
 autoload -Uz promptinit
