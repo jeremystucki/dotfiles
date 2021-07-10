@@ -14,6 +14,7 @@
 
 [diff]
     algorithm = patience
+    colorMoved = default
 
 [merge]
     ff = no
@@ -33,3 +34,17 @@
 [rebase]
     autosquash = true
     autoStash = true
+
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+
+[delta]
+    navigate = true
+    side-by-side = true
+    file-style = bold yellow ul
+
+[interactive]
+    diffFilter = delta --color-only 
