@@ -46,3 +46,8 @@ prompt spaceship
 if [ "$(hostname)" = "volt" ]; then
     bindkey "^[[3~" delete-char
 fi
+
+if [ "$(hostname)" = "Jeremys-MacBook-Pro.local" ]; then
+    export PATH="/usr/local/opt/openjdk@11/bin:$PATH"
+    export PATH="$PATH:$HOME/Library/Android/sdk/platform-tools"
+fi
