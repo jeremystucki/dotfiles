@@ -1,0 +1,243 @@
+import:
+  - ~/.config/alacritty/machine-specific-config.yml
+
+font:
+  normal:
+    family: JetBrains Mono
+    style: Regular 
+
+  bold:
+    style: Regular
+
+live_config_reload: true
+
+  # Colors (Monokai Pro)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2D2A2E'
+#     foreground: '#FCFCFA'
+# 
+#   # Normal colors
+#   normal:
+#     black:   '#403E41'
+#     red:     '#FF6188'
+#     green:   '#A9DC76'
+#     yellow:  '#FFD866'
+#     blue:    '#FC9867'
+#     magenta: '#AB9DF2'
+#     cyan:    '#78DCE8'
+#     white:   '#FCFCFA'
+# 
+#   # Bright colors
+#   bright:
+#     black:   '#727072'
+#     red:     '#FF6188'
+#     green:   '#A9DC76'
+#     yellow:  '#FFD866'
+#     blue:    '#FC9867'
+#     magenta: '#AB9DF2'
+#     cyan:    '#78DCE8'
+#     white:   '#FCFCFA'
+
+# # Colors (Pencil Light)
+# colors:
+#   # Default Colors
+#   primary:
+#     background: '#f1f1f1'
+#     foreground: '#424242'
+#   # Normal colors
+#   normal:
+#     black:   '#212121'
+#     red:     '#c30771'
+#     green:   '#10a778'
+#     yellow:  '#a89c14'
+#     blue:    '#008ec4'
+#     magenta: '#523c79'
+#     cyan:    '#20a5ba'
+#     white:   '#e0e0e0'
+#   # Bright colors
+#   bright:
+#     black:   '#212121'
+#     red:     '#fb007a'
+#     green:   '#5fd7af'
+#     yellow:  '#f3e430'
+#     blue:    '#20bbfc'
+#     magenta: '#6855de'
+#     cyan:    '#4fb8cc'
+#     white:   '#f1f1f1'
+
+# # Colors (Pencil Dark)
+# colors:
+#   # Default Colors
+#   primary:
+#     background: '#212121'
+#     foreground: '#f1f1f1'
+#   # Normal colors
+#   normal:
+#     black:   '#212121'
+#     red:     '#c30771'
+#     green:   '#10a778'
+#     yellow:  '#a89c14'
+#     blue:    '#008ec4'
+#     magenta: '#523c79'
+#     cyan:    '#20a5ba'
+#     white:   '#e0e0e0'
+#   # Bright colors
+#   bright:
+#     black:   '#212121'
+#     red:     '#fb007a'
+#     green:   '#5fd7af'
+#     yellow:  '#f3e430'
+#     blue:    '#20bbfc'
+#     magenta: '#6855de'
+#     cyan:    '#4fb8cc'
+#     white:   '#f1f1f1'
+
+# # Colors (One Light)
+# colors:
+#   primary:
+#     background: '#fafafa'
+#     foreground: '#383a42'
+#   cursor:
+#     text:       CellBackground
+#     cursor:     '#526eff' # syntax-cursor-color
+#   selection:
+#     text:       CellForeground
+#     background: '#e5e5e6' # syntax-selection-color
+#   normal:
+#     black:      '#696c77' # mono-2
+#     red:        '#e45649' # red 1
+#     green:      '#50a14f'
+#     yellow:     '#c18401' # orange 2
+#     blue:       '#4078f2'
+#     magenta:    '#a626a4'
+#     cyan:       '#0184bc'
+#     white:      '#a0a1a7' # mono-3
+
+# # Colors (One Dark)
+# colors:
+#   primary:
+#     background: '#282c34'
+#     foreground: '#dae2f2'
+#   cursor:
+#     text:       CellBackground
+#     cursor:     '#528bff' # syntax-cursor-color
+#   selection:
+#     text:       CellForeground
+#     background: '#3e4451' # syntax-selection-color
+#   normal:
+#     black:      '#5c6370' # mono-3
+#     red:        '#e06c75' # red 1
+#     green:      '#98c379'
+#     yellow:     '#e5c07b' # orange 2
+#     blue:       '#61afef'
+#     magenta:    '#c678dd'
+#     cyan:       '#56b6c2'
+#     white:      '#828997' # mono-2
+
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#2c2c2c'
+#     foreground: '#f2f2f2'
+#
+#     dim_foreground:    '#dbdbdb'
+#     bright_foreground: '#d9d9d9'
+#     dim_background:    '#202020' # not sure
+#     bright_background: '#3a3a3a' # not sure
+#
+#   # Cursor colors
+#   cursor:
+#     text:   '#2c2c2c'
+#     cursor: '#d9d9d9'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#1c1c1c'
+#     red:     '#e56964'
+#     green:   '#909d63'
+#     yellow:  '#ebc17a'
+#     blue:    '#88b8d8'
+#     magenta: '#aa6292'
+#     cyan:    '#86d3ce'
+#     white:   '#cacaca'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#636363'
+#     red:     '#bc5653'
+#     green:   '#909d63'
+#     yellow:  '#ebc17a'
+#     blue:    '#7eaac7'
+#     magenta: '#aa6292'
+#     cyan:    '#86d3ce'
+#     white:   '#f7f7f7'
+#
+#   # Dim colors
+#   dim:
+#     black:   '#232323'
+#     red:     '#74423f'
+#     green:   '#5e6547'
+#     yellow:  '#8b7653'
+#     blue:    '#556b79'
+#     magenta: '#6e4962'
+#     cyan:    '#5c8482'
+#     white:   '#828282'
+
+# # Colors (Dracula)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#282a36'
+#     foreground: '#f8f8f2'
+#
+#   # Normal colors
+#   normal:
+#     black:   '#000000'
+#     red:     '#ff5555'
+#     green:   '#50fa7b'
+#     yellow:  '#f1fa8c'
+#     blue:    '#caa9fa'
+#     magenta: '#ff79c6'
+#     cyan:    '#8be9fd'
+#     white:   '#bfbfbf'
+#
+#   # Bright colors
+#   bright:
+#     black:   '#575b70'
+#     red:     '#ff6e67'
+#     green:   '#5af78e'
+#     yellow:  '#f4f99d'
+#     blue:    '#caa9fa'
+#     magenta: '#ff92d0'
+#     cyan:    '#9aedfe'
+#     white:   '#e6e6e6'
+
+colors:
+   # Default colors
+   primary:
+     background: '#2b2b2b'
+     foreground: '#bbbbbb'
+
+   # Normal colors
+   normal:
+     black:   '#ffffff'
+     red:     '#ff6b68'
+     green:   '#a8c023'
+     yellow:  '#d6bf55'
+     blue:    '#5394ec'
+     magenta: '#ae8abe'
+     cyan:    '#299999'
+     white:   '#1f1f1f'
+
+   # Bright colors
+   bright:
+     black:   '#575b70'
+     red:     '#ff8785'
+     green:   '#a8ca23'
+     yellow:  '#ffff00'
+     blue:    '#7eaef1'
+     magenta: '#ff99ff'
+     cyan:    '#6cdada'
+     white:   '#e6e6e6'

@@ -1,0 +1,12 @@
+[includeIf "gitdir:~/Documents/Code/Valora/"]
+    path = ~/.gitconfig-valora
+
+[includeIf "gitdir:~/Documents/Code/GitHub/"]
+    path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/Documents/Code/aur/"]
+    path = ~/.gitconfig-github
+
+[includeIf "gitdir:~/Documents/School/"]
+    path = ~/.gitconfig-github
+
