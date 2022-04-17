@@ -28,10 +28,6 @@
       export GIT_PS1_SHOWCOLORHINTS=true
 
       export PS1=$'\n%1~$(__git_ps1)\n$ '
-
-      if [ \"$(hostname)\" = 'volt' ]; then
-          bindkey '^[[3~' delete-char # TODO: Figure out why I did this
-      fi
     '';
   };
 }
