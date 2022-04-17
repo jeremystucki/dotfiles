@@ -9,6 +9,10 @@ font:
   bold:
     style: Regular
 
+window:
+  decorations: full
+#  opacity: 0.95
+
 live_config_reload: true
 
   # Colors (Monokai Pro)
