@@ -1,5 +1,6 @@
 {
   home.file."git-prompt.sh".source = ../git-prompt.sh;
+  home.file."completion.zsh".source = ../completion.zsh;
 
   programs.zsh = {
     enable = true;
@@ -17,6 +18,8 @@
     };
 
     initExtra = ''
+      source completion.zsh
+
       setopt PROMPT_SUBST
       source ~/git-prompt.sh
 
