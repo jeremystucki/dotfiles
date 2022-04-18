@@ -4,6 +4,8 @@
     /cli.nix
     /git.nix
     /vim.nix
+    /code.nix
+    /jetbrains.nix
   ];
 
   home.username = "jeremy";

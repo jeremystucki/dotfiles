@@ -4,6 +4,8 @@
   home.packages = with pkgs; [
     bat
     fd
+    jq
+    pandoc
     ripgrep
     tealdeer
   ];

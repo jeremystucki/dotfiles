@@ -1,19 +1,10 @@
 {
+  home.file.".config/nvim/colors/theme.vim".source = ../theme.vim;
+
   programs.neovim = {
     enable = true;
 
     viAlias = true;
-
-    # settings = {
-    #   tabstop = 4;
-    #   shiftwidth = 4;
-    #   expandtab = true;
-
-    #   number = true;
-    #   relativenumber = true;
-
-    #   history = 1000;
-    # };
 
     extraConfig = ''
       set nocompatible
@@ -39,7 +30,7 @@
       set history=1000
       set undolevels=1000
 
-      colorscheme oxeded
+      colorscheme theme
 
       set cursorline
       hi clear CursorLine
