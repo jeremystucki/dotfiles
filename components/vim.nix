@@ -1,5 +1,5 @@
 {
-  home.file.".config/nvim/colors/theme.vim".source = ../theme.vim;
+  home.file.".config/nvim/colors/theme.vim".source = ../resources/theme.vim;
 
   programs.neovim = {
     enable = true;

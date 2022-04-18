@@ -1,6 +1,6 @@
 {
-  home.file."git-prompt.sh".source = ../git-prompt.sh;
-  home.file."completion.zsh".source = ../completion.zsh;
+  home.file."git-prompt.sh".source = ../resources/git-prompt.sh;
+  home.file."completion.zsh".source = ../resources/completion.zsh;
 
   programs.zsh = {
     enable = true;
