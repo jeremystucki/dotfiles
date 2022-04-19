@@ -28,7 +28,17 @@
         commit.gpgSign = true;
       };
     }
+    {
+      condition = "gitdir:~/Documents/Code/";
+      contents = {
+        user = {
+          email = "dev@jeremystucki.ch";
+          signingkey = "5336B63C29AE19E0A358EF0AD2A1E19158A33812";
+        };
+        commit.gpgSign = true;
+      };
+    }
   ];
-  
+
   programs.zsh.initExtra = "bindkey '^[[3~' delete-char";
 }
