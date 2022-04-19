@@ -1,5 +1,6 @@
 {
   imports = map (x: ./components + x) [
+    /alacritty.nix
     /zsh.nix
     /cli.nix
     /git.nix
@@ -13,6 +14,8 @@
   home.stateVersion = "22.05";
 
   programs.home-manager.enable = true;
+
+  home.file.".config/alacritty/machine-specific-config.yml".text = "";
 
   programs.git.includes = [
     {
