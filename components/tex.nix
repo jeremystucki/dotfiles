@@ -1,0 +1,3 @@
+{
+  programs.texlive.enable = true;
+}

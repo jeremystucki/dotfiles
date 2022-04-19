@@ -7,6 +7,7 @@
     /vim.nix
     /code.nix
     /jetbrains.nix
+    /tex.nix
   ];
 
   home.username = "jeremy";
@@ -16,6 +17,8 @@
   programs.home-manager.enable = true;
 
   home.file.".config/alacritty/machine-specific-config.yml".text = "";
+
+  programs.zathura.enable = true;
 
   programs.git.includes = [
     {
