@@ -1,4 +1,7 @@
+{ pkgs, ... }:
+
 {
+  home.packages = [ pkgs.nerdfonts ];
   home.file.".config/alacritty/alacritty.yml".source = ../resources/alacritty.yml;
 
 #   programs.alacritty = {

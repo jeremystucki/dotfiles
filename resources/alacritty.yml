@@ -3,8 +3,8 @@ import:
 
 font:
   normal:
-    family: JetBrains Mono
-    style: Regular 
+    family: JetBrains Mono Nerd Font
+    style: Regular
 
   bold:
     style: Regular

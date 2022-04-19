@@ -13,13 +13,7 @@
       size = 1000000;
     };
 
-    shellAliases = {
-      ll = "ls -lah";
-    };
-
     initExtra = ''
-      source completion.zsh
-
       setopt PROMPT_SUBST
       source ~/git-prompt.sh
 
