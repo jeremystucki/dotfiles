@@ -8,6 +8,7 @@
     /code.nix
     /jetbrains.nix
     /tex.nix
+    /haskell.nix
   ];
 
   home.username = "jeremy";
@@ -34,4 +35,8 @@
       };
     }
   ];
+
+  programs.vscode.userSettings = {
+    workbench.colorTheme = "Default Light+";
+  };
 }
