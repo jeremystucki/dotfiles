@@ -16,7 +16,6 @@
     };
 
     initExtra = ''
-      setopt PROMPT_SUBST
       source ~/git-prompt.sh
 
       export GIT_PS1_SHOWDIRTYSTATE=true
