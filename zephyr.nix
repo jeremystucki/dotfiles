@@ -34,6 +34,12 @@
         user.email = "dev@jeremystucki.ch";
       };
     }
+    {
+      condition = "gitdir:~/GitLab-OST/";
+      contents = {
+        user.email = "jeremy.stucki@ost.ch";
+      };
+    }
   ];
 
   programs.vscode.userSettings = {
