@@ -18,6 +18,8 @@
       setopt PROMPT_SUBST
       source ~/git-prompt.sh
 
+      source ~/completion.zsh
+
       export GIT_PS1_SHOWDIRTYSTATE=true
       export GIT_PS1_SHOWUNTRACKEDFILES=true
       export GIT_PS1_SHOWCOLORHINTS=true
