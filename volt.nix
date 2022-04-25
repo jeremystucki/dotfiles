@@ -7,6 +7,7 @@
     /vim.nix
     /code.nix
     /jetbrains.nix
+    /haskell.nix
   ];
 
   home.username = "jeremy";
@@ -29,6 +30,16 @@
       };
     }
     {
+      condition = "gitdir:~/Documents/Code/GitLab-OST/";
+      contents = {
+        user = {
+          email = "jeremy.stucki@ost.ch";
+          signingkey = "8E5EF915A05542E62295B5BC3D33B691D8AE9CDF";
+        };
+        commit.gpgSign = true;
+      };
+    }
+    {
       condition = "gitdir:~/Documents/Code/";
       contents = {
         user = {
@@ -41,4 +52,8 @@
   ];
 
   programs.zsh.initExtra = "bindkey '^[[3~' delete-char";
+
+  programs.vscode.userSettings = {
+    workbench.colorTheme = "Quiet Light";
+  };
 }
