@@ -13,6 +13,7 @@
       push.default = "current";
       pull.rebase = true;
       rerere.enabled = true;
+      status.short = true;
     };
 
     delta = {
