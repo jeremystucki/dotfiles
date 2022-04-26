@@ -35,7 +35,7 @@
       };
     }
     {
-      condition = "gitdir:~/GitLab-OST/";
+      condition = "gitdir:~/GitLabOST/";
       contents = {
         user.email = "jeremy.stucki@ost.ch";
       };
