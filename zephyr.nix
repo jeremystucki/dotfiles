@@ -42,6 +42,8 @@
     }
   ];
 
+  programs.zsh.initExtra = "bindkey '^[[3~' delete-char";
+
   programs.vscode.userSettings = {
     workbench.colorTheme = "Default Light+";
   };
