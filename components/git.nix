@@ -14,6 +14,7 @@
       pull.rebase = true;
       rerere.enabled = true;
       status.short = true;
+      rebase.autosquash = true;
     };
 
     delta = {
