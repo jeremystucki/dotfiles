@@ -6,6 +6,7 @@
     fd
     ripgrep
     tealdeer
+    nodePackages.svgo
   ];
 
   programs.bat.enable = true;
