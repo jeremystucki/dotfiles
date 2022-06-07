@@ -7,6 +7,7 @@
       co = "checkout";
       l  = "log --pretty=oneline-extra --date=human"; 
       lg = "l --graph";
+      ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
     };
 
     extraConfig = {
