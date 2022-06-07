@@ -6,6 +6,7 @@
     fd
     ripgrep
     tealdeer
+    zip
     nodePackages.svgo
   ];
 
