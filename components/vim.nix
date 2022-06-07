@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   home.file.".config/nvim/colors/theme.vim".source = ../resources/theme.vim;
 
@@ -5,6 +7,14 @@
     enable = true;
 
     viAlias = true;
+
+    plugins = with pkgs.vimPlugins; [
+        fzf-vim
+        vim-commentary
+        vim-fugitive
+        vim-nix
+        vim-unimpaired
+    ];
 
     extraConfig = ''
       set nocompatible
