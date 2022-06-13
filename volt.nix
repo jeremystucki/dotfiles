@@ -20,6 +20,16 @@
 
   programs.git.includes = [
     {
+      condition = "gitdir:~/Documents/Code/";
+      contents = {
+        user = {
+          email = "dev@jeremystucki.ch";
+          signingkey = "5336B63C29AE19E0A358EF0AD2A1E19158A33812";
+        };
+        commit.gpgSign = true;
+      };
+    }
+    {
       condition = "gitdir:~/Documents/Code/Valora/";
       contents = {
         user = {
@@ -35,16 +45,6 @@
         user = {
           email = "jeremy.stucki@ost.ch";
           signingkey = "8E5EF915A05542E62295B5BC3D33B691D8AE9CDF";
-        };
-        commit.gpgSign = true;
-      };
-    }
-    {
-      condition = "gitdir:~/Documents/Code/";
-      contents = {
-        user = {
-          email = "dev@jeremystucki.ch";
-          signingkey = "5336B63C29AE19E0A358EF0AD2A1E19158A33812";
         };
         commit.gpgSign = true;
       };
