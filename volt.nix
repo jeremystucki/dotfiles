@@ -8,6 +8,7 @@
     /code.nix
     /jetbrains.nix
     /haskell.nix
+    /tex.nix
   ];
 
   home.username = "jeremy";
