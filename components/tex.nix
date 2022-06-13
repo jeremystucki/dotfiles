@@ -1,3 +1,6 @@
+{ pkgs, ... }:
+
 {
-  programs.texlive.enable = true;
+  home.packages = [ pkgs.texlive.combined.scheme-full ];
 }
+
