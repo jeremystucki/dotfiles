@@ -2,6 +2,8 @@
   home.file."git-prompt.sh".source = ../resources/git-prompt.sh;
   home.file."completion.zsh".source = ../resources/completion.zsh;
 
+  programs.fzf.enable = true;
+
   programs.zsh = {
     enable = true;
 

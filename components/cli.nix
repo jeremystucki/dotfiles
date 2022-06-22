@@ -19,4 +19,6 @@
   programs.lsd.enable = true;
   programs.zsh.shellAliases.ls = "lsd -l";
   programs.zsh.shellAliases.lt = "lsd --tree";
+
+  programs.zoxide.enable = true;
 }

@@ -6,6 +6,7 @@
     package = pkgs.vscodium;
 
     extensions = with pkgs.vscode-extensions; [
+      asvetliakov.vscode-neovim
       bbenoist.nix
       editorconfig.editorconfig
       haskell.haskell
@@ -15,4 +16,8 @@
   };
 
   programs.zsh.shellAliases.code = "codium";
+
+  programs.vscode.userSettings = {
+    vscode-neovim.neovimExecutablePaths.linux = "/home/jeremy/.nix-profile/bin/nvim";
+  };
 }
