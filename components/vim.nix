@@ -13,6 +13,7 @@
         vim-commentary
         vim-fugitive
         vim-nix
+        vim-repeat
         vim-unimpaired
     ];
 
