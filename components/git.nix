@@ -16,6 +16,7 @@
       rerere.enabled = true;
       status.short = true;
       rebase.autosquash = true;
+      init.defaultBranch = "main";
     };
 
     delta = {
