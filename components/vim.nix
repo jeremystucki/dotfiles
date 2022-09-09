@@ -10,6 +10,7 @@
 
     plugins = with pkgs.vimPlugins; [
         fzf-vim
+        kotlin-vim
         vim-commentary
         vim-fugitive
         vim-nix
