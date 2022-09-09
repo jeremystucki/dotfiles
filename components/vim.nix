@@ -33,6 +33,7 @@
       set expandtab
 
       set hlsearch
+      set ic
 
       set scrolloff=4
       set sidescrolloff=5

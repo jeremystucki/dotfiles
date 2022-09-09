@@ -3,7 +3,9 @@
 {
   home.packages = with pkgs; [
     bat
+    dogdns
     fd
+    ffmpeg
     ripgrep
     tealdeer
     zip
@@ -21,4 +23,9 @@
   programs.zsh.shellAliases.lt = "lsd --tree";
 
   programs.zoxide.enable = true;
+
+  programs.tmux = {
+    enable = true;
+    keyMode = "vi";
+  };
 }
