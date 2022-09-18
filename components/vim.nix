@@ -19,9 +19,7 @@
     ];
 
     extraConfig = ''
-      set nocompatible
-
-      set clipboard=unnamedplus
+      set clipboard+=unnamedplus
 
       filetype plugin indent on
 
@@ -33,12 +31,10 @@
       set shiftwidth=4
       set expandtab
 
-      set hlsearch
       set ic
 
       set scrolloff=4
       set sidescrolloff=5
-      set incsearch
 
       set history=1000
       set undolevels=1000

@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   home.file."git-prompt.sh".source = ../resources/git-prompt.sh;
   home.file."completion.zsh".source = ../resources/completion.zsh;
@@ -17,6 +19,12 @@
     };
 
     initExtra = ''
+      EDITOR=vi
+      ZVM_VI_EDITOR=vi
+
+      autoload edit-command-line
+      zle -N edit-command-line
+
       setopt PROMPT_SUBST
       source ~/git-prompt.sh
 
@@ -27,6 +35,9 @@
       export GIT_PS1_SHOWCOLORHINTS=true
 
       export PS1=$'\n%1~$(__git_ps1)\n$ '
+
+      # TODO: Figure out how to do this properly
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
     '';
   };
 }
