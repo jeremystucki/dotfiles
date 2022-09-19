@@ -38,6 +38,10 @@
 #
 #      TODO: Figure out how to do this properly
 #      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+      autoload edit-command-line
+      zle -N edit-command-line
+      bindkey '^v' edit-command-line
     '';
   };
 }
