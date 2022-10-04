@@ -3,7 +3,7 @@
     /alacritty.nix
     /cli.nix
     /code.nix
-    /dotnet.nix
+    /cpp.nix
     /git.nix
     /haskell.nix
     /jetbrains.nix
