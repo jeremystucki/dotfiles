@@ -5,7 +5,6 @@
     clion
     datagrip
     idea-ultimate
-    rider
     webstorm
   ];
 }
