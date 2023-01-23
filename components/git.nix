@@ -1,22 +1,30 @@
 {
+  home.shellAliases = { g = "git"; };
+
   programs.git = {
     enable = true;
     userName = "Jeremy Stucki";
 
     aliases = {
       co = "checkout";
-      l  = "log --pretty=oneline-extra --date=human"; 
+      l  = "log --pretty=oneline --abbrev-commit";
       lg = "l --graph";
+      s  = "status";
       ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
     };
 
     extraConfig = {
+      init.defaultBranch = "main";
       push.default = "current";
       pull.rebase = true;
       rerere.enabled = true;
       status.short = true;
-      rebase.autosquash = true;
-      init.defaultBranch = "main";
+
+      rebase = {
+        autosquash = true;
+        abbreviateCommands = true;
+        autostash = true;
+      };
     };
 
     delta = {
