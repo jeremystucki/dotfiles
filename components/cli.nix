@@ -5,7 +5,7 @@
     bat
     dogdns
     fd
-    ffmpeg
+    ffmpeg-full
     ripgrep
     tealdeer
     zip
