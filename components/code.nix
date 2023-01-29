@@ -6,6 +6,7 @@
     package = pkgs.vscodium;
 
     extensions = with pkgs.vscode-extensions; [
+      asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
       bbenoist.nix
       editorconfig.editorconfig
