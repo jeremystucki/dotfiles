@@ -21,9 +21,10 @@
       status.short = true;
 
       rebase = {
-        autosquash = true;
         abbreviateCommands = true;
         autostash = true;
+        autosquash = true;
+        updateRefs = true;
       };
     };
 
