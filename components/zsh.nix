@@ -30,7 +30,8 @@
 
       export PS1=$'\n%1~$(__git_ps1)\n$ '
 
-#      EDITOR=vi
+      export EDITOR=vi
+
 #      ZVM_VI_EDITOR=vi
 #
 #      autoload edit-command-line
