@@ -6,8 +6,10 @@
     dogdns
     fd
     ffmpeg-full
+    ranger
     ripgrep
     tealdeer
+    tokei
     zip
     nodePackages.svgo
   ];
