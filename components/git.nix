@@ -1,5 +1,16 @@
+{ pkgs, ... }:
+
 {
   home.shellAliases = { g = "git"; };
+
+  programs.gh = {
+    enable = true;
+    extensions = [ pkgs.gh-dash ];
+    settings = {
+      git_protocol = "ssh";
+      prompt = "enabled";
+    };
+  };
 
   programs.git = {
     enable = true;
