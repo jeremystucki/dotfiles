@@ -10,6 +10,7 @@
     ripgrep
     tealdeer
     tokei
+    youtube-dl
     zip
     nodePackages.svgo
   ];
@@ -28,6 +29,16 @@
 
   programs.tmux = {
     enable = true;
+#    mouse = true; // TODO: Enable after next nix release
     keyMode = "vi";
+    terminal = "screen-256color";
+    extraConfig = ''
+      bind -r C-h select-pane -L
+      bind -r C-j select-pane -D
+      bind -r C-k select-pane -U
+      bind -r C-l select-pane -R
+
+      set-option -g status-style bg=white,fg=cyan
+    '';
   };
 }
