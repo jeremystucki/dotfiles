@@ -2,9 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    gdb
-    gcc
+    boost180
     cmake
+    gcc
+    gdb
     ninja
   ];
 }
