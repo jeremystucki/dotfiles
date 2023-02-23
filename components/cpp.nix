@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     boost180
     cmake
-    gcc
+    gcc12
     gdb
     ninja
   ];
