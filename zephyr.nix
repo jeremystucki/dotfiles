@@ -25,15 +25,15 @@
 
   programs.git.includes = [
     {
-      condition = "gitdir:~/GitHub/valora-digital/";
-      contents = {
-        user.email = "jeremy.stucki@valora.com";
-      };
-    }
-    {
       condition = "gitdir:~/GitHub/";
       contents = {
         user.email = "dev@jeremystucki.ch";
+      };
+    }
+    {
+      condition = "gitdir:~/GitHub/valora-digital/";
+      contents = {
+        user.email = "jeremy.stucki@valora.com";
       };
     }
     {
