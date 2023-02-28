@@ -1,14 +1,15 @@
 {
   imports = map (x: ./components + x) [
     /alacritty.nix
-    /zsh.nix
     /cli.nix
+    /cpp.nix
     /git.nix
     /vim.nix
     /code.nix
     /jetbrains.nix
     /haskell.nix
     /tex.nix
+    /zsh.nix
   ];
 
   home.username = "jeremy";
