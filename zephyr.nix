@@ -5,6 +5,7 @@
     /code.nix
     /cpp.nix
     /git.nix
+    /gnome.nix
     /haskell.nix
     /jetbrains.nix
     /node.nix

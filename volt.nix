@@ -4,6 +4,7 @@
     /cli.nix
     /cpp.nix
     /git.nix
+    /gnome.nix
     /vim.nix
     /code.nix
     /jetbrains.nix
