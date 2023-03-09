@@ -3,6 +3,7 @@ import:
 
 window:
   opacity: 0.96
+  decorations: 'none'
 
 font:
   normal:
