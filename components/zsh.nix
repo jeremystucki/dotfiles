@@ -32,6 +32,8 @@
 
       export EDITOR=vi
 
+      export LESS=-iR
+
 #      ZVM_VI_EDITOR=vi
 #
 #      autoload edit-command-line
