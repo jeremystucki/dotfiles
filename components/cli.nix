@@ -39,6 +39,7 @@
       bind -r C-l select-pane -R
 
       set-option -g status-style bg=white,fg=cyan
+      set -g mouse on
     '';
   };
 }
