@@ -1,4 +1,6 @@
 {
+  targets.genericLinux.enable = true;
+
   imports = map (x: ./components + x) [
     /alacritty.nix
     /cli.nix
