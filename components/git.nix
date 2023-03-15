@@ -18,7 +18,7 @@
 
     aliases = {
       co = "checkout";
-      cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')"
+      cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')";
       l  = "log --pretty=oneline --abbrev-commit";
       lg = "l --graph";
       s  = "status";
