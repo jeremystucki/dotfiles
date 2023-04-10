@@ -61,4 +61,18 @@
   programs.vscode.userSettings = {
     workbench.colorTheme = "Quiet Light";
   };
+
+  dconf.settings = {
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      custom-keybindings = [
+        "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/spotify/"
+      ];
+    };
+
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/spotify" = {
+      binding = "<Super>P";
+      command = "sh -c 'wmctrl -xa Spotify || spotify'";
+      name = "spotify nix";
+    };
+  };
 }
