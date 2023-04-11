@@ -14,6 +14,7 @@
         vim-commentary
         vim-fugitive
         vim-nix
+        vim-obsession
         vim-repeat
         vim-unimpaired
     ];

@@ -32,6 +32,19 @@
 #    mouse = true; // TODO: Enable after next nix release
     keyMode = "vi";
     terminal = "screen-256color";
+    plugins = [
+      {
+        plugin = pkgs.tmuxPlugins.resurrect;
+        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
+      }
+      {
+        plugin = pkgs.tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-save-interval '60' # minutes
+        '';
+      }
+    ];
     extraConfig = ''
       bind -r C-h select-pane -L
       bind -r C-j select-pane -D
