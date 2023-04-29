@@ -29,30 +29,24 @@
 
   programs.tmux = {
     enable = true;
-#    mouse = true; // TODO: Enable after next nix release
-    keyMode = "vi";
-    terminal = "screen-256color";
+    mouse = true;
     plugins = [
-      {
-        plugin = pkgs.tmuxPlugins.resurrect;
-        extraConfig = "set -g @resurrect-strategy-nvim 'session'";
-      }
-      {
-        plugin = pkgs.tmuxPlugins.continuum;
-        extraConfig = ''
-          set -g @continuum-restore 'on'
-          set -g @continuum-save-interval '60' # minutes
-        '';
-      }
+      { plugin = pkgs.tmuxPlugins.catppuccin; }
+      { plugin = pkgs.tmuxPlugins.sensible; }
+      { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
     ];
     extraConfig = ''
-      bind -r C-h select-pane -L
-      bind -r C-j select-pane -D
-      bind -r C-k select-pane -U
-      bind -r C-l select-pane -R
+      set -g base-index 1
+      set -g pane-base-index 1
+      set-window-option -g pane-base-index 1
+      set-option -g renumber-windows on
 
       set-option -g status-style bg=white,fg=cyan
+
       set -g mouse on
+
+      bind '"' split-window -v -c "#{pane_current_path}"
+      bind % split-window -h -c "#{pane_current_path}"
     '';
   };
 }
