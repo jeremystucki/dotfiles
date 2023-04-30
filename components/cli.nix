@@ -34,6 +34,7 @@
       { plugin = pkgs.tmuxPlugins.catppuccin; }
       { plugin = pkgs.tmuxPlugins.sensible; }
       { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
+      { plugin = pkgs.tmuxPlugins.yank; }
     ];
     extraConfig = ''
       set -g base-index 1
@@ -42,8 +43,6 @@
       set-option -g renumber-windows on
 
       set-option -g status-style bg=white,fg=cyan
-
-      set -g mouse on
 
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
