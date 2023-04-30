@@ -30,11 +30,26 @@
   programs.tmux = {
     enable = true;
     mouse = true;
+    keyMode = "vi";
     plugins = [
       { plugin = pkgs.tmuxPlugins.catppuccin; }
+      { plugin = pkgs.tmuxPlugins.copycat; }
       { plugin = pkgs.tmuxPlugins.sensible; }
       { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
-      { plugin = pkgs.tmuxPlugins.yank; }
+      {
+        plugin = pkgs.tmuxPlugins.open;
+        extraConfig = ''
+          set -g @open-S 'https://www.duckduckgo.com/?q='
+        '';
+      }
+      {
+        plugin = pkgs.tmuxPlugins.yank;
+        extraConfig = ''
+          bind-key -T copy-mode-vi v send-keys -X begin-selection
+          bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+          bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+        '';
+      }
     ];
     extraConfig = ''
       set -g base-index 1
