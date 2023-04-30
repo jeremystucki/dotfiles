@@ -29,10 +29,10 @@
       export GIT_PS1_SHOWCOLORHINTS=true
 
       export PS1=$'\n%1~$(__git_ps1)\n$ '
-
       export EDITOR=vi
-
       export LESS=-iR
+
+      alias c='clear -x'
 
 #      ZVM_VI_EDITOR=vi
 #

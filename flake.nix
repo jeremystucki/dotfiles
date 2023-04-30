@@ -17,7 +17,7 @@
         inherit system;
         config = {
           allowUnfree = true;
-          input-fonts.acceptLicense = true; # TODO: Move out of here
+          input-fonts.acceptLicense = true;
         };
       };
     in {
