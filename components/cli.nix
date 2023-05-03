@@ -32,11 +32,17 @@
     mouse = true;
     keyMode = "vi";
     plugins = [
-      { plugin = pkgs.tmuxPlugins.catppuccin; }
       { plugin = pkgs.tmuxPlugins.copycat; }
       { plugin = pkgs.tmuxPlugins.resurrect; }
       { plugin = pkgs.tmuxPlugins.sensible; }
       { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
+      {
+        plugin = pkgs.tmuxPlugins.catppuccin;
+        extraConfig = ''
+          set -g @catppuccin_left_separator "█"
+          set -g @catppuccin_right_separator "█"
+        '';
+      }
       {
         plugin = pkgs.tmuxPlugins.continuum;
         extraConfig = ''
