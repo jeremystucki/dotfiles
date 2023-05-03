@@ -7,6 +7,7 @@
     /code.nix
     /cpp.nix
     /dotnet.nix
+    /gcloud.nix
     /git.nix
     /gnome.nix
     /haskell.nix
