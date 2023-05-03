@@ -34,8 +34,15 @@
     plugins = [
       { plugin = pkgs.tmuxPlugins.catppuccin; }
       { plugin = pkgs.tmuxPlugins.copycat; }
+      { plugin = pkgs.tmuxPlugins.resurrect; }
       { plugin = pkgs.tmuxPlugins.sensible; }
       { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
+      {
+        plugin = pkgs.tmuxPlugins.continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+        '';
+      }
       {
         plugin = pkgs.tmuxPlugins.open;
         extraConfig = ''
