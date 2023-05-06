@@ -7,11 +7,12 @@
     /cpp.nix
     /git.nix
     /gnome.nix
-    /vim.nix
     /code.nix
     /jetbrains.nix
     /haskell.nix
     /tex.nix
+    /tmux.nix
+    /vim.nix
     /zsh.nix
   ];
 

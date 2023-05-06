@@ -14,6 +14,7 @@
     /jetbrains.nix
     /node.nix
     /tex.nix
+    /tmux.nix
     /vim.nix
     /zsh.nix
   ];
