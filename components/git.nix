@@ -25,6 +25,10 @@
       ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
     };
 
+    ignores = [
+      ".envrc"
+    ];
+
     extraConfig = {
       init.defaultBranch = "main";
       push.default = "current";
