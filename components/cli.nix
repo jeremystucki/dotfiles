@@ -6,6 +6,7 @@
     dogdns
     fd
     ffmpeg-full
+    ngrok
     ranger
     ripgrep
     tealdeer
