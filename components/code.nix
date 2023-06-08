@@ -14,6 +14,10 @@
       james-yu.latex-workshop
       justusadam.language-haskell
     ];
+
+    userSettings = {
+      git.mergeEditor = true;
+    };
   };
 
   programs.zsh.shellAliases.code = "codium";
