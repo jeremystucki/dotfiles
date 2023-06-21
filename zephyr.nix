@@ -3,6 +3,7 @@
 
   imports = map (x: ./components + x) [
     /alacritty.nix
+    /apps.nix
     /cli.nix
     /code.nix
     /cpp.nix
