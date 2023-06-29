@@ -6,6 +6,7 @@
     /apps.nix
     /cli.nix
     /cpp.nix
+    /dotnet.nix
     /git.nix
     /gnome.nix
     /code.nix
