@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    bookletimposer
     evolution
     gnome.gnome-calendar
     gnome.gnome-contacts
