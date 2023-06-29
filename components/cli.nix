@@ -3,14 +3,20 @@
 {
   home.packages = with pkgs; [
     bat
+    delta
     dogdns
+    du-dust
+    entr
     fd
     ffmpeg-full
     ngrok
+    nmap
+    pdftk
     ranger
     ripgrep
     tealdeer
     tokei
+    wol
     youtube-dl
     zip
     nodePackages.svgo
