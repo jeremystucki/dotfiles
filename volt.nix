@@ -8,6 +8,7 @@
     /cpp.nix
     /dotnet.nix
     /git.nix
+    /gcloud.nix
     /gnome.nix
     /code.nix
     /jetbrains.nix
