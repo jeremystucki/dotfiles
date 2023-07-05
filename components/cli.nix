@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    android-tools
+    asciinema
     bat
     delta
     dogdns
