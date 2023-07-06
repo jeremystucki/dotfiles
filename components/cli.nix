@@ -35,4 +35,9 @@
   programs.zsh.shellAliases.lt = "lsd --tree";
 
   programs.zoxide.enable = true;
+
+  programs.bottom = {
+    enable = true;
+    settings.flags.color = "nord";
+  };
 }
