@@ -50,6 +50,9 @@
       autoload edit-command-line
       zle -N edit-command-line
       bindkey '^v' edit-command-line
+
+      bindkey '^a' beginning-of-line
+      bindkey '^e' end-of-line
     '';
   };
 }
