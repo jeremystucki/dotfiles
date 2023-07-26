@@ -2,7 +2,6 @@ import:
   - ~/.config/alacritty/machine-specific-config.yml
 
 window:
-  opacity: 0.96
   decorations: 'none'
 
 font:
