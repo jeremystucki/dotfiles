@@ -46,6 +46,8 @@
       bindkey '^a' beginning-of-line
       bindkey '^e' end-of-line
       bindkey '^n' clear-screen
+
+      bindkey '^[[3~' delete-char
     '';
   };
 }

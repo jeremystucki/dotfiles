@@ -22,7 +22,7 @@
 
   home.username = "jeremy";
   home.homeDirectory = "/home/jeremy";
-  home.stateVersion = "22.05";
+  home.stateVersion = "23.05";
 
   programs.home-manager.enable = true;
 
@@ -50,8 +50,6 @@
       };
     }
   ];
-
-  programs.zsh.initExtra = "bindkey '^[[3~' delete-char";
 
   programs.vscode.userSettings = {
     workbench.colorTheme = "Default Light+";
