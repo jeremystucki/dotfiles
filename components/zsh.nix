@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   home.file."git-prompt.sh".source = ../resources/git-prompt.sh;
@@ -38,14 +38,6 @@
       export LESS=-iR
 
       alias c='clear -x'
-
-#      ZVM_VI_EDITOR=vi
-#
-#      autoload edit-command-line
-#      zle -N edit-command-line
-#
-#      TODO: Figure out how to do this properly
-#      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
       autoload edit-command-line
       zle -N edit-command-line

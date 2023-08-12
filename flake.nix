@@ -2,7 +2,6 @@
   description = "Home Manager configuration of jeremy";
 
   inputs = {
-    # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.05";
@@ -10,11 +9,10 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager }:
     let
-      system = "x86_64-linux";
       pkgs = import nixpkgs {
-        inherit system;
+        system = "x86_64-linux";
         config = {
           allowUnfree = true;
           input-fonts.acceptLicense = true;
