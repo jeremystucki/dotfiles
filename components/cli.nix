@@ -11,6 +11,7 @@
     entr
     fd
     ffmpeg-full
+    miller
     ngrok
     nmap
     pdftk
