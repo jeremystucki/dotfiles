@@ -38,6 +38,7 @@
       export LESS=-iR
 
       alias c='clear -x'
+      alias clip='xclip -selection c'
 
       autoload edit-command-line
       zle -N edit-command-line
