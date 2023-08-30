@@ -9,15 +9,15 @@
     viAlias = true;
 
     plugins = with pkgs.vimPlugins; [
-        fzf-vim
-        kotlin-vim
-        vim-commentary
-        vim-fugitive
-        vim-nix
-        vim-obsession
-        vim-repeat
-        vim-tmux-navigator
-        vim-unimpaired
+      fzf-vim
+      kotlin-vim
+      vim-commentary
+      vim-fugitive
+      vim-nix
+      vim-obsession
+      vim-repeat
+      vim-tmux-navigator
+      vim-unimpaired
     ];
 
     extraConfig = ''

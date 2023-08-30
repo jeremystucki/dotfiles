@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.google-cloud-sdk
-    pkgs.cloud-sql-proxy
+  home.packages = with pkgs; [
+    google-cloud-sdk
+    cloud-sql-proxy
   ];
 }

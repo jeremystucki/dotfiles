@@ -16,6 +16,7 @@
     /node.nix
     /tex.nix
     /tmux.nix
+    /typst.nix
     /vim.nix
     /zsh.nix
   ];

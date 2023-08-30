@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    texlive.combined.scheme-full 
+    typst
   ];
 
   programs.vscode.extensions = with pkgs.vscode-extensions; [
-    james-yu.latex-workshop
+    nvarner.typst-lsp
   ];
 }

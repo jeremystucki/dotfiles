@@ -10,9 +10,6 @@
       asvetliakov.vscode-neovim
       bbenoist.nix
       editorconfig.editorconfig
-      haskell.haskell
-      james-yu.latex-workshop
-      justusadam.language-haskell
     ];
 
     userSettings = {

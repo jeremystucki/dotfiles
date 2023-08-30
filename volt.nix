@@ -15,6 +15,7 @@
     /haskell.nix
     /tex.nix
     /tmux.nix
+    /typst.nix
     /vim.nix
     /zsh.nix
   ];
@@ -61,7 +62,7 @@
   ];
 
   programs.vscode.userSettings = {
-    workbench.colorTheme = "Quiet Light";
+    workbench.colorTheme = "Solarized Dark";
   };
 
   dconf.settings = {
