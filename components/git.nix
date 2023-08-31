@@ -16,6 +16,8 @@
     enable = true;
     userName = "Jeremy Stucki";
 
+    lfs.enable = true;
+
     aliases = {
       co = "checkout";
       cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')";
