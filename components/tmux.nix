@@ -5,33 +5,33 @@
     enable = true;
     mouse = true;
     keyMode = "vi";
-    plugins = [
-      { plugin = pkgs.tmuxPlugins.copycat; }
-      { plugin = pkgs.tmuxPlugins.resurrect; }
-      { plugin = pkgs.tmuxPlugins.sensible; }
-      { plugin = pkgs.tmuxPlugins.vim-tmux-navigator; }
+    plugins = with pkgs.tmuxPlugins; [
+      copycat
+      resurrect
+      sensible
+      vim-tmux-navigator
       {
-        plugin = pkgs.tmuxPlugins.catppuccin;
+        plugin = catppuccin;
         extraConfig = ''
           set -g @catppuccin_left_separator "█"
           set -g @catppuccin_right_separator "█"
         '';
       }
       {
-        plugin = pkgs.tmuxPlugins.continuum;
+        plugin = continuum;
         extraConfig = ''
           set -g @continuum-boot 'on'
           set -g @continuum-restore 'on'
         '';
       }
       {
-        plugin = pkgs.tmuxPlugins.open;
+        plugin = open;
         extraConfig = ''
           set -g @open-S 'https://www.duckduckgo.com/?q='
         '';
       }
       {
-        plugin = pkgs.tmuxPlugins.yank;
+        plugin = yank;
         extraConfig = ''
           bind-key -T copy-mode-vi v send-keys -X begin-selection
           bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
