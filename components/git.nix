@@ -25,6 +25,7 @@
       lg = "l --graph";
       s  = "status";
       ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
+      apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";
     };
 
     ignores = [
