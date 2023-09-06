@@ -20,7 +20,7 @@
     tealdeer
     tokei
     wol
-    youtube-dl
+    yt-dlp
     zip
     nodePackages.svgo
   ];
