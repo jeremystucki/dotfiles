@@ -30,6 +30,7 @@
 
     ignores = [
       ".envrc"
+      ".idea"
     ];
 
     extraConfig = {
