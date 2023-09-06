@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
     bookletimposer
     blanket
+    pkgs-unstable.cartridges
     citations
     evolution
     gnome-decoder
