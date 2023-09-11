@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
@@ -6,5 +6,6 @@
     firefox
     tailscale
     telegram-desktop
+    pkgs-unstable.android-studio
   ];
 }

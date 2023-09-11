@@ -21,6 +21,9 @@
       };
       pkgs-unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
+        config = {
+          allowUnfree = true;
+        };
       };
     in {
       homeConfigurations."jeremy@volt" = home-manager.lib.homeManagerConfiguration {
