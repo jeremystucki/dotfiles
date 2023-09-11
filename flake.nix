@@ -29,6 +29,7 @@
         extraSpecialArgs = {
           inherit pkgs-unstable;
         };       
+        targets.genericLinux.enable = true;
       };
       homeConfigurations."jeremy@zephyr" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -36,6 +37,19 @@
         extraSpecialArgs = {
           inherit pkgs-unstable;
         };       
+      };
+      nixosConfigurations.volt-nixos = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
+        modules = [
+          ./configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.users.jeremy = import ./volt.nix;
+            home-manager.useGlobalPkgs = true;
+            home-manager.extraSpecialArgs = {
+              inherit pkgs-unstable;
+            };       
+          }
+        ];
       };
     };
 }
