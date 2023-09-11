@@ -7,7 +7,7 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+      ./volt-nixos-hardware-configuration.nix
     ];
 
   # Bootloader.
@@ -162,4 +162,17 @@
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
+
+  services.tailscale.enable = true;
+
+  programs._1password.enable = true;
+  programs._1password-gui = {
+    enable = true;
+    # Certain features, including CLI integration and system authentication support,
+    # require enabling PolKit integration on some desktop environments (e.g. Plasma).
+    polkitPolicyOwners = [ "jeremy" ];
+  };
 }

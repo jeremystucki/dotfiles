@@ -41,9 +41,9 @@
       nixosConfigurations.volt-nixos = nixpkgs.lib.nixosSystem {
         inherit pkgs;
         modules = [
-          ./configuration.nix
+          ./volt-nixos-configuration.nix
           home-manager.nixosModules.home-manager {
-            home-manager.users.jeremy = import ./volt.nix;
+            home-manager.users.jeremy = nixpkgs.lib.mkMerge [ (import ./volt.nix) (import ./volt-nixos-extras.nix) ];
             home-manager.useGlobalPkgs = true;
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;
