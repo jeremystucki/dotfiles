@@ -152,4 +152,10 @@
   '';
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    adjust-display-brightness
+    blur-my-shell
+    dash-to-dock
+  ];
 }
