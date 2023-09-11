@@ -3,14 +3,14 @@
     /alacritty.nix
     /apps.nix
     /cli.nix
+    /code.nix
     /cpp.nix
     /dotnet.nix
-    /git.nix
     /gcloud.nix
+    /git.nix
     /gnome.nix
-    /code.nix
-    /jetbrains.nix
     /haskell.nix
+    /jetbrains.nix
     /tex.nix
     /tmux.nix
     /typst.nix

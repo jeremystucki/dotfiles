@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/jeremy/Documents" =
+    { device = "/dev/disk/by-uuid/5fd3f27f-f766-4b84-839f-355f06c4de04";
+      fsType = "ext4";
+    };
+
   boot.initrd.luks.devices."luks-119076f9-eea0-4e5f-bd28-a8620993ff06".device = "/dev/disk/by-uuid/119076f9-eea0-4e5f-bd28-a8620993ff06";
 
   fileSystems."/boot" =

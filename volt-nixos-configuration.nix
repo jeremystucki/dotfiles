@@ -150,4 +150,6 @@
     Host *
         IdentityAgent ~/.1password/agent.sock
   '';
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
