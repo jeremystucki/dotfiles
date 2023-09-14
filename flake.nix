@@ -17,6 +17,9 @@
         config = {
           allowUnfree = true;
           input-fonts.acceptLicense = true;
+          permittedInsecurePackages = [
+            "electron-12.2.3"
+          ];
         };
       };
       pkgs-unstable = import nixpkgs-unstable {
@@ -28,7 +31,7 @@
     in {
       homeConfigurations."jeremy@volt" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./volt.nix ];
+        modules = [ ./volt/home-manager.nix ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
         };       
@@ -36,17 +39,20 @@
       };
       homeConfigurations."jeremy@zephyr" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./zephyr.nix ];
+        modules = [ ./zephyr/home-manager.nix ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
         };       
       };
-      nixosConfigurations.volt-nixos = nixpkgs.lib.nixosSystem {
+      nixosConfigurations."volt-nixos" = nixpkgs.lib.nixosSystem {
         inherit pkgs;
+        specialArgs = {
+          inherit pkgs-unstable;
+        };
         modules = [
-          ./volt-nixos-configuration.nix
+          ./volt/nixos-configuration.nix
           home-manager.nixosModules.home-manager {
-            home-manager.users.jeremy = nixpkgs.lib.mkMerge [ (import ./volt.nix) (import ./volt-nixos-extras.nix) ];
+            home-manager.users.jeremy = import ./volt/home-manager.nix;
             home-manager.useGlobalPkgs = true;
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;

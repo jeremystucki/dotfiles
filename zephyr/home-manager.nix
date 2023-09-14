@@ -1,11 +1,11 @@
 {
   targets.genericLinux.enable = true;
 
-  imports = map (x: ./components + x) [
+  imports = map (x: ../components + x) [
     /alacritty.nix
-    /apps.nix
     /cli.nix
     /code.nix
+    /common-apps.nix
     /cpp.nix
     /dotnet.nix
     /gcloud.nix

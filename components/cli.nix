@@ -17,7 +17,6 @@
     pdftk
     ranger
     ripgrep
-    tealdeer
     tokei
     wol
     yt-dlp
@@ -40,5 +39,12 @@
   programs.bottom = {
     enable = true;
     settings.flags.color = "nord";
+  };
+
+  programs.tealdeer = {
+    enable = true;
+    settings = {
+      updates.auto_update = true;
+    };
   };
 }

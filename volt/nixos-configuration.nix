@@ -1,7 +1,9 @@
-{ config, pkgs, pkgs-unstable, home-manager, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 {
-  imports = [ ./volt-nixos-hardware-configuration.nix ];
+  imports = [
+    ./nixos-hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -17,10 +19,8 @@
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".keyFile = "/crypto_keyfile.bin";
 
   networking.hostName = "volt-nixos";
-  # networking.wireless.enable = true;
-
-  # Enable networking
   networking.networkmanager.enable = true;
+  # networking.wireless.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Zurich";
@@ -66,6 +66,14 @@
     isNormalUser = true;
     description = "Jeremy Stucki";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      alacritty
+      chromium
+      firefox
+      telegram-desktop
+      xsel
+      pkgs-unstable.android-studio
+    ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are
