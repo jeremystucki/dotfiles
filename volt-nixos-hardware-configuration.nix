@@ -23,6 +23,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/home/jeremy/Games" =
+    { device = "/dev/disk/by-uuid/2a697660-240b-446e-8c67-cb02e7be264a";
+      fsType = "ext4";
+    };
+
   boot.initrd.luks.devices."luks-119076f9-eea0-4e5f-bd28-a8620993ff06".device = "/dev/disk/by-uuid/119076f9-eea0-4e5f-bd28-a8620993ff06";
 
   fileSystems."/boot" =

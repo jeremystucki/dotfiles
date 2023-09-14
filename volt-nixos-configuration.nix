@@ -158,4 +158,6 @@
     blur-my-shell
     dash-to-dock
   ];
+
+  programs.steam.enable = true;
 }
