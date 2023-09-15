@@ -41,6 +41,18 @@
     xkbVariant = "";
   };
 
+  programs.hyprland = {
+    enable = true;
+    package = (pkgs-unstable.hyprland.override {
+      enableNvidiaPatches = true;
+    });
+  };
+
+  programs.waybar = {
+    enable = true;
+    package = pkgs-unstable.waybar;
+  };
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -71,6 +83,7 @@
       chromium
       ddcutil
       firefox
+      kitty
       telegram-desktop
       xsel
       pkgs-unstable.android-studio
@@ -164,7 +177,10 @@
         IdentityAgent ~/.1password/agent.sock
   '';
 
-  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+  };
 
   environment.systemPackages = with pkgs.gnomeExtensions; [
     adjust-display-brightness

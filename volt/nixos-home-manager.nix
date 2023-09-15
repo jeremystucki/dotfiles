@@ -7,6 +7,8 @@ in {
     ./common-home-manager.nix
   ];
 
+  programs.rofi.enable = true;
+
   programs.git.extraConfig = {
     commit.gpgsign = true;
     user.signingkey = publicKey;
