@@ -5,6 +5,7 @@
     android-tools
     asciinema
     bat
+    caddy
     delta
     dogdns
     du-dust
