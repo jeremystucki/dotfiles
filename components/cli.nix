@@ -15,6 +15,7 @@
     ngrok
     nmap
     pdftk
+    postgresql
     ranger
     ripgrep
     tokei
