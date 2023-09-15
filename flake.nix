@@ -31,7 +31,7 @@
     in {
       homeConfigurations."jeremy@volt" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./volt/home-manager.nix ];
+        modules = [ ./volt/common-home-manager.nix ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
         };       
@@ -52,7 +52,7 @@
         modules = [
           ./volt/nixos-configuration.nix
           home-manager.nixosModules.home-manager {
-            home-manager.users.jeremy = import ./volt/home-manager.nix;
+            home-manager.users.jeremy = import ./volt/nixos-home-manager.nix { inherit pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;
