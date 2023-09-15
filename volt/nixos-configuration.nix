@@ -65,10 +65,11 @@
   users.users.jeremy = {
     isNormalUser = true;
     description = "Jeremy Stucki";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" ];
     packages = with pkgs; [
       alacritty
       chromium
+      ddcutil
       firefox
       telegram-desktop
       xsel
@@ -139,6 +140,8 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  hardware.i2c.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   services.flatpak.enable = true;
@@ -167,6 +170,7 @@
     adjust-display-brightness
     blur-my-shell
     dash-to-dock
+    just-perfection
   ];
 
   programs.steam.enable = true;
