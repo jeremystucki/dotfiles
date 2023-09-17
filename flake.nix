@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    color-scheme-sync = {
+      url = "github:jeremystucki/color-scheme-sync/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, color-scheme-sync }:
     let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
@@ -51,6 +55,7 @@
         };
         modules = [
           ./volt/nixos-configuration.nix
+          color-scheme-sync.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager.users.jeremy = import ./volt/nixos-home-manager.nix { inherit pkgs; };
             home-manager.useGlobalPkgs = true;
