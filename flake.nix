@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     color-scheme-sync = {
-      url = "github:jeremystucki/color-scheme-sync/nix-flake";
+      url = "github:bash/color-scheme-sync";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

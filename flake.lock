@@ -8,16 +8,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1694957877,
-        "narHash": "sha256-0r49ZJ+lHgiUCLpEJKqudNfhx10E461TGcn0EmhUDOM=",
-        "owner": "jeremystucki",
+        "lastModified": 1695025214,
+        "narHash": "sha256-CxMNcpiK2K5FDuidXYWSChUW18T4Tmypl7o93Z/UQ0I=",
+        "owner": "bash",
         "repo": "color-scheme-sync",
-        "rev": "3c67ecb848eb8ec084eb1a082fec3f7d83217b90",
+        "rev": "e5b0422893a59d935c201c9b26e3577f9b3b51c2",
         "type": "github"
       },
       "original": {
-        "owner": "jeremystucki",
-        "ref": "nix-flake",
+        "owner": "bash",
         "repo": "color-scheme-sync",
         "type": "github"
       }
