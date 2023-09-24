@@ -20,6 +20,7 @@
     ranger
     ripgrep
     tokei
+    units
     wol
     yt-dlp
     zip
