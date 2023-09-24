@@ -38,8 +38,8 @@
         modules = [ ./volt/common-home-manager.nix ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
+          targets.genericLinux.enable = true;
         };       
-        targets.genericLinux.enable = true;
       };
       homeConfigurations."jeremy@zephyr" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
