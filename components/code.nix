@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = [ pkgs.nil ];
 
   programs.vscode = {
     enable = true;
-    package = pkgs.vscodium;
+    package = pkgs-unstable.vscodium;
 
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
