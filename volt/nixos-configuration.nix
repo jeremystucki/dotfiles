@@ -75,6 +75,7 @@
       firefox
       jetbrains.rider
       telegram-desktop
+      wl-clipboard
       xsel
       pkgs-unstable.android-studio
     ];
