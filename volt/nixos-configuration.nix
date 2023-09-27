@@ -88,6 +88,11 @@
   #   enableSSHSupport = true;
   # };
 
+  programs.java = {
+    enable = true;
+    package = pkgs.openjdk17;
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
