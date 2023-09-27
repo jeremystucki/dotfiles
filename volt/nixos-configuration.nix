@@ -73,6 +73,7 @@
       chromium
       ddcutil
       firefox
+      jetbrains.rider
       telegram-desktop
       xsel
       pkgs-unstable.android-studio
