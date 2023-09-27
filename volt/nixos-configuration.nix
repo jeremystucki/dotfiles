@@ -18,6 +18,8 @@
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".device = "/dev/disk/by-uuid/e0d59253-c3ee-4fab-8ce0-182877db57c3";
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".keyFile = "/crypto_keyfile.bin";
 
+  boot.supportedFilesystems = [ "ntfs" ];
+
   networking.hostName = "volt-nixos";
   networking.networkmanager.enable = true;
   # networking.wireless.enable = true;
