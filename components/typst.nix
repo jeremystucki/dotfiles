@@ -6,8 +6,14 @@
     typst-lsp
   ];
 
-  programs.vscode.extensions = with pkgs-unstable.vscode-extensions; [
-    nvarner.typst-lsp
-    tomoki1207.pdf
-  ];
+  programs.vscode = {
+    extensions = with pkgs-unstable.vscode-extensions; [
+      nvarner.typst-lsp
+      tomoki1207.pdf
+    ];
+
+    userSettings.typst-lsp = {
+      exportPdf = "never";
+    };
+  };
 }
