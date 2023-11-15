@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
@@ -7,6 +7,8 @@
        dotnet-aspnetcore_6
        dotnet-sdk_7
        dotnet-aspnetcore_7
+       pkgs-unstable.dotnet-sdk_8
+       pkgs-unstable.dotnet-aspnetcore_8
     ])
   ];
 }
