@@ -24,7 +24,6 @@
   programs.vscode.userSettings = {
     vscode-neovim.neovimExecutablePaths.linux = "/home/jeremy/.nix-profile/bin/nvim";
 
-    editor.fontFamily = "Input Sans";
     editor.cursorSurroundingLines = 8;
 
     nix = {
