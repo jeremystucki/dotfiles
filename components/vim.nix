@@ -16,6 +16,7 @@
       vim-nix
       vim-obsession
       vim-repeat
+      vim-terraform
       vim-tmux-navigator
       vim-unimpaired
     ];
