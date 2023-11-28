@@ -171,7 +171,7 @@
 
   programs.ssh.extraConfig = ''
     Host *
-        IdentityAgent ~/.1password/agent.sock
+        IdentityAgent ${config.users.users.jeremy.home}/.1password/agent.sock
   '';
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
