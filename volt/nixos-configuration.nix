@@ -178,6 +178,8 @@
   '';
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.TZDIR = "/etc/zoneinfo";
+
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs.gnomeExtensions; [
