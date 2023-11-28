@@ -67,7 +67,7 @@
   users.users.jeremy = {
     isNormalUser = true;
     description = "Jeremy Stucki";
-    extraGroups = [ "networkmanager" "wheel" "i2c" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" ];
     packages = with pkgs; [
       alacritty
       chromium
@@ -175,6 +175,7 @@
   '';
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs.gnomeExtensions; [
     adjust-display-brightness
