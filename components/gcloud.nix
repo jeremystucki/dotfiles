@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
     google-cloud-sdk
-    cloud-sql-proxy
+    google-cloud-sql-proxy
   ];
 }
