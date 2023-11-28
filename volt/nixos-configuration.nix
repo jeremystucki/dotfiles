@@ -74,6 +74,9 @@
       ddcutil
       firefox
       jetbrains.rider
+      nodejs
+      nodePackages.pnpm
+      slack
       telegram-desktop
       wl-clipboard
       xsel
