@@ -5,7 +5,7 @@
     bookletimposer
     blanket
     pkgs-unstable.cartridges
-    citations
+    # citations
     evolution
     gnome-decoder
     gnome.gnome-calendar
