@@ -12,6 +12,7 @@
     entr
     fd
     ffmpeg-full
+    file
     miller
     ngrok
     nmap
