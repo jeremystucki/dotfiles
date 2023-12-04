@@ -13,8 +13,10 @@
     gnome.gnome-characters
     inkscape
     obsidian
+    pkgs-unstable.slack
     spotify
     threema-desktop
     wireshark-qt
+    zathura
   ];
 }
