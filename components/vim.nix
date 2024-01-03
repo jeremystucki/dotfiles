@@ -19,6 +19,7 @@
       vim-terraform
       vim-tmux-navigator
       vim-unimpaired
+      catppuccin-nvim
     ];
 
     extraConfig = ''
@@ -43,6 +44,7 @@
       set undolevels=1000
 
       colorscheme theme
+      "colorscheme catppuccin-latte
 
       set cursorline
       hi clear CursorLine
