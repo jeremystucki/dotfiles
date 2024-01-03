@@ -68,10 +68,10 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
-  environment.systemPackages = with pkgs.gnomeExtensions; [
-    adjust-display-brightness
-    blur-my-shell
-    dash-to-dock
-    just-perfection
-  ];
+#  environment.systemPackages = with pkgs.gnomeExtensions; [
+#    adjust-display-brightness
+#    blur-my-shell
+#    dash-to-dock
+#    just-perfection
+#  ];
 }
