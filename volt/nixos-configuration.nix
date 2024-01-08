@@ -18,6 +18,7 @@
       alacritty
       chromium
       ddcutil
+      etcher
       firefox
       jetbrains.rider
       nodejs
