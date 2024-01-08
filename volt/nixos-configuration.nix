@@ -29,6 +29,7 @@
       wl-clipboard
       xsel
       pkgs-unstable.android-studio
+      pkgs-unstable.discord
     ];
   };
 
