@@ -103,6 +103,12 @@
         IdentityAgent ${config.users.users.jeremy.home}/.1password/agent.sock
   '';
 
+  systemd.user.services._1password = {
+    script = "${pkgs._1password-gui}/bin/1password --silent";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     TZDIR = "/etc/zoneinfo";
