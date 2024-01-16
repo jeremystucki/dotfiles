@@ -20,7 +20,6 @@
       ddcutil
       etcher
       firefox
-      jetbrains.rider
       nodejs
       nodePackages.pnpm
       nvd
@@ -30,6 +29,7 @@
       xsel
       pkgs-unstable.android-studio
       pkgs-unstable.discord
+      pkgs-unstable.jetbrains.rider
     ];
   };
 
