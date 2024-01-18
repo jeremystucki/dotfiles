@@ -7,10 +7,6 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    initrd.secrets = {
-      "/crypto_keyfile.bin" = null;
-    };
-
     supportedFilesystems = [ "ntfs" ];
   };
 

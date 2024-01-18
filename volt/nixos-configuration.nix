@@ -10,6 +10,10 @@
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".device = "/dev/disk/by-uuid/e0d59253-c3ee-4fab-8ce0-182877db57c3";
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".keyFile = "/crypto_keyfile.bin";
 
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
   networking.hostName = "volt-nixos";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

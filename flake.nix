@@ -66,5 +66,22 @@
           }
         ];
       };
+      nixosConfigurations."zephyr-nixos" = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
+        specialArgs = {
+          inherit pkgs-unstable;
+        };
+        modules = [
+          ./zephyr/nixos-configuration.nix
+          color-scheme-sync.nixosModules.default
+          home-manager.nixosModules.home-manager {
+            home-manager.users.jeremy = import ./zephyr/nixos-home-manager.nix { inherit pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.extraSpecialArgs = {
+              inherit pkgs-unstable;
+            };
+          }
+        ];
+      };
     };
 }
