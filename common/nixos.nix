@@ -18,10 +18,6 @@
       };
     };
 
-    initrd.secrets = {
-      "/crypto_keyfile.bin" = null;
-    };
-
     supportedFilesystems = [ "ntfs" ];
   };
 
@@ -29,6 +25,24 @@
     isNormalUser = true;
     description = "Jeremy Stucki";
     extraGroups = [ "networkmanager" "wheel" "i2c" "docker" ];
+
+    packages = with pkgs; [
+      alacritty
+      chromium
+      ddcutil
+      etcher
+      firefox
+      nodejs
+      nodePackages.pnpm
+      nvd
+      slack
+      telegram-desktop
+      wl-clipboard
+      xsel
+      pkgs-unstable.android-studio
+      pkgs-unstable.discord
+      pkgs-unstable.jetbrains.rider
+    ];
   };
 
   programs.zsh.enable = true;
@@ -40,7 +54,7 @@
     # wireless.enable = true;
   };
 
-  # time.timeZone = "Europe/Zurich";
+  time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_US.UTF-8";
   
   services.xserver = {

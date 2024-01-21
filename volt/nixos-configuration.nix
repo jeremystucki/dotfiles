@@ -10,28 +10,11 @@
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".device = "/dev/disk/by-uuid/e0d59253-c3ee-4fab-8ce0-182877db57c3";
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".keyFile = "/crypto_keyfile.bin";
 
-  networking.hostName = "volt-nixos";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jeremy = {
-    packages = with pkgs; [
-      alacritty
-      chromium
-      ddcutil
-      etcher
-      firefox
-      nodejs
-      nodePackages.pnpm
-      nvd
-      slack
-      telegram-desktop
-      wl-clipboard
-      xsel
-      pkgs-unstable.android-studio
-      pkgs-unstable.discord
-      pkgs-unstable.jetbrains.rider
-    ];
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
   };
+
+  networking.hostName = "volt-nixos";
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
