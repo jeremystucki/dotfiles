@@ -116,7 +116,7 @@
 
   systemd.user.services._1password = {
     script = "${pkgs._1password-gui}/bin/1password --silent";
-    wantedBy = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
   };
 
