@@ -22,8 +22,8 @@
       alacritty
       chromium
       ddcutil
+      etcher
       firefox
-      jetbrains.rider
       nodejs
       nodePackages.pnpm
       nvd
@@ -32,6 +32,8 @@
       wl-clipboard
       xsel
       pkgs-unstable.android-studio
+      pkgs-unstable.discord
+      pkgs-unstable.jetbrains.rider
     ];
   };
 
@@ -71,6 +73,15 @@
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
+
+  services.xserver.displayManager.autoLogin = {
+    enable = true;
+    user = "jeremy";
+  };
+
+  # https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
 #  environment.systemPackages = with pkgs.gnomeExtensions; [
 #    adjust-display-brightness

@@ -4,8 +4,19 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+      };
+
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
 
     supportedFilesystems = [ "ntfs" ];
   };
@@ -98,6 +109,12 @@
     Host *
         IdentityAgent ${config.users.users.jeremy.home}/.1password/agent.sock
   '';
+
+  systemd.user.services._1password = {
+    script = "${pkgs._1password-gui}/bin/1password --silent";
+    after = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";

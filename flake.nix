@@ -23,7 +23,9 @@
           input-fonts.acceptLicense = true;
           permittedInsecurePackages = [
             "electron-12.2.3"
+            "electron-19.1.9"
             "electron-24.8.6"
+            "electron-25.9.0"
           ];
         };
       };
