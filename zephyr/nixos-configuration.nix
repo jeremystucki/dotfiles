@@ -8,25 +8,6 @@
 
   networking.hostName = "zephyr-nixos";
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.jeremy = {
-    packages = with pkgs; [
-      alacritty
-      chromium
-      ddcutil
-      firefox
-      jetbrains.rider
-      nodejs
-      nodePackages.pnpm
-      nvd
-      slack
-      telegram-desktop
-      wl-clipboard
-      xsel
-      pkgs-unstable.android-studio
-    ];
-  };
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

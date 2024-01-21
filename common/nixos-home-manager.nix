@@ -3,10 +3,6 @@
 let
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG9keparNqpev2qrDO3cAiDzyTUsAAN9Mh+JLbOsdiZs";
 in {
-  imports = [
-    ./common-home-manager.nix
-  ];
-
   programs.git.extraConfig = {
     commit.gpgsign = true;
     user.signingkey = publicKey;
