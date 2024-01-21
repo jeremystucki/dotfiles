@@ -4,8 +4,19 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+      };
+
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
 
     initrd.secrets = {
       "/crypto_keyfile.bin" = null;
