@@ -57,6 +57,7 @@
           inherit pkgs-unstable;
         };
         modules = [
+          ./common/nixos.nix
           ./volt/nixos-configuration.nix
           color-scheme-sync.nixosModules.default
           home-manager.nixosModules.home-manager {
@@ -67,7 +68,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;
-            };       
+            };
           }
         ];
       };
@@ -77,6 +78,7 @@
           inherit pkgs-unstable;
         };
         modules = [
+          ./common/nixos.nix
           ./zephyr/nixos-configuration.nix
           color-scheme-sync.nixosModules.default
           home-manager.nixosModules.home-manager {

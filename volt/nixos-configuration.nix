@@ -1,8 +1,7 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, ... }:
 
 {
   imports = [
-    ../common/nixos.nix
     ./nixos-hardware-configuration.nix
   ];
 
