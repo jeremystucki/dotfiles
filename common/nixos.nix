@@ -24,7 +24,7 @@
   users.users.jeremy = {
     isNormalUser = true;
     description = "Jeremy Stucki";
-    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" "adbusers" ];
 
     packages = with pkgs; [
       alacritty
@@ -123,6 +123,8 @@
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
     polkitPolicyOwners = [ "jeremy" ];
   };
+
+  programs.adb.enable = true;
 
   programs.ssh.extraConfig = ''
     Host *
