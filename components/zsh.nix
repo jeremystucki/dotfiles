@@ -12,6 +12,17 @@
     nix-direnv.enable = true;
   };
 
+  programs.atuin = {
+    enable = true;
+    flags = [ "--disable-up-arrow" ];
+    settings = {
+      style = "compact";
+      show_help = false;
+      inline_height = 20;
+      keymap_mode = "vim-insert";
+    };
+  };
+
   programs.zsh = {
     enable = true;
 
