@@ -35,6 +35,7 @@
       nodejs
       nodePackages.pnpm
       nvd
+      ruby
       slack
       telegram-desktop
       wl-clipboard
