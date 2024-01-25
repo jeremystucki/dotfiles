@@ -12,6 +12,7 @@
     gnome.gnome-contacts
     gnome.gnome-characters
     inkscape
+    libreoffice
     obsidian
     pkgs-unstable.slack
     spotify
