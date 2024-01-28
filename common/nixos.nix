@@ -115,6 +115,11 @@
     driSupport32Bit = true;
   };
 
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    input-fonts
+  ];
+
   programs.steam.enable = true;
 
   programs.java = {
