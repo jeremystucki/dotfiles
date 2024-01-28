@@ -16,10 +16,12 @@
     miller
     ngrok
     nmap
+    ocrmypdf
     pdftk
     postgresql
     ranger
     ripgrep
+    tesseract
     tokei
     units
     wol
