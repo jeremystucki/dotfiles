@@ -30,7 +30,7 @@
     };
 
     ignores = [
-      ".envrc"
+      ".direnv"
       ".idea"
     ];
 
