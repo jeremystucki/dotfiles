@@ -11,6 +11,7 @@
     gnome.gnome-calendar
     gnome.gnome-contacts
     gnome.gnome-characters
+    imagemagick
     inkscape
     libreoffice
     obsidian
