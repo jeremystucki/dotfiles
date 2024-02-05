@@ -15,6 +15,7 @@
     inkscape
     libreoffice
     obsidian
+    piper
     pkgs-unstable.slack
     spotify
     threema-desktop

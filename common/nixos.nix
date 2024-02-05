@@ -110,6 +110,8 @@
     #media-session.enable = true;
   };
 
+  services.ratbagd.enable = true;
+
   virtualisation.docker.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
