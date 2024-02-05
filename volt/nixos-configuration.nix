@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
@@ -52,6 +52,9 @@
   # https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
+
+  environment.systemPackages = [ pkgs.openrgb ];
+  services.udev.packages = [ pkgs.openrgb ];
 
 #  environment.systemPackages = with pkgs.gnomeExtensions; [
 #    adjust-display-brightness
