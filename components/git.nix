@@ -40,6 +40,7 @@
       pull.rebase = true;
       rerere.enabled = true;
       status.short = true;
+      commit.verbose = true;
 
       rebase = {
         abbreviateCommands = true;
