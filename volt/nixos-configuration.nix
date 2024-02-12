@@ -54,7 +54,11 @@
   systemd.services."autovt@tty1".enable = false;
 
   environment.systemPackages = [ pkgs.openrgb ];
-  services.udev.packages = [ pkgs.openrgb ];
+
+  services.udev.packages = with pkgs; [
+    openrgb
+    zsa-udev-rules
+  ];
 
 #  environment.systemPackages = with pkgs.gnomeExtensions; [
 #    adjust-display-brightness

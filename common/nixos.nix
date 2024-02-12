@@ -38,7 +38,7 @@
   users.users.jeremy = {
     isNormalUser = true;
     description = "Jeremy Stucki";
-    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" "adbusers" "plugdev" ];
 
     packages = with pkgs; [
       alacritty
