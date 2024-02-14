@@ -28,6 +28,9 @@
             "electron-25.9.0"
           ];
         };
+        overlays = [ (final: prev: {
+          obsidian = prev.obsidian.override { electron = final.electron_24; };
+        })];
       };
       pkgs-unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
