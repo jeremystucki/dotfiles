@@ -23,7 +23,7 @@
 
   programs.vscode.userSettings = {
     vscode-neovim.neovimExecutablePaths.linux = "/home/jeremy/.nix-profile/bin/nvim";
-
+    window.autoDetectColorScheme = true;
     editor.cursorSurroundingLines = 8;
 
     nix = {
