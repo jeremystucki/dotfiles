@@ -11,4 +11,3 @@
     ms-vscode.cmake-tools
   ];
 }
-

@@ -45,14 +45,14 @@
         extraSpecialArgs = {
           inherit pkgs-unstable;
           targets.genericLinux.enable = true;
-        };       
+        };
       };
       homeConfigurations."jeremy@zephyr" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./zephyr/home-manager.nix ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
-        };       
+        };
       };
       nixosConfigurations."volt-nixos" = nixpkgs.lib.nixosSystem {
         inherit pkgs;
