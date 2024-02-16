@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of jeremy";
+  description = "My nix configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
@@ -16,57 +16,46 @@
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, color-scheme-sync }:
     let
+      system = "x86_64-linux";
+      config = {
+        allowUnfree = true;
+        input-fonts.acceptLicense = true;
+        permittedInsecurePackages = [
+          "electron-12.2.3"
+          "electron-19.1.9"
+          "electron-24.8.6"
+          "electron-25.9.0"
+        ];
+      };
       pkgs = import nixpkgs {
-        system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
-          input-fonts.acceptLicense = true;
-          permittedInsecurePackages = [
-            "electron-12.2.3"
-            "electron-19.1.9"
-            "electron-24.8.6"
-            "electron-25.9.0"
-          ];
-        };
+        inherit system config;
         overlays = [ (final: prev: {
           obsidian = prev.obsidian.override { electron = final.electron_24; };
         })];
       };
       pkgs-unstable = import nixpkgs-unstable {
-        system = "x86_64-linux";
-        config = {
-          allowUnfree = true;
-        };
+        inherit system config;
       };
-    in {
-      homeConfigurations."jeremy@volt" = home-manager.lib.homeManagerConfiguration {
+      homeManagerConfigForArch = { module }: home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./volt/common-home-manager.nix ];
+        modules = [ module ];
         extraSpecialArgs = {
           inherit pkgs-unstable;
           targets.genericLinux.enable = true;
         };
       };
-      homeConfigurations."jeremy@zephyr" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ ./zephyr/home-manager.nix ];
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-        };
-      };
-      nixosConfigurations."volt-nixos" = nixpkgs.lib.nixosSystem {
-        inherit pkgs;
+      nixosConfig = { nixosModule, homeManagerModule }: nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit pkgs-unstable;
+          inherit pkgs pkgs-unstable;
         };
         modules = [
           ./common/nixos.nix
-          ./volt/nixos-configuration.nix
+          nixosModule
           color-scheme-sync.nixosModules.default
           home-manager.nixosModules.home-manager {
             home-manager.users.jeremy.imports = [
               ./common/nixos-home-manager.nix
-              ./volt/common-home-manager.nix
+              homeManagerModule
             ];
             home-manager.useGlobalPkgs = true;
             home-manager.extraSpecialArgs = {
@@ -75,26 +64,20 @@
           }
         ];
       };
-      nixosConfigurations."zephyr-nixos" = nixpkgs.lib.nixosSystem {
-        inherit pkgs;
-        specialArgs = {
-          inherit pkgs-unstable;
-        };
-        modules = [
-          ./common/nixos.nix
-          ./zephyr/nixos-configuration.nix
-          color-scheme-sync.nixosModules.default
-          home-manager.nixosModules.home-manager {
-            home-manager.users.jeremy.imports = [
-              ./common/nixos-home-manager.nix
-              ./zephyr/common-home-manager.nix
-            ];
-            home-manager.useGlobalPkgs = true;
-            home-manager.extraSpecialArgs = {
-              inherit pkgs-unstable;
-            };
-          }
-        ];
+    in {
+      homeConfigurations."jeremy@volt" = homeManagerConfigForArch {
+        module = ./volt/common-home-manager.nix;
+      };
+      homeConfigurations."jeremy@zephyr" = homeManagerConfigForArch {
+        module = ./zephyr/home-manager.nix;
+      };
+      nixosConfigurations."volt-nixos" = nixosConfig {
+        nixosModule = ./volt/nixos-configuration.nix;
+        homeManagerModule = ./volt/common-home-manager.nix;
+      };
+      nixosConfigurations."zephyr-nixos" = nixosConfig {
+        nixosModule = ./zephyr/nixos-configuration.nix;
+        homeManagerModule = ./zephyr/common-home-manager.nix;
       };
     };
 }
