@@ -21,6 +21,7 @@
     postgresql
     ranger
     ripgrep
+    sqlite
     tesseract
     tokei
     units
