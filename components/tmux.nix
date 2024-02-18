@@ -47,6 +47,7 @@
 
       set-option -g status-style bg=white,fg=cyan
 
+      bind c new-window -c "#{pane_current_path}"
       bind '"' split-window -v -c "#{pane_current_path}"
       bind % split-window -h -c "#{pane_current_path}"
 
