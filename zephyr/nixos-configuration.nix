@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [
@@ -27,4 +27,8 @@
       STOP_CHARGE_THRESH_BAT0 = 85;
     };
   };
+
+  environment.systemPackages = [ pkgs.ecryptfs ];
+  security.pam.enableEcryptfs = true;
+  boot.kernelModules = [ "ecryptfs" ];
 }
