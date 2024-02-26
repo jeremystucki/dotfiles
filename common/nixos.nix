@@ -46,10 +46,12 @@
       ddcutil
       etcher
       firefox
+      killall
       nodejs
       nodePackages.pnpm
       nvd
       ruby
+      screen
       slack
       telegram-desktop
       wl-clipboard
