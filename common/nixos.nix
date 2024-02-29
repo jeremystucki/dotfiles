@@ -171,4 +171,7 @@
     NIXOS_OZONE_WL = "1";
     TZDIR = "/etc/zoneinfo";
   };
+
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ "jeremy" ];
 }
