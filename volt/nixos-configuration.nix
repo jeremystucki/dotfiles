@@ -60,6 +60,8 @@
     zsa-udev-rules
   ];
 
+  hardware.bluetooth.settings.General.Experimental = true;
+
 #  environment.systemPackages = with pkgs.gnomeExtensions; [
 #    adjust-display-brightness
 #    blur-my-shell
