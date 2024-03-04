@@ -2,20 +2,22 @@
 
 {
   home.packages = with pkgs; [
-    bookletimposer
     blanket
-    pkgs-unstable.cartridges
-    # citations
+    bookletimposer
+#    citations
     evolution
     gnome-decoder
     gnome.gnome-calendar
-    gnome.gnome-contacts
     gnome.gnome-characters
+    gnome.gnome-contacts
+    handbrake
     imagemagick
     inkscape
     libreoffice
+    mpv
     obsidian
     piper
+    pkgs-unstable.cartridges
     pkgs-unstable.slack
     spotify
     threema-desktop
