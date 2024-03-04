@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  home.file.".postgresqlrc".text = ''
+  home.file.".psqlrc".text = ''
     \set ON_ERROR_ROLLBACK interactive
     \set COMP_KEYWORD_CASE upper
     \set HISTSIZE 10000
