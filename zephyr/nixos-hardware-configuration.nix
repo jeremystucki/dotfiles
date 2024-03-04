@@ -13,13 +13,13 @@
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
   boot.initrd.availableKernelModules = [
-    "nvme"
     "ehci_pci"
-    "xhci_pci"
-    "usb_storage"
-    "usbhid"
-    "sd_mod"
+    "nvme"
     "rtsx_pci_sdmmc"
+    "sd_mod"
+    "usbhid"
+    "usb_storage"
+    "xhci_pci"
   ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];

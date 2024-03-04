@@ -47,12 +47,12 @@
     isNormalUser = true;
     description = "Jeremy Stucki";
     extraGroups = [
-      "networkmanager"
-      "wheel"
-      "i2c"
-      "docker"
       "adbusers"
+      "docker"
+      "i2c"
+      "networkmanager"
       "plugdev"
+      "wheel"
     ];
 
     packages = with pkgs; [
@@ -65,15 +65,15 @@
       nodejs
       nodePackages.pnpm
       nvd
+      pkgs-unstable.android-studio
+      pkgs-unstable.discord
+      pkgs-unstable.jetbrains.rider
       ruby
       screen
       slack
       telegram-desktop
       wl-clipboard
       xsel
-      pkgs-unstable.android-studio
-      pkgs-unstable.discord
-      pkgs-unstable.jetbrains.rider
     ];
   };
 

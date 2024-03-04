@@ -9,6 +9,7 @@
     viAlias = true;
 
     plugins = with pkgs.vimPlugins; [
+      catppuccin-nvim
       fzf-vim
       kotlin-vim
       vim-commentary
@@ -19,7 +20,6 @@
       vim-terraform
       vim-tmux-navigator
       vim-unimpaired
-      catppuccin-nvim
     ];
 
     extraConfig = ''
