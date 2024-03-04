@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
-
 {
-  imports = [
-    ./nixos-hardware-configuration.nix
-  ];
+  imports = [ ./nixos-hardware-configuration.nix ];
 
   # Enable swap on luks
   boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".device = "/dev/disk/by-uuid/e0d59253-c3ee-4fab-8ce0-182877db57c3";
@@ -16,7 +13,7 @@
   networking.hostName = "volt-nixos";
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
 
@@ -62,10 +59,10 @@
 
   hardware.bluetooth.settings.General.Experimental = true;
 
-#  environment.systemPackages = with pkgs.gnomeExtensions; [
-#    adjust-display-brightness
-#    blur-my-shell
-#    dash-to-dock
-#    just-perfection
-#  ];
+  #  environment.systemPackages = with pkgs.gnomeExtensions; [
+  #    adjust-display-brightness
+  #    blur-my-shell
+  #    dash-to-dock
+  #    just-perfection
+  #  ];
 }

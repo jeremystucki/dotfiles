@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  home.shellAliases = { g = "git"; };
+  home.shellAliases = {
+    g = "git";
+  };
 
   programs.gh = {
     enable = true;
@@ -21,9 +23,9 @@
     aliases = {
       co = "checkout";
       cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')";
-      l  = "log --pretty=oneline --abbrev-commit";
+      l = "log --pretty=oneline --abbrev-commit";
       lg = "l --graph";
-      s  = "status";
+      s = "status";
       wip = "commit -m 'wip'";
       ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
       apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";

@@ -1,7 +1,15 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nix.gc = {
     automatic = true;
@@ -38,7 +46,14 @@
   users.users.jeremy = {
     isNormalUser = true;
     description = "Jeremy Stucki";
-    extraGroups = [ "networkmanager" "wheel" "i2c" "docker" "adbusers" "plugdev" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "i2c"
+      "docker"
+      "adbusers"
+      "plugdev"
+    ];
 
     packages = with pkgs; [
       alacritty
@@ -86,8 +101,12 @@
     layout = "us";
     xkbVariant = "";
 
-    displayManager = { gdm.enable = true; };
-    desktopManager = { gnome.enable = true; };
+    displayManager = {
+      gdm.enable = true;
+    };
+    desktopManager = {
+      gnome.enable = true;
+    };
   };
 
   services.flatpak.enable = true;
@@ -172,6 +191,6 @@
     TZDIR = "/etc/zoneinfo";
   };
 
-   virtualisation.virtualbox.host.enable = true;
-   users.extraGroups.vboxusers.members = [ "jeremy" ];
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "jeremy" ];
 }

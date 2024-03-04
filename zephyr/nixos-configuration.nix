@@ -1,9 +1,7 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ./nixos-hardware-configuration.nix
-  ];
+  imports = [ ./nixos-hardware-configuration.nix ];
 
   networking.hostName = "zephyr-nixos";
 

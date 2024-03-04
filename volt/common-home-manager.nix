@@ -8,7 +8,7 @@
     /dotnet.nix
     /gcloud.nix
     /git.nix
-#    /gnome.nix
+    #    /gnome.nix
     /haskell.nix
     /jetbrains.nix
     /postgres.nix

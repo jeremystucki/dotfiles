@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 {
   home.packages = with pkgs; [
@@ -16,8 +16,10 @@
     miller
     ngrok
     nmap
+    nodePackages.svgo
     ocrmypdf
     pdftk
+    pkgs-unstable.nixfmt-rfc-style
     postgresql
     ranger
     ripgrep
@@ -28,7 +30,6 @@
     wol
     yt-dlp
     zip
-    nodePackages.svgo
   ];
 
   programs.bat.enable = true;

@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     blanket
     bookletimposer
-#    citations
+    #    citations
     evolution
     gnome-decoder
     gnome.gnome-calendar

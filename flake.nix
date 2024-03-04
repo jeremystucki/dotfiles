@@ -14,7 +14,14 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, color-scheme-sync }:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      home-manager,
+      color-scheme-sync,
+    }:
     let
       system = "x86_64-linux";
       config = {
@@ -29,42 +36,46 @@
       };
       pkgs = import nixpkgs {
         inherit system config;
-        overlays = [ (final: prev: {
-          obsidian = prev.obsidian.override { electron = final.electron_24; };
-        })];
-      };
-      pkgs-unstable = import nixpkgs-unstable {
-        inherit system config;
-      };
-      homeManagerConfigForArch = { module }: home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [ module ];
-        extraSpecialArgs = {
-          inherit pkgs-unstable;
-          targets.genericLinux.enable = true;
-        };
-      };
-      nixosConfig = { nixosModule, homeManagerModule }: nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit pkgs pkgs-unstable;
-        };
-        modules = [
-          ./common/nixos.nix
-          nixosModule
-          color-scheme-sync.nixosModules.default
-          home-manager.nixosModules.home-manager {
-            home-manager.users.jeremy.imports = [
-              ./common/nixos-home-manager.nix
-              homeManagerModule
-            ];
-            home-manager.useGlobalPkgs = true;
-            home-manager.extraSpecialArgs = {
-              inherit pkgs-unstable;
-            };
-          }
+        overlays = [
+          (final: prev: { obsidian = prev.obsidian.override { electron = final.electron_24; }; })
         ];
       };
-    in {
+      pkgs-unstable = import nixpkgs-unstable { inherit system config; };
+      homeManagerConfigForArch =
+        { module }:
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ module ];
+          extraSpecialArgs = {
+            inherit pkgs-unstable;
+            targets.genericLinux.enable = true;
+          };
+        };
+      nixosConfig =
+        { nixosModule, homeManagerModule }:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit pkgs pkgs-unstable;
+          };
+          modules = [
+            ./common/nixos.nix
+            nixosModule
+            color-scheme-sync.nixosModules.default
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.users.jeremy.imports = [
+                ./common/nixos-home-manager.nix
+                homeManagerModule
+              ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.extraSpecialArgs = {
+                inherit pkgs-unstable;
+              };
+            }
+          ];
+        };
+    in
+    {
       homeConfigurations."jeremy@volt" = homeManagerConfigForArch {
         module = ./volt/common-home-manager.nix;
       };

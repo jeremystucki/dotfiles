@@ -6,9 +6,7 @@
     typst-lsp
   ];
 
-  programs.neovim.plugins = with pkgs-unstable.vimPlugins; [
-    typst-vim
-  ];
+  programs.neovim.plugins = with pkgs-unstable.vimPlugins; [ typst-vim ];
 
   programs.vscode = {
     extensions = with pkgs-unstable.vscode-extensions; [

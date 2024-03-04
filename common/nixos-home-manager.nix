@@ -1,8 +1,9 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 let
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG9keparNqpev2qrDO3cAiDzyTUsAAN9Mh+JLbOsdiZs";
-in {
+in
+{
   programs.git.extraConfig = {
     commit.gpgsign = true;
     user.signingkey = publicKey;
