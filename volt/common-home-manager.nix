@@ -27,27 +27,6 @@
 
   home.file.".config/alacritty/machine-specific-config.yml".source = ../resources/alacritty-volt.yml;
 
-  programs.git.includes = [
-    {
-      condition = "gitdir:~/Documents/Code/";
-      contents = {
-        user.email = "dev@jeremystucki.ch";
-      };
-    }
-    {
-      condition = "gitdir:~/Documents/Code/Valora/";
-      contents = {
-        user.email = "jeremy.stucki@valora.com";
-      };
-    }
-    {
-      condition = "gitdir:~/Documents/Code/GitLab-OST/";
-      contents = {
-        user.email = "jeremy.stucki@ost.ch";
-      };
-    }
-  ];
-
   programs.vscode.userSettings = {
     workbench.colorTheme = "Solarized Dark";
   };

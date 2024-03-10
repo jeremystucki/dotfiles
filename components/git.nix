@@ -60,5 +60,32 @@
         file-style = "bold yellow ul";
       };
     };
+
+    includes = [
+      {
+        condition = "hasconfig:remote.*.url:git@github.com:*/**";
+        contents = {
+          user.email = "dev@jeremystucki.ch";
+        };
+      }
+      {
+        condition = "hasconfig:remote.*.url:git@github.com:valora-digital/**";
+        contents = {
+          user.email = "jeremy.stucki@valora.com";
+        };
+      }
+      {
+        condition = "hasconfig:remote.*.url:https://git.sonova.com/*/**";
+        contents = {
+          user.email = "jeremy.stucki.external@sonova.com";
+        };
+      }
+      {
+        condition = "hasconfig:remote.*.url:ssh://git@gitlab.ost.ch:*/**";
+        contents = {
+          user.email = "jeremy.stucki@ost.ch";
+        };
+      }
+    ];
   };
 }
