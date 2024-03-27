@@ -2,8 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    cmake
     clang
+    cmake
+    jetbrains.clion
   ];
 
   programs.vscode.extensions = with pkgs.vscode-extensions; [

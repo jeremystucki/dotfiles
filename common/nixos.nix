@@ -62,12 +62,9 @@
       etcher
       firefox
       killall
-      nodejs
-      nodePackages.pnpm
       nvd
-      pkgs-unstable.android-studio
       pkgs-unstable.discord
-      pkgs-unstable.jetbrains.rider
+      pkgs-unstable.jetbrains.datagrip
       ruby
       screen
       slack

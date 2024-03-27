@@ -10,8 +10,6 @@
     /git.nix
     #    /gnome.nix
     /haskell.nix
-    /jetbrains.nix
-    /postgres.nix
     /tex.nix
     /tmux.nix
     /typst.nix

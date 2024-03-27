@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    android-tools
     asciinema
     bat
     caddy
@@ -20,10 +19,8 @@
     ocrmypdf
     pdftk
     pkgs-unstable.nixfmt-rfc-style
-    postgresql
     ranger
     ripgrep
-    sqlite
     tesseract
     tokei
     units

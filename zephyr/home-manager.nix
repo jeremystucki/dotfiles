@@ -12,8 +12,6 @@
     /git.nix
     /gnome.nix
     /haskell.nix
-    /jetbrains.nix
-    /node.nix
     /tex.nix
     /tmux.nix
     /typst.nix
