@@ -186,6 +186,12 @@
     wantedBy = [ "graphical-session.target" ];
   };
 
+  systemd.user.services.tmux = {
+    script = "${pkgs.tmux}/bin/tmux new-session -d";
+    wantedBy = [ "default.target" ];
+    serviceConfig.Type = "forking";
+  };
+
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     TZDIR = "/etc/zoneinfo";
