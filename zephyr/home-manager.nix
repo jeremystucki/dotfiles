@@ -31,27 +31,6 @@
 
   programs.zathura.enable = true;
 
-  programs.git.includes = [
-    {
-      condition = "gitdir:~/GitHub/";
-      contents = {
-        user.email = "dev@jeremystucki.ch";
-      };
-    }
-    {
-      condition = "gitdir:~/GitHub/valora-digital/";
-      contents = {
-        user.email = "jeremy.stucki@valora.com";
-      };
-    }
-    {
-      condition = "gitdir:~/GitLabOST/";
-      contents = {
-        user.email = "jeremy.stucki@ost.ch";
-      };
-    }
-  ];
-
   programs.vscode.userSettings = {
     workbench.colorTheme = "Default Light+";
   };
