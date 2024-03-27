@@ -13,8 +13,8 @@
 
   nix.gc = {
     automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 30d";
+    dates = "monthly";
+    options = "--delete-older-than 60d";
   };
 
   # This value determines the NixOS release from which the default
