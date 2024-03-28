@@ -1,0 +1,22 @@
+on:
+  push:
+    branches: [ "main", "github-actions" ]
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration:
+          - "nixosConfigurations.volt-nixos.config.system.build.toplevel"
+          - "nixosConfigurations.zephyr-nixos.config.system.build.toplevel"
+          - "homeConfigurations.jeremy@volt.activationPackage"
+          - "homeConfigurations.jeremy@zephyr.activationPackage"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v10
+      - uses: DeterminateSystems/magic-nix-cache-action@v4
+      - run: nix build '.#${{ matrix.configuration }}' --dry-run
