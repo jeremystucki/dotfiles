@@ -3,7 +3,6 @@
 {
   home.packages = with pkgs; [
     blanket
-    bookletimposer
     #    citations
     evolution
     gnome-decoder
