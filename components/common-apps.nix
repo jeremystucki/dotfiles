@@ -16,7 +16,7 @@
     mpv
     obsidian
     piper
-    pkgs-unstable.cartridges
+    cartridges
     pkgs-unstable.slack
     spotify
     threema-desktop

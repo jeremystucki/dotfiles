@@ -64,7 +64,7 @@
       killall
       nvd
       pkgs-unstable.discord
-      pkgs-unstable.jetbrains.datagrip
+      jetbrains.datagrip
       ruby
       screen
       slack
