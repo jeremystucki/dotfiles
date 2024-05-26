@@ -23,6 +23,7 @@
     ripgrep
     tesseract
     tokei
+    tree
     units
     wol
     yt-dlp
