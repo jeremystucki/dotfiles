@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     blanket
     #    citations
+    cinny-desktop
     evolution
     gnome-decoder
     gnome.gnome-calendar
