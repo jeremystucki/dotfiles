@@ -15,13 +15,7 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      nixpkgs-unstable,
-      home-manager,
-      color-scheme-sync,
-    }:
+    inputs:
     let
       system = "x86_64-linux";
       config = {
@@ -34,37 +28,27 @@
           "electron-25.9.0"
         ];
       };
-      pkgs = import nixpkgs {
+      pkgs = import inputs.nixpkgs {
         inherit system config;
         overlays = [
           (final: prev: { obsidian = prev.obsidian.override { electron = final.electron_24; }; })
         ];
       };
-      pkgs-unstable = import nixpkgs-unstable { inherit system config; };
-      homeManagerConfigForArch =
-        { module }:
-        home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./common/home-manager.nix
-            module
-          ];
-          extraSpecialArgs = {
-            inherit pkgs-unstable;
-            targets.genericLinux.enable = true;
-          };
-        };
+      pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
       nixosConfig =
-        { nixosModule, homeManagerModule ? {} }:
-        nixpkgs.lib.nixosSystem {
+        {
+          nixosModule,
+          homeManagerModule ? { },
+        }:
+        inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit pkgs pkgs-unstable;
           };
           modules = [
             ./common/nixos.nix
             nixosModule
-            color-scheme-sync.nixosModules.default
-            home-manager.nixosModules.home-manager
+            inputs.color-scheme-sync.nixosModules.default
+            inputs.home-manager.nixosModules.home-manager
             {
               home-manager.users.jeremy.imports = [
                 ./common/home-manager.nix
@@ -80,14 +64,14 @@
         };
     in
     {
-      homeConfigurations."jeremy@volt" = homeManagerConfigForArch {
-        module = ./volt/home-manager.nix;
-      };
       nixosConfigurations."volt-nixos" = nixosConfig {
         nixosModule = ./volt/nixos-configuration.nix;
+        homeManagerModule = ./volt/home-manager.nix;
       };
       nixosConfigurations."zephyr-nixos" = nixosConfig {
         nixosModule = ./zephyr/nixos-configuration.nix;
       };
+
+      formatter.${system} = pkgs-unstable.nixfmt-rfc-style;
     };
 }
