@@ -1,6 +1,4 @@
 {
-  targets.genericLinux.enable = true;
-
   imports = map (x: ../components + x) [
     /alacritty.nix
     /cli.nix
@@ -10,7 +8,6 @@
     /dotnet.nix
     /gcloud.nix
     /git.nix
-    /gnome.nix
     /haskell.nix
     /tex.nix
     /tmux.nix
@@ -24,12 +21,4 @@
   home.stateVersion = "23.05";
 
   programs.home-manager.enable = true;
-
-  home.file.".config/alacritty/machine-specific-config.yml".text = "";
-
-  programs.zathura.enable = true;
-
-  programs.vscode.userSettings = {
-    workbench.colorTheme = "Default Light+";
-  };
 }

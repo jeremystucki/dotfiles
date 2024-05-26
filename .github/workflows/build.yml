@@ -9,7 +9,6 @@ jobs:
           - "nixosConfigurations.volt-nixos.config.system.build.toplevel"
           - "nixosConfigurations.zephyr-nixos.config.system.build.toplevel"
           - "homeConfigurations.jeremy@volt.activationPackage"
-          - "homeConfigurations.jeremy@zephyr.activationPackage"
 
     runs-on: ubuntu-latest
 

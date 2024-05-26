@@ -45,14 +45,17 @@
         { module }:
         home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
-          modules = [ module ];
+          modules = [
+            ./common/home-manager.nix
+            module
+          ];
           extraSpecialArgs = {
             inherit pkgs-unstable;
             targets.genericLinux.enable = true;
           };
         };
       nixosConfig =
-        { nixosModule, homeManagerModule }:
+        { nixosModule, homeManagerModule ? {} }:
         nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit pkgs pkgs-unstable;
@@ -64,6 +67,7 @@
             home-manager.nixosModules.home-manager
             {
               home-manager.users.jeremy.imports = [
+                ./common/home-manager.nix
                 ./common/nixos-home-manager.nix
                 homeManagerModule
               ];
@@ -77,18 +81,13 @@
     in
     {
       homeConfigurations."jeremy@volt" = homeManagerConfigForArch {
-        module = ./volt/common-home-manager.nix;
-      };
-      homeConfigurations."jeremy@zephyr" = homeManagerConfigForArch {
-        module = ./zephyr/home-manager.nix;
+        module = ./volt/home-manager.nix;
       };
       nixosConfigurations."volt-nixos" = nixosConfig {
         nixosModule = ./volt/nixos-configuration.nix;
-        homeManagerModule = ./volt/common-home-manager.nix;
       };
       nixosConfigurations."zephyr-nixos" = nixosConfig {
         nixosModule = ./zephyr/nixos-configuration.nix;
-        homeManagerModule = ./zephyr/common-home-manager.nix;
       };
     };
 }

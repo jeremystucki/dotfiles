@@ -16,6 +16,7 @@
 
     userSettings = {
       git.mergeEditor = true;
+      workbench.colorTheme = "Solarized Dark";
     };
   };
 
