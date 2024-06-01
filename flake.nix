@@ -79,7 +79,8 @@
       nixosConfigurations."zephyr-nixos" = nixosConfig {
         nixosModule = ./zephyr/nixos-configuration.nix;
       };
-
-      formatter.${system} = pkgs-unstable.nixfmt-rfc-style;
-    };
+    }
+    // inputs.flake-utils.lib.eachDefaultSystem (system: {
+      formatter = pkgs-unstable.nixfmt-rfc-style;
+    });
 }
