@@ -52,7 +52,6 @@
       alacritty
       chromium
       ddcutil
-      etcher
       firefox
       killall
       nvd
@@ -88,8 +87,10 @@
   services.xserver = {
     enable = true;
 
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
 
     displayManager = {
       gdm.enable = true;
