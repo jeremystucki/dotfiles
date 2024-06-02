@@ -6,5 +6,5 @@
     input-fonts
   ];
 
-  home.file.".config/alacritty/alacritty.yml".source = ../resources/alacritty.yml;
+  home.file.".config/alacritty/alacritty.toml".source = ../resources/alacritty.toml;
 }

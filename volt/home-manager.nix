@@ -1,3 +1,3 @@
 {
-  home.file.".config/alacritty/machine-specific-config.yml".source = ../resources/alacritty-volt.yml;
+  home.file.".config/alacritty/machine-specific-config.toml".source = ../resources/alacritty-volt.toml;
 }
