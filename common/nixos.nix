@@ -49,7 +49,6 @@
     ];
 
     packages = with pkgs; [
-      alacritty
       chromium
       ddcutil
       firefox

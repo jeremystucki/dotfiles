@@ -6,5 +6,8 @@
     input-fonts
   ];
 
-  home.file.".config/alacritty/alacritty.toml".source = ../resources/alacritty.toml;
+  programs.alacritty = {
+    enable = true;
+    settings = builtins.fromTOML (builtins.readFile ../resources/alacritty.toml);
+  };
 }
