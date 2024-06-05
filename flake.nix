@@ -28,19 +28,8 @@
       config = {
         allowUnfree = true;
         input-fonts.acceptLicense = true;
-        permittedInsecurePackages = [
-          "electron-12.2.3"
-          "electron-19.1.9"
-          "electron-24.8.6"
-          "electron-25.9.0"
-        ];
       };
-      pkgs = import inputs.nixpkgs {
-        inherit system config;
-        overlays = [
-          (final: prev: { obsidian = prev.obsidian.override { electron = final.electron_24; }; })
-        ];
-      };
+      pkgs = import inputs.nixpkgs { inherit system config; };
       pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
       nixosConfig =
         {
