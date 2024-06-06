@@ -49,6 +49,7 @@
     ];
 
     packages = with pkgs; [
+      foot
       chromium
       ddcutil
       firefox

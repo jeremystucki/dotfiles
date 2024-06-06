@@ -13,10 +13,12 @@
     ffmpeg-full
     file
     miller
+    multipath-tools
     ngrok
     nmap
     nodePackages.svgo
     ocrmypdf
+    ollama
     pdftk
     pkgs-unstable.nixfmt-rfc-style
     ranger
