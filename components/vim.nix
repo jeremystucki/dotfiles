@@ -12,6 +12,7 @@
       catppuccin-nvim
       fzf-vim
       kotlin-vim
+      nerdtree
       vim-commentary
       vim-fugitive
       vim-nix

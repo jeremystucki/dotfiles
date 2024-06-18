@@ -6,8 +6,9 @@ jobs:
       fail-fast: false
       matrix:
         configuration:
-          - "nixosConfigurations.x86_64-linux.volt-nixos.config.system.build.toplevel"
-          - "nixosConfigurations.x86_64-linux.zephyr-nixos.config.system.build.toplevel"
+          - "nixosConfigurations.volt-nixos.config.system.build.toplevel"
+          - "nixosConfigurations.zephyr-nixos.config.system.build.toplevel"
+          - 'darwinConfigurations.work-macbook.system'
 
     runs-on: ubuntu-latest
 

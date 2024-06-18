@@ -1,11 +1,13 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    postgresql
-    sqlite
-    jetbrains.datagrip
-  ];
+  home.packages =
+    with pkgs;
+    [
+      postgresql
+      sqlite
+    ]
+    ++ lib.optional (!stdenv.isDarwin) [ jetbrains.datagrip ];
 
   home.file.".psqlrc".text = ''
     \set ON_ERROR_ROLLBACK interactive

@@ -1,36 +1,41 @@
 { pkgs, pkgs-unstable, ... }:
 
 {
-  home.packages = with pkgs; [
-    asciinema
-    bat
-    caddy
-    delta
-    dogdns
-    du-dust
-    entr
-    fd
-    ffmpeg-full
-    file
-    miller
-    multipath-tools
-    ngrok
-    nmap
-    nodePackages.svgo
-    ocrmypdf
-    ollama
-    pdftk
-    pkgs-unstable.nixfmt-rfc-style
-    ranger
-    ripgrep
-    tesseract
-    tokei
-    tree
-    units
-    wol
-    yt-dlp
-    zip
-  ];
+  home.packages =
+    with pkgs;
+    [
+      asciinema
+      bat
+      caddy
+      delta
+      dogdns
+      du-dust
+      entr
+      fd
+      ffmpeg-full
+      file
+      mani
+      miller
+      nmap
+      nodePackages.svgo
+      ocrmypdf
+      ollama
+      pdftk
+      pkgs-unstable.nixfmt-rfc-style
+      ranger
+      ripgrep
+      tesseract
+      tokei
+      tree
+      units
+      yt-dlp
+      zip
+    ]
+    ++ lib.optional (!stdenv.isDarwin) [
+      multipath-tools
+      ngrok
+      wol
+    ];
 
   programs.bat.enable = true;
   programs.jq.enable = true;

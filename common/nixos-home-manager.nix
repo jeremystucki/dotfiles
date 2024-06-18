@@ -5,10 +5,13 @@ let
 in
 {
   imports = map (x: ../components + x) [
-    /android.nix
-    /databases.nix
+    /common-apps.nix
+    /cpp.nix
+    /haskell.nix
     /web.nix
   ];
+
+  home.homeDirectory = "/home/jeremy";
 
   programs.git.extraConfig = {
     commit.gpgsign = true;

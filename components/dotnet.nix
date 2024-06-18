@@ -13,6 +13,6 @@
         pkgs-unstable.dotnet-sdk_8
         pkgs-unstable.dotnet-aspnetcore_8
       ])
-      pkgs-unstable.jetbrains.rider
-    ];
+    ]
+    ++ lib.optional (!stdenv.isDarwin) [ pkgs-unstable.jetbrains.rider ];
 }
