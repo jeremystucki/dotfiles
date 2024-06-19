@@ -7,7 +7,7 @@
       postgresql
       sqlite
     ]
-    ++ lib.optional (!stdenv.isDarwin) [ jetbrains.datagrip ];
+    ++ lib.optionals (!stdenv.isDarwin) [ jetbrains.datagrip ];
 
   home.file.".psqlrc".text = ''
     \set ON_ERROR_ROLLBACK interactive

@@ -31,7 +31,7 @@
       yt-dlp
       zip
     ]
-    ++ lib.optional (!stdenv.isDarwin) [
+    ++ lib.optionals (!stdenv.isDarwin) [
       multipath-tools
       ngrok
       wol

@@ -3,5 +3,5 @@
 {
   home.packages =
     with pkgs;
-    [ android-tools ] ++ lib.optional (!stdenv.isDarwin) [ pkgs-unstable.android-studio ];
+    [ android-tools ] ++ lib.optionals (!stdenv.isDarwin) [ pkgs-unstable.android-studio ];
 }
