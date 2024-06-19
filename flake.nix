@@ -76,9 +76,7 @@
             homeManagerModule = ./volt/home-manager.nix;
           };
 
-          "zephyr-nixos" = nixosConfig {
-            nixosModule = ./zephyr/nixos-configuration.nix;
-          };
+          "zephyr-nixos" = nixosConfig { nixosModule = ./zephyr/nixos-configuration.nix; };
         };
 
       darwinConfigurations =
