@@ -11,6 +11,7 @@
       /gcloud.nix
       /git.nix
       /java.nix
+      /rust.nix
       /tex.nix
       /tmux.nix
       /typst.nix
