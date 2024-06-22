@@ -2,9 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    cargo
-    rustc
-    rustfmt
-    clippy
+    rustup
   ];
 }
