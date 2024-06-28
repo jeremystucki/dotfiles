@@ -1,5 +1,8 @@
 { pkgs, ... }:
 
+let
+  gitPackage = pkgs.git;
+in
 {
   home.shellAliases = {
     g = "git";
@@ -14,8 +17,13 @@
     };
   };
 
+  programs.zsh.initExtra = ''
+    source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
+  '';
+
   programs.git = {
     enable = true;
+    package = gitPackage;
     userName = "Jeremy Stucki";
 
     lfs.enable = true;
