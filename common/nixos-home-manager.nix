@@ -6,7 +6,6 @@ in
 {
   imports = map (x: ../components + x) [
     /common-apps.nix
-    /cpp.nix
     /haskell.nix
     /web.nix
   ];
