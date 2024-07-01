@@ -17,7 +17,6 @@
     piper
     cartridges
     pkgs-unstable.slack
-    spotify
     threema-desktop
     wireshark-qt
     zathura
