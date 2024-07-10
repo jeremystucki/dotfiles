@@ -108,7 +108,7 @@
                 environment.shells = [ pkgs.zsh ];
                 programs.zsh.enable = true;
                 users.users.jeremy.home = "/Users/jeremy";
-                fonts.fonts = [ pkgs.jetbrains-mono ];
+                fonts.packages = [ pkgs.jetbrains-mono ];
               }
               inputs.home-manager.darwinModules.home-manager
               {
