@@ -81,7 +81,7 @@
 
       darwinConfigurations =
         let
-          system = "x86_64-darwin";
+          system = "aarch64-darwin";
           config = {
             allowUnfree = true;
             input-fonts.acceptLicense = true;
