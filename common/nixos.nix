@@ -63,6 +63,7 @@
       telegram-desktop
       wl-clipboard
       xsel
+      gnome.gnome-tweaks
     ];
   };
 
