@@ -24,6 +24,7 @@
       pkgs-unstable.nixfmt-rfc-style
       ranger
       ripgrep
+      terraform
       tesseract
       tokei
       tree
