@@ -30,6 +30,7 @@
       tokei
       tree
       units
+      xsv
       yt-dlp
       zip
     ]
