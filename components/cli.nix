@@ -14,6 +14,7 @@
       fd
       ffmpeg-full
       file
+      ijq
       mani
       miller
       nmap
