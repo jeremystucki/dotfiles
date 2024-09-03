@@ -6,6 +6,7 @@
     [
       asciinema
       bat
+      borgbackup
       caddy
       delta
       dogdns
