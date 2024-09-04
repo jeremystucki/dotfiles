@@ -8,6 +8,7 @@
       bat
       borgbackup
       caddy
+      csvlens
       delta
       dogdns
       du-dust
