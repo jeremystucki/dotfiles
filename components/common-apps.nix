@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    bambu-studio
     blanket
     evolution
     gnome-decoder
