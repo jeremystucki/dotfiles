@@ -104,6 +104,8 @@
                   ];
                 };
 
+                system.stateVersion = 4;
+
                 nixpkgs.config = config;
                 environment.shells = [ pkgs.zsh ];
                 programs.zsh.enable = true;
