@@ -9,7 +9,6 @@
     kitty
     xcodes
     ruby
-    xcodebuild
   ];
 
   home.homeDirectory = "/Users/jeremy";
