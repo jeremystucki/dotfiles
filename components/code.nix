@@ -5,7 +5,6 @@
 
   programs.vscode = {
     enable = true;
-    package = pkgs-unstable.vscodium;
 
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
@@ -19,8 +18,6 @@
       workbench.colorTheme = "Solarized Dark";
     };
   };
-
-  programs.zsh.shellAliases.code = "codium";
 
   programs.vscode.userSettings = {
     vscode-neovim.neovimExecutablePaths.linux = "/home/jeremy/.nix-profile/bin/nvim";
