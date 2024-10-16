@@ -17,6 +17,7 @@
       ffmpeg-full
       file
       ijq
+      libwebp
       mani
       miller
       nmap
