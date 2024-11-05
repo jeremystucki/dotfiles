@@ -10,6 +10,11 @@
     "/crypto_keyfile.bin" = null;
   };
 
+  boot.loader = {
+    timeout = 300;
+    grub.useOSProber = true;
+  };
+
   networking.hostName = "volt-nixos";
 
   # Load nvidia driver for Xorg and Wayland
