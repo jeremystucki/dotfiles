@@ -65,7 +65,7 @@ in
 
       "gpg \"ssh\"".program =
         if pkgs.stdenv.isDarwin then
-          "/Applications/1Password.app/Contents/MacOS/op-ssh-sig"
+          "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
         else
           "${pkgs._1password-gui}/bin/op-ssh-sign";
 
