@@ -1,6 +1,3 @@
-import = ["~/.config/alacritty/machine-specific-config.toml"]
-live_config_reload = true
-
 [colors.bright]
 black = "#575b70"
 blue = "#7eaef1"
@@ -31,6 +28,10 @@ style = "Regular"
 [font.normal]
 family = "JetBrains Mono Nerd Font"
 style = "Regular"
+
+[general]
+import = ["~/.config/alacritty/machine-specific-config.toml"]
+live_config_reload = true
 
 [window]
 decorations = "none"
