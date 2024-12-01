@@ -6,13 +6,13 @@
       url = "github:numtide/flake-utils";
     };
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-24.05";
+      url = "github:nixos/nixpkgs/nixos-24.11";
     };
     nixpkgs-unstable = {
       url = "github:nixos/nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     color-scheme-sync = {
@@ -39,6 +39,9 @@
           config = {
             allowUnfree = true;
             input-fonts.acceptLicense = true;
+            permittedInsecurePackages = [
+              "dotnet-sdk-7.0.410"
+            ];
           };
           pkgs = import inputs.nixpkgs { inherit system config; };
           pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };

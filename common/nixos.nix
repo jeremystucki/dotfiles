@@ -63,7 +63,7 @@
       telegram-desktop
       wl-clipboard
       xsel
-      gnome.gnome-tweaks
+      gnome-tweaks
     ];
   };
 
@@ -113,8 +113,6 @@
     "hmac-sha2-512"
   ];
 
-  # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -145,10 +143,9 @@
   hardware.i2c.enable = true;
 
   # Enable OpenGL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   fonts.packages = with pkgs; [

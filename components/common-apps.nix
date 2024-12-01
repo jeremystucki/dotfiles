@@ -6,9 +6,9 @@
     blanket
     evolution
     gnome-decoder
-    gnome.gnome-calendar
-    gnome.gnome-characters
-    gnome.gnome-contacts
+    gnome-calendar
+    gnome-characters
+    gnome-contacts
     handbrake
     imagemagick
     inkscape
