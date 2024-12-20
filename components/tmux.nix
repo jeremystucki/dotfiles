@@ -8,8 +8,14 @@
     plugins = with pkgs.tmuxPlugins; [
       copycat
       resurrect
-      sensible
       vim-tmux-navigator
+      {
+        plugin = sensible;
+        extraConfig = ''
+          # Workaround for https://github.com/tmux-plugins/tmux-sensible/issues/74
+          set -g default-command '$SHELL'
+        '';
+      }
       {
         plugin = catppuccin;
         extraConfig = ''
