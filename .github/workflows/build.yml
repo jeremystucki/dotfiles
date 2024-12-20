@@ -8,7 +8,7 @@ jobs:
         configuration:
           - "nixosConfigurations.volt-nixos.config.system.build.toplevel"
           - "nixosConfigurations.zephyr-nixos.config.system.build.toplevel"
-          - 'darwinConfigurations.work-macbook.system'
+          - "darwinConfigurations.work-macbook.system"
 
     runs-on: ubuntu-latest
 
