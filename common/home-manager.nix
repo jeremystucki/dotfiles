@@ -8,7 +8,6 @@
       /code.nix
       /databases.nix
       /dotnet.nix
-      /gcloud.nix
       /git.nix
       /java.nix
       /rust.nix
