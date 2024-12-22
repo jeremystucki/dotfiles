@@ -73,7 +73,6 @@ in
         format = "ssh";
         ssh.allowedSignersFile = builtins.toFile "allowed_signers" ''
           dev@jeremystucki.ch ${publicKey}
-          jeremy.stucki@valora.com ${publicKey}
           jeremy.stucki@ost.ch ${publicKey}
         '';
       };
@@ -93,18 +92,6 @@ in
         condition = "hasconfig:remote.*.url:git@github.com:*/**";
         contents = {
           user.email = "dev@jeremystucki.ch";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:git@github.com:valora-digital/**";
-        contents = {
-          user.email = "jeremy.stucki@valora.com";
-        };
-      }
-      {
-        condition = "hasconfig:remote.*.url:https://git.sonova.com/*/**";
-        contents = {
-          user.email = "jeremy.stucki.external@sonova.com";
         };
       }
       {
