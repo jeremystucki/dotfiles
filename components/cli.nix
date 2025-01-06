@@ -24,7 +24,7 @@
       nodePackages.svgo
       ocrmypdf
       ollama
-      pdftk
+      pdfcpu
       pkgs-unstable.nixfmt-rfc-style
       ranger
       ripgrep
