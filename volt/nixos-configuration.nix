@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostConfiguration, ... }:
 {
   imports = [ ./nixos-hardware-configuration.nix ];
 
@@ -15,7 +15,7 @@
     grub.useOSProber = true;
   };
 
-  networking.hostName = "volt-nixos";
+  networking.hostName = hostConfiguration.hostname;
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -48,7 +48,7 @@
 
   services.displayManager.autoLogin = {
     enable = true;
-    user = "jeremy";
+    user = hostConfiguration.username;
   };
 
   # https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229

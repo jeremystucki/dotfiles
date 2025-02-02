@@ -1,3 +1,5 @@
+{ hostConfiguration, ... }:
+
 {
   imports =
     [ ./apps.nix ]
@@ -18,7 +20,7 @@
       /zsh.nix
     ];
 
-  home.username = "jeremy";
+  home.username = hostConfiguration.username;
   home.stateVersion = "23.05";
 
   programs.home-manager.enable = true;

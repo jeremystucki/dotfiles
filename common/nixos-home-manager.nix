@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ hostConfiguration, ... }:
 
 {
   imports = map (x: ../components + x) [
@@ -7,5 +7,5 @@
     /web.nix
   ];
 
-  home.homeDirectory = "/home/jeremy";
+  home.homeDirectory = "/home/${hostConfiguration.username}";
 }

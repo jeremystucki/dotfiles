@@ -32,43 +32,52 @@
 
   outputs =
     inputs:
+    let
+          config = {
+            allowUnfree = true;
+            input-fonts.acceptLicense = true;
+          };
+      hostConfigurations = {
+        "volt-nixos" = {
+          hostname = "volt";
+          username = "jeremy";
+        };
+        "zephyr" = {
+          hostname = "zephyr";
+          username = "jeremy";
+        };
+        "work-macbook" = {
+          username = "jeremy";
+        };
+      };
+    in
     {
       nixosConfigurations =
         let
           system = "x86_64-linux";
-          config = {
-            allowUnfree = true;
-            input-fonts.acceptLicense = true;
-            permittedInsecurePackages = [
-              "dotnet-sdk-7.0.410"
-            ];
-          };
           pkgs = import inputs.nixpkgs { inherit system config; };
           pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
           nixosConfig =
             {
               nixosModule,
               homeManagerModule ? { },
+              hostConfiguration,
             }:
             inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit pkgs pkgs-unstable;
-              };
+              specialArgs = { inherit pkgs pkgs-unstable hostConfiguration; };
               modules = [
                 ./common/nixos.nix
                 nixosModule
                 inputs.color-scheme-sync.nixosModules.default
                 inputs.home-manager.nixosModules.home-manager
                 {
-                  home-manager.users.jeremy.imports = [
+                  home-manager.users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
                     ./common/nixos-home-manager.nix
                     homeManagerModule
                   ];
                   home-manager.useGlobalPkgs = true;
-                  home-manager.extraSpecialArgs = {
-                    inherit pkgs-unstable;
-                  };
+                  home-manager.extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
                 }
               ];
             };
@@ -77,30 +86,29 @@
           "volt-nixos" = nixosConfig {
             nixosModule = ./volt/nixos-configuration.nix;
             homeManagerModule = ./volt/home-manager.nix;
+            hostConfiguration = hostConfigurations.volt;
           };
-
-          "zephyr-nixos" = nixosConfig { nixosModule = ./zephyr/nixos-configuration.nix; };
+          "zephyr" = nixosConfig {
+            nixosModule = ./zephyr/nixos-configuration.nix;
+            hostConfiguration = hostConfigurations.zephyr;
+          };
         };
 
       darwinConfigurations =
         let
           system = "aarch64-darwin";
-          config = {
-            allowUnfree = true;
-            input-fonts.acceptLicense = true;
-          };
           pkgs = import inputs.nixpkgs { inherit system config; };
           pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
+          hostConfiguration = hostConfigurations.work-macbook;
         in
         {
           "work-macbook" = inputs.darwin.lib.darwinSystem {
             inherit system;
-
             modules = [
               {
                 nix.useDaemon = true;
                 nix.settings = {
-                  trusted-users = [ "jeremy" ];
+                  trusted-users = [ hostConfiguration.username ];
                   experimental-features = [
                     "nix-command"
                     "flakes"
@@ -112,7 +120,7 @@
                 nixpkgs.config = config;
                 environment.shells = [ pkgs.zsh ];
                 programs.zsh.enable = true;
-                users.users.jeremy.home = "/Users/jeremy";
+                users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
                 fonts.packages = [ pkgs.jetbrains-mono ];
               }
               inputs.home-manager.darwinModules.home-manager
@@ -120,13 +128,11 @@
                 home-manager = {
                   useGlobalPkgs = true;
                   useUserPackages = true;
-                  users.jeremy.imports = [
+                  users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
                     ./darwin-home-manager.nix
                   ];
-                  extraSpecialArgs = {
-                    inherit pkgs-unstable;
-                  };
+                  extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
                   sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];
                 };
               }

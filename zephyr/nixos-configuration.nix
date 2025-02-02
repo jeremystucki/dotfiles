@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, hostConfiguration, ... }:
 
 {
   imports = [ ./nixos-hardware-configuration.nix ];
 
-  networking.hostName = "zephyr-nixos";
+  networking.hostName = hostConfiguration.hostname;
 
   services.power-profiles-daemon.enable = false;
 

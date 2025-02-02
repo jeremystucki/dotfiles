@@ -2,6 +2,7 @@
   config,
   pkgs,
   pkgs-unstable,
+  hostConfiguration,
   ...
 }:
 
@@ -36,7 +37,7 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
-  users.users.jeremy = {
+  users.users.${hostConfiguration.username} = {
     isNormalUser = true;
     description = "Jeremy Stucki";
     extraGroups = [
@@ -165,14 +166,14 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ "jeremy" ];
+    polkitPolicyOwners = [ hostConfiguration.username ];
   };
 
   programs.adb.enable = true;
 
   programs.ssh.extraConfig = ''
     Host *
-        IdentityAgent ${config.users.users.jeremy.home}/.1password/agent.sock
+        IdentityAgent ${config.users.users.${hostConfiguration.username}.home}/.1password/agent.sock
   '';
 
   systemd.user.services._1password = {
@@ -194,5 +195,5 @@
   };
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "jeremy" ];
+  users.extraGroups.vboxusers.members = [ hostConfiguration.username ];
 }

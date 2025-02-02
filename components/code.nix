@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, hostConfiguration, ... }:
 
 {
   home.packages = [ pkgs.nil ];
@@ -21,7 +21,7 @@
   };
 
   programs.vscode.userSettings = {
-    vscode-neovim.neovimExecutablePaths.linux = "/home/jeremy/.nix-profile/bin/nvim";
+    vscode-neovim.neovimExecutablePaths.linux = "/home/${hostConfiguration.username}/.nix-profile/bin/nvim";
     window.autoDetectColorScheme = true;
     editor.cursorSurroundingLines = 8;
 

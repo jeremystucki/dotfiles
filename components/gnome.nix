@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, hostConfiguration, ... }:
 
 {
   home.packages = with pkgs; [ wmctrl ];
@@ -27,7 +27,7 @@
 
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/nautilus" = {
       binding = "<Super>E";
-      command = "sh -c 'wmctrl -xa nautilus || nautilus /home/jeremy'";
+      command = "sh -c 'wmctrl -xa nautilus || nautilus /home/${hostConfiguration.username}'";
       name = "nautilus nix";
     };
 
