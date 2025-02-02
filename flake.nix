@@ -86,7 +86,7 @@
           "volt-nixos" = nixosConfig {
             nixosModule = ./volt/nixos-configuration.nix;
             homeManagerModule = ./volt/home-manager.nix;
-            hostConfiguration = hostConfigurations.volt;
+            hostConfiguration = hostConfigurations.volt-nixos;
           };
           "zephyr" = nixosConfig {
             nixosModule = ./zephyr/nixos-configuration.nix;
