@@ -66,7 +66,7 @@
           nixosConfig =
             {
               nixosModule,
-              homeManagerModule ? { },
+              hostSpecificHomeManagerModule ? { },
               hostConfiguration,
             }:
             inputs.nixpkgs.lib.nixosSystem {
@@ -80,8 +80,10 @@
                 {
                   home-manager.users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
-                    ./common/nixos-home-manager.nix
-                    homeManagerModule
+                    ./components/apps.nix
+                    ./components/haskell.nix
+                    ./components/web.nix
+                    hostSpecificHomeManagerModule
                   ];
                   home-manager.useGlobalPkgs = true;
                   home-manager.extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
@@ -92,8 +94,8 @@
         {
           "volt-nixos" = nixosConfig {
             nixosModule = ./volt/nixos-configuration.nix;
-            homeManagerModule = ./volt/home-manager.nix;
             hostConfiguration = hostConfigurations.volt-nixos;
+            hostSpecificHomeManagerModule = ./volt/home-manager.nix;
           };
           "zephyr" = nixosConfig {
             nixosModule = ./zephyr/nixos-configuration.nix;
@@ -132,7 +134,7 @@
                   useUserPackages = true;
                   users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
-                    ./darwin-home-manager.nix
+                    ./components/apps.nix
                   ];
                   extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
                   sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];

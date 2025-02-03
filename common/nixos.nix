@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   hostConfiguration,
   ...
 }:
@@ -42,24 +41,6 @@
       "networkmanager"
       "plugdev"
       "wheel"
-    ];
-
-    packages = with pkgs; [
-      foot
-      chromium
-      ddcutil
-      firefox
-      killall
-      nvd
-      pkgs-unstable.discord
-      jetbrains.datagrip
-      ruby
-      screen
-      slack
-      telegram-desktop
-      wl-clipboard
-      xsel
-      gnome-tweaks
     ];
   };
 

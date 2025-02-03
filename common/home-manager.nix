@@ -1,9 +1,8 @@
-{ hostConfiguration, ... }:
+{ pkgs, hostConfiguration, ... }:
 
 {
   imports =
-    [ ./apps.nix ]
-    ++ map (x: ../components + x) [
+    map (x: ../components + x) [
       /alacritty.nix
       /android.nix
       /cli.nix
@@ -20,8 +19,16 @@
       /zsh.nix
     ];
 
-  home.username = hostConfiguration.username;
-  home.stateVersion = "23.05";
+  home = {
+    stateVersion = "23.05";
+    username = hostConfiguration.username;
+
+    homeDirectory =
+      if (pkgs.stdenv.isDarwin) then
+        "/Users/${hostConfiguration.username}"
+      else
+        "/home/${hostConfiguration.username}";
+  };
 
   programs.home-manager.enable = true;
 }

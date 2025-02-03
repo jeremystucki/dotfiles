@@ -1,4 +1,9 @@
-{ pkgs, pkgs-unstable, hostConfiguration, ... }:
+{
+  pkgs,
+  pkgs-unstable,
+  hostConfiguration,
+  ...
+}:
 
 {
   home.packages = [ pkgs.nil ];
