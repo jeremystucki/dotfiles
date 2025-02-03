@@ -45,7 +45,7 @@
       };
       hostConfigurations = {
         "volt-nixos" = {
-          hostname = "volt";
+          hostname = "volt-nixos";
           username = "jeremy";
         };
         "zephyr" = {
