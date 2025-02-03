@@ -33,8 +33,6 @@
       obsidian
       pdfarranger
       piper
-      ruby
-      screen
       telegram-desktop
       threema-desktop
       wireshark-qt
@@ -49,6 +47,5 @@
       iina
       iterm2
       xcodes
-      ruby
     ];
 }

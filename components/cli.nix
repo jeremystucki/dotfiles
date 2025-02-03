@@ -28,6 +28,7 @@
       pkgs-unstable.nixfmt-rfc-style
       ranger
       ripgrep
+      ruby
       terraform
       tesseract
       tokei
@@ -40,6 +41,7 @@
     ++ lib.optionals (!stdenv.isDarwin) [
       multipath-tools
       ngrok
+      screen
       wol
     ];
 
