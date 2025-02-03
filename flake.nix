@@ -33,10 +33,16 @@
   outputs =
     inputs:
     let
-          config = {
-            allowUnfree = true;
-            input-fonts.acceptLicense = true;
-          };
+      config = {
+        allowUnfree = true;
+        input-fonts.acceptLicense = true;
+      };
+      nixSettings = {
+        nix.settings.experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+      };
       hostConfigurations = {
         "volt-nixos" = {
           hostname = "volt";
@@ -67,6 +73,7 @@
               specialArgs = { inherit pkgs pkgs-unstable hostConfiguration; };
               modules = [
                 ./common/nixos.nix
+                nixSettings
                 nixosModule
                 inputs.color-scheme-sync.nixosModules.default
                 inputs.home-manager.nixosModules.home-manager
@@ -105,15 +112,10 @@
           "work-macbook" = inputs.darwin.lib.darwinSystem {
             inherit system;
             modules = [
+              nixSettings
               {
                 nix.useDaemon = true;
-                nix.settings = {
-                  trusted-users = [ hostConfiguration.username ];
-                  experimental-features = [
-                    "nix-command"
-                    "flakes"
-                  ];
-                };
+                nix.settings.trusted-users = [ hostConfiguration.username ];
 
                 system.stateVersion = 4;
 
