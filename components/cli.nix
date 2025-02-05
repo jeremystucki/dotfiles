@@ -16,6 +16,7 @@
       fd
       ffmpeg-full
       file
+      fnm
       ijq
       libwebp
       mani

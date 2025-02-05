@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   home.file."completion.zsh".source = ../resources/completion.zsh;
@@ -60,6 +60,9 @@
       bindkey '^n' clear-screen
 
       bindkey '^[[3~' delete-char
+
+      eval "$(${pkgs.fnm}/bin/fnm env --use-on-cd --shell zsh)"
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
   };
 }
