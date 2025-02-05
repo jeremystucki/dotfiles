@@ -39,6 +39,9 @@
       yt-dlp
       zip
     ]
+    ++ lib.optionals (stdenv.isDarwin) [
+      azure-cli
+    ]
     ++ lib.optionals (!stdenv.isDarwin) [
       multipath-tools
       ngrok
