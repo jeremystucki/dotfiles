@@ -103,7 +103,7 @@ in
         };
       }
       {
-        condition = "hasconfig:remote.*.url:ssh://git@ssh.dev.azure.com:*/**";
+        condition = "hasconfig:remote.*.url:git@ssh.dev.azure.com:*/**";
         contents = {
           user.email = "jeremy.stucki@digitecgalaxus.ch";
           user.signingkey = rsaPublicKey;
