@@ -3,14 +3,14 @@
 {
   home.packages = with pkgs-unstable; [
     typst
-    typst-lsp
+    tinymist
   ];
 
   programs.neovim.plugins = with pkgs-unstable.vimPlugins; [ typst-vim ];
 
   programs.vscode = {
     extensions = with pkgs-unstable.vscode-extensions; [
-      nvarner.typst-lsp
+      myriad-dreamin.tinymist
       tomoki1207.pdf
     ];
 
