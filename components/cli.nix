@@ -30,7 +30,6 @@
       ranger
       ripgrep
       ruby
-      terraform
       tesseract
       tokei
       tree
