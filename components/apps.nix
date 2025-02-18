@@ -33,6 +33,7 @@
       obsidian
       pdfarranger
       piper
+      signal-desktop
       telegram-desktop
       threema-desktop
       wireshark-qt
