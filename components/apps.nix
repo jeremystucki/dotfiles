@@ -7,6 +7,7 @@
       nvd
       obsidian
       protonmail-desktop
+      signal-desktop
       pkgs-unstable.discord
       pkgs-unstable.spotify
     ] ++ lib.optionals (!stdenv.isDarwin) [
@@ -33,7 +34,6 @@
       obsidian
       pdfarranger
       piper
-      signal-desktop
       telegram-desktop
       threema-desktop
       wireshark-qt
