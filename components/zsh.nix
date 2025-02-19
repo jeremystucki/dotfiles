@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   home.file."completion.zsh".source = ../resources/completion.zsh;
@@ -62,6 +62,8 @@
       bindkey '^[[3~' delete-char
 
       eval "$(${pkgs.fnm}/bin/fnm env --use-on-cd --shell zsh)"
+    ''
+    + lib.optionalString pkgs.stdenv.isDarwin ''
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
   };
