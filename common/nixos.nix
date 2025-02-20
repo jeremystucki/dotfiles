@@ -172,4 +172,5 @@
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ hostConfiguration.username ];
+  boot.kernelModules = [ "vboxnetflt" "vboxnetadp" ];
 }
