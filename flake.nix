@@ -126,6 +126,11 @@
                 programs.zsh.enable = true;
                 users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
                 fonts.packages = [ pkgs.jetbrains-mono ];
+
+                homebrew = {
+                  enable = true;
+                  casks = [ "ghostty" ];
+                };
               }
               inputs.home-manager.darwinModules.home-manager
               {
