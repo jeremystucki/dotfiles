@@ -47,6 +47,7 @@
       docker
       iina
       iterm2
+      rectangle
       xcodes
     ];
 }
