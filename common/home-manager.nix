@@ -3,7 +3,6 @@
 {
   imports =
     map (x: ../components + x) [
-      /alacritty.nix
       /android.nix
       /cli.nix
       /code.nix

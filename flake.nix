@@ -80,6 +80,7 @@
                 {
                   home-manager.users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
+                    ./components/alacritty.nix
                     ./components/apps.nix
                     ./components/haskell.nix
                     ./components/web.nix
