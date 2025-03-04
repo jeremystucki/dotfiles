@@ -40,7 +40,6 @@
     ]
     ++ lib.optionals (stdenv.isDarwin) [
       azure-cli
-      pkgs-unstable.swiftformat
     ]
     ++ lib.optionals (!stdenv.isDarwin) [
       multipath-tools
