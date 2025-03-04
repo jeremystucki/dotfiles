@@ -9,6 +9,7 @@
       /code.nix
       /databases.nix
       /dotnet.nix
+      /fonts.nix
       /git.nix
       /java.nix
       /rust.nix
