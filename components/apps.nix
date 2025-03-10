@@ -42,9 +42,10 @@
       zathura
       pkgs-unstable.discord
     ] ++ lib.optionals (stdenv.isDarwin) [
-      element-desktop
       colima
       docker
+      element-desktop
+      google-chrome
       iina
       iterm2
       rectangle
