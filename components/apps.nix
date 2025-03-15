@@ -31,7 +31,6 @@
       killall
       libreoffice
       mpv
-      obsidian
       pdfarranger
       piper
       telegram-desktop
