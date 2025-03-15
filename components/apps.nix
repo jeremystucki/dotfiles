@@ -25,6 +25,7 @@
       gnome-decoder
       gnome-tweaks
       handbrake
+      hydrapaper
       imagemagick
       inkscape
       jetbrains.datagrip
