@@ -11,7 +11,6 @@
       pkgs-unstable.discord
       pkgs-unstable.spotify
     ] ++ lib.optionals (!stdenv.isDarwin) [
-      bambu-studio
       blanket
       cartridges
       chromium
@@ -41,6 +40,7 @@
       xsel
       zathura
       pkgs-unstable.discord
+      pkgs-unstable.orca-slicer
     ] ++ lib.optionals (stdenv.isDarwin) [
       colima
       docker
