@@ -28,6 +28,10 @@
       # This does not work due to broken packages
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+    git-format-staged = {
+      url = "github:hallettj/git-format-staged";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -115,6 +119,13 @@
           "work-macbook" = inputs.darwin.lib.darwinSystem {
             inherit system;
             modules = [
+              {
+                nixpkgs.overlays = [
+                  (final: prev: {
+                    git-format-staged = inputs.git-format-staged.packages.${system}.default;
+                  })
+                ];
+              }
               nixSettings
               {
                 nix.useDaemon = true;

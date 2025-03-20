@@ -171,6 +171,27 @@
         "type": "indirect"
       }
     },
+    "git-format-staged": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": "systems_3"
+      },
+      "locked": {
+        "lastModified": 1736037534,
+        "narHash": "sha256-5ovWQjpYV4mR2LKtv5Y16Ef3+BJ0QEbCW51fOMXzQjM=",
+        "owner": "hallettj",
+        "repo": "git-format-staged",
+        "rev": "d37cf89066da2548be0f80dc6534e95b184665f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hallettj",
+        "repo": "git-format-staged",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -198,7 +219,7 @@
         "flake-compat": "flake-compat_2",
         "flake-utils": "flake-utils_3",
         "nixpkgs": "nixpkgs",
-        "systems": "systems_3"
+        "systems": "systems_4"
       },
       "locked": {
         "lastModified": 1739821351,
@@ -266,6 +287,7 @@
         "color-scheme-sync": "color-scheme-sync",
         "darwin": "darwin",
         "flake-utils": "flake-utils_2",
+        "git-format-staged": "git-format-staged",
         "home-manager": "home-manager",
         "mac-app-util": "mac-app-util",
         "nixpkgs": "nixpkgs_2",
@@ -330,6 +352,21 @@
       }
     },
     "systems_3": {
+      "locked": {
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_4": {
       "locked": {
         "lastModified": 1689347925,
         "narHash": "sha256-ozenz5bFe1UUqOn7f60HRmgc01BgTGIKZ4Xl+HbocGQ=",

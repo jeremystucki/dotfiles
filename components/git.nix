@@ -10,6 +10,8 @@ in
     g = "git";
   };
 
+  home.packages = pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.git-format-staged ];
+
   programs.gh = {
     enable = true;
     extensions = [ pkgs.gh-dash ];
