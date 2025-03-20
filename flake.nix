@@ -2,8 +2,12 @@
   description = "My nix configuration";
 
   inputs = {
+    systems = {
+      url = "github:nix-systems/default";
+    };
     flake-utils = {
       url = "github:numtide/flake-utils";
+      inputs.systems.follows = "systems";
     };
     nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-24.11";
@@ -25,12 +29,14 @@
     };
     mac-app-util = {
       url = "github:hraban/mac-app-util";
+      inputs.systems.follows = "systems";
       # This does not work due to broken packages
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     git-format-staged = {
       url = "github:hallettj/git-format-staged";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
     };
   };
 
