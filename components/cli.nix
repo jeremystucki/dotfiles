@@ -23,6 +23,7 @@
       miller
       nmap
       nodePackages.svgo
+      nvd
       ocrmypdf
       ollama
       pdfcpu

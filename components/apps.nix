@@ -4,7 +4,6 @@
   home.packages =
     with pkgs;
     [
-      nvd
       obsidian
       protonmail-desktop
       signal-desktop
