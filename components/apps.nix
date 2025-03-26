@@ -6,8 +6,8 @@
     [
       obsidian
       protonmail-desktop
-      signal-desktop
       pkgs-unstable.discord
+      pkgs-unstable.signal-desktop
       pkgs-unstable.spotify
     ] ++ lib.optionals (!stdenv.isDarwin) [
       blanket
