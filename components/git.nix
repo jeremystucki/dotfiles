@@ -99,6 +99,12 @@ in
         };
       }
       {
+        condition = "hasconfig:remote.*.url:git@github.com:DigitecGalaxus/**";
+        contents = {
+          user.email = "jeremy.stucki@digitecgalaxus.ch";
+        };
+      }
+      {
         condition = "hasconfig:remote.*.url:ssh://git@gitlab.ost.ch:*/**";
         contents = {
           user.email = "jeremy.stucki@ost.ch";
