@@ -35,6 +35,7 @@
       tokei
       tree
       units
+      watchman
       xsv
       yt-dlp
       zip
