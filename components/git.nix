@@ -55,6 +55,7 @@ in
       rerere.enabled = true;
       status.short = true;
       commit.verbose = true;
+      fetch.prune = true;
 
       rebase = {
         abbreviateCommands = true;
