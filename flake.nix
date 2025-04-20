@@ -91,7 +91,6 @@
                   home-manager.users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
                     ./components/alacritty.nix
-                    ./components/apps.nix
                     ./components/haskell.nix
                     ./components/web.nix
                     hostSpecificHomeManagerModule
@@ -157,7 +156,6 @@
                   useUserPackages = true;
                   users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
-                    ./components/apps.nix
                     ./components/dotnet.nix
                   ];
                   extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };

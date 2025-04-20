@@ -4,6 +4,7 @@
   imports =
     map (x: ../components + x) [
       /android.nix
+      /apps.nix
       /cli.nix
       /code.nix
       /databases.nix
