@@ -158,6 +158,7 @@
                   users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
                     ./components/apps.nix
+                    ./components/dotnet.nix
                   ];
                   extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
                   sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];
