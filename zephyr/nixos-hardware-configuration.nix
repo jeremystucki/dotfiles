@@ -4,7 +4,6 @@
 {
   config,
   lib,
-  pkgs,
   modulesPath,
   ...
 }:
@@ -22,7 +21,7 @@
     "xhci_pci"
   ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "sg" "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
