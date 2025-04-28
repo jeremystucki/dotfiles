@@ -28,7 +28,24 @@
 
   environment.systemPackages = [ pkgs.ecryptfs ];
   security.pam.enableEcryptfs = true;
-  boot.kernelModules = [ "ecryptfs" ];
+
+  boot = {
+    kernelModules = [ "ecryptfs" ];
+    loader = {
+      grub = {
+        enable = true;
+        device = "nodev";
+        efiSupport = true;
+      };
+
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+    };
+
+    supportedFilesystems = [ "ntfs" ];
+  };
 
   services.fprintd.enable = true;
 }

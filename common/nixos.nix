@@ -14,23 +14,6 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05";
 
-  boot = {
-    loader = {
-      grub = {
-        enable = true;
-        device = "nodev";
-        efiSupport = true;
-      };
-
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
-      };
-    };
-
-    supportedFilesystems = [ "ntfs" ];
-  };
-
   users.users.${hostConfiguration.username} = {
     isNormalUser = true;
     description = "Jeremy Stucki";

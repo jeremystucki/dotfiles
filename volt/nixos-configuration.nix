@@ -1,18 +1,29 @@
-{ config, pkgs, hostConfiguration, ... }:
+{
+  config,
+  pkgs,
+  hostConfiguration,
+  ...
+}:
 {
   imports = [ ./nixos-hardware-configuration.nix ];
 
-  # Enable swap on luks
-  boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".device = "/dev/disk/by-uuid/e0d59253-c3ee-4fab-8ce0-182877db57c3";
-  boot.initrd.luks.devices."luks-e0d59253-c3ee-4fab-8ce0-182877db57c3".keyFile = "/crypto_keyfile.bin";
-
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
-
   boot.loader = {
     timeout = 300;
-    grub.useOSProber = true;
+
+    efi.canTouchEfiVariables = true;
+
+    systemd-boot = {
+      enable = true;
+
+      windows.windows-11 = {
+        title = "Windows 11";
+        efiDeviceHandle = "FS7";
+      };
+
+      extraInstallCommands = ''
+        ${pkgs.gnused}/bin/sed -i 's/default .*/default @saved/' /boot/loader/loader.conf
+      '';
+    };
   };
 
   networking.hostName = hostConfiguration.hostname;
