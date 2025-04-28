@@ -1,20 +1,17 @@
-{ pkgs, ... }:
-
-let
+{pkgs, ...}: let
   gitPackage = pkgs.git;
   publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG9keparNqpev2qrDO3cAiDzyTUsAAN9Mh+JLbOsdiZs";
   rsaPublicKey = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIvAX/wQdFT4h2ifgPfi2JxZzKcDYY60uM9PRtbyoMXNc73QXvIVHs3wFB3sg3nISX745Et9z/FZUUYZZ0qey7jyRuzXIa7KH3xdDRJEj+JyZqr4cSvHcVSf5cYfkFRRGmaMPqdr4Q+52S/KtGNIBbH+GZlXk5T7GnmMn9f+EPBeggJ1CKAJoWctfbLcTQ9M7+ZIuAJKPMpPWuBL2Z7KVUmQPVzHvOfIybMBIDAuTotVpcJDgnKpw4I/Qang49RlT8Y3HxToIiPOZasAD/+bXktYzf3zFl+dpljfecX9tdWmF+DwXVMjhFNoY9w9RYKIU3KT3TEdrx45tDaNKK2wZ4o6elQyYwyQC8omAdqk91QxcZvaq85FKdRgdk04gZogQRSceDhRE6GAhQQGIn1Ne9MPxcElHpsniiJLJRtm9GXc1xZ25A4VAbZK4KRuC2AXeJhfYRdDp7QRobsY+cRXW0JcMVVnBkI34Az5kV05NUxifSNOFCPReBkWS5F/nHvu65qQaGg4nKCDVotHHcTDB8zjg6DPEOx2rAf8eN0PNkAcguy+y+/HylBeaj0fyIOKMoAutO5NiGiXLfzT/mJ35wv3rwx4ynBKocWB9qXZWVkutOkYtp60nTgLLz6isy1K0qJ1LL1YvTLXy/kiFn1N0Q3uTHC1VJnDkcZgXvMTxdGQ==";
-in
-{
+in {
   home.shellAliases = {
     g = "git";
   };
 
-  home.packages = pkgs.lib.optionals pkgs.stdenv.isDarwin [ pkgs.git-format-staged ];
+  home.packages = pkgs.lib.optionals pkgs.stdenv.isDarwin [pkgs.git-format-staged];
 
   programs.gh = {
     enable = true;
-    extensions = [ pkgs.gh-dash ];
+    extensions = [pkgs.gh-dash];
     settings = {
       git_protocol = "ssh";
       prompt = "enabled";
@@ -43,10 +40,12 @@ in
       apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";
     };
 
-    ignores = [
-      ".direnv"
-      ".idea"
-    ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [ ".DS_Store" ];
+    ignores =
+      [
+        ".direnv"
+        ".idea"
+      ]
+      ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [".DS_Store"];
 
     extraConfig = {
       init.defaultBranch = "main";
@@ -68,10 +67,9 @@ in
       user.signingkey = publicKey;
 
       "gpg \"ssh\"".program =
-        if pkgs.stdenv.isDarwin then
-          "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-        else
-          "${pkgs._1password-gui}/bin/op-ssh-sign";
+        if pkgs.stdenv.isDarwin
+        then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+        else "${pkgs._1password-gui}/bin/op-ssh-sign";
 
       gpg = {
         format = "ssh";

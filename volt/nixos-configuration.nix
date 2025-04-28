@@ -3,9 +3,8 @@
   pkgs,
   hostConfiguration,
   ...
-}:
-{
-  imports = [ ./nixos-hardware-configuration.nix ];
+}: {
+  imports = [./nixos-hardware-configuration.nix];
 
   boot.loader = {
     timeout = 300;
@@ -29,10 +28,9 @@
   networking.hostName = hostConfiguration.hostname;
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.nvidia = {
-
     # Modesetting is required.
     modesetting.enable = true;
 
@@ -66,7 +64,7 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  environment.systemPackages = [ pkgs.openrgb ];
+  environment.systemPackages = [pkgs.openrgb];
 
   services.udev.packages = with pkgs; [
     openrgb

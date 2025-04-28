@@ -1,7 +1,9 @@
-{ pkgs, hostConfiguration, ... }:
-
 {
-  imports = [ ./nixos-hardware-configuration.nix ];
+  pkgs,
+  hostConfiguration,
+  ...
+}: {
+  imports = [./nixos-hardware-configuration.nix];
 
   networking.hostName = hostConfiguration.hostname;
 
@@ -26,11 +28,11 @@
     };
   };
 
-  environment.systemPackages = [ pkgs.ecryptfs ];
+  environment.systemPackages = [pkgs.ecryptfs];
   security.pam.enableEcryptfs = true;
 
   boot = {
-    kernelModules = [ "ecryptfs" ];
+    kernelModules = ["ecryptfs"];
     loader = {
       grub = {
         enable = true;
@@ -44,7 +46,7 @@
       };
     };
 
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
   };
 
   services.fprintd.enable = true;

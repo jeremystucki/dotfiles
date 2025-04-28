@@ -1,7 +1,5 @@
-{ pkgs-unstable, ... }:
-
-with pkgs-unstable.dotnetCorePackages;
-{
+{pkgs-unstable, ...}:
+with pkgs-unstable.dotnetCorePackages; {
   home.packages = [
     (combinePackages [
       sdk_8_0

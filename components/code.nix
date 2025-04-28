@@ -3,10 +3,8 @@
   pkgs-unstable,
   hostConfiguration,
   ...
-}:
-
-{
-  home.packages = [ pkgs.nil ];
+}: {
+  home.packages = [pkgs.nil];
 
   programs.vscode = {
     enable = true;

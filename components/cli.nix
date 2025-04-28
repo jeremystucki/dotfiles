@@ -1,8 +1,9 @@
-{ pkgs, pkgs-unstable, ... }:
-
 {
-  home.packages =
-    with pkgs;
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
+  home.packages = with pkgs;
     [
       asciinema
       bat

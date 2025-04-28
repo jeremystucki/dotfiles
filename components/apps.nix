@@ -1,15 +1,17 @@
-{ pkgs, pkgs-unstable, ... }:
-
 {
-  home.packages =
-    with pkgs;
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
+  home.packages = with pkgs;
     [
       obsidian
       protonmail-desktop
       pkgs-unstable.discord
       pkgs-unstable.signal-desktop-bin
       pkgs-unstable.spotify
-    ] ++ lib.optionals (!stdenv.isDarwin) [
+    ]
+    ++ lib.optionals (!stdenv.isDarwin) [
       blanket
       cartridges
       chromium
@@ -39,7 +41,8 @@
       xsel
       zathura
       pkgs-unstable.orca-slicer
-    ] ++ lib.optionals (stdenv.isDarwin) [
+    ]
+    ++ lib.optionals (stdenv.isDarwin) [
       colima
       docker
       element-desktop

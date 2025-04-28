@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
 {
+  pkgs,
+  lib,
+  ...
+}: {
   home.file."completion.zsh".source = ../resources/completion.zsh;
 
   programs.fzf.enable = true;
@@ -13,7 +15,7 @@
 
   programs.atuin = {
     enable = true;
-    flags = [ "--disable-up-arrow" ];
+    flags = ["--disable-up-arrow"];
     settings = {
       style = "compact";
       show_help = false;
@@ -34,37 +36,38 @@
       size = 1000000;
     };
 
-    initExtra = ''
-      setopt PROMPT_SUBST
+    initExtra =
+      ''
+        setopt PROMPT_SUBST
 
-      source ~/completion.zsh
+        source ~/completion.zsh
 
-      export GIT_PS1_SHOWDIRTYSTATE=true
-      export GIT_PS1_SHOWUNTRACKEDFILES=true
-      export GIT_PS1_SHOWCOLORHINTS=true
+        export GIT_PS1_SHOWDIRTYSTATE=true
+        export GIT_PS1_SHOWUNTRACKEDFILES=true
+        export GIT_PS1_SHOWCOLORHINTS=true
 
-      export PS1=$'\n%1~$(__git_ps1)\n$ '
-      export EDITOR=vi
-      export LESS=-iR
+        export PS1=$'\n%1~$(__git_ps1)\n$ '
+        export EDITOR=vi
+        export LESS=-iR
 
-      alias c='clear -x'
-      alias clip='xclip -selection c'
-      alias base64='base64 -w 0'
+        alias c='clear -x'
+        alias clip='xclip -selection c'
+        alias base64='base64 -w 0'
 
-      autoload edit-command-line
-      zle -N edit-command-line
-      bindkey '^v' edit-command-line
+        autoload edit-command-line
+        zle -N edit-command-line
+        bindkey '^v' edit-command-line
 
-      bindkey '^a' beginning-of-line
-      bindkey '^e' end-of-line
-      bindkey '^n' clear-screen
+        bindkey '^a' beginning-of-line
+        bindkey '^e' end-of-line
+        bindkey '^n' clear-screen
 
-      bindkey '^[[3~' delete-char
+        bindkey '^[[3~' delete-char
 
-      eval "$(${pkgs.fnm}/bin/fnm env --use-on-cd --shell zsh)"
-    ''
-    + lib.optionalString pkgs.stdenv.isDarwin ''
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
+        eval "$(${pkgs.fnm}/bin/fnm env --use-on-cd --shell zsh)"
+      ''
+      + lib.optionalString pkgs.stdenv.isDarwin ''
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+      '';
   };
 }

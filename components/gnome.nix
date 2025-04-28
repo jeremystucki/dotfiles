@@ -1,7 +1,9 @@
-{ pkgs, hostConfiguration, ... }:
-
 {
-  home.packages = with pkgs; [ wmctrl ];
+  pkgs,
+  hostConfiguration,
+  ...
+}: {
+  home.packages = with pkgs; [wmctrl];
 
   dconf.settings = {
     "org/gnome/settings-daemon/plugins/media-keys" = {

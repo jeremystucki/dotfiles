@@ -3,9 +3,7 @@
   pkgs,
   hostConfiguration,
   ...
-}:
-
-{
+}: {
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -32,7 +30,7 @@
 
   networking = {
     networkmanager.enable = true;
-    firewall.trustedInterfaces = [ "tailscale0" ];
+    firewall.trustedInterfaces = ["tailscale0"];
     # wireless.enable = true;
   };
 
@@ -113,7 +111,7 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override {fonts = ["JetBrainsMono"];})
     input-fonts
   ];
 
@@ -129,7 +127,7 @@
     enable = true;
     # Certain features, including CLI integration and system authentication support,
     # require enabling PolKit integration on some desktop environments (e.g. Plasma).
-    polkitPolicyOwners = [ hostConfiguration.username ];
+    polkitPolicyOwners = [hostConfiguration.username];
   };
 
   programs.adb.enable = true;
@@ -141,14 +139,14 @@
 
   systemd.user.services._1password = {
     script = "${pkgs._1password-gui}/bin/1password --silent";
-    after = [ "graphical-session.target" ];
-    partOf = [ "graphical-session.target" ];
-    wantedBy = [ "graphical-session.target" ];
+    after = ["graphical-session.target"];
+    partOf = ["graphical-session.target"];
+    wantedBy = ["graphical-session.target"];
   };
 
   systemd.user.services.tmux = {
     script = "${pkgs.tmux}/bin/tmux new-session -d";
-    wantedBy = [ "default.target" ];
+    wantedBy = ["default.target"];
     serviceConfig.Type = "forking";
   };
 
@@ -158,6 +156,6 @@
   };
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ hostConfiguration.username ];
-  boot.kernelModules = [ "vboxnetflt" "vboxnetadp" ];
+  users.extraGroups.vboxusers.members = [hostConfiguration.username];
+  boot.kernelModules = ["vboxnetflt" "vboxnetadp"];
 }
