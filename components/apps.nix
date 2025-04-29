@@ -8,7 +8,7 @@
       obsidian
       protonmail-desktop
       pkgs-unstable.discord
-      pkgs-unstable.signal-desktop-bin
+      pkgs-unstable.signal-desktop
       pkgs-unstable.spotify
     ]
     ++ lib.optionals (!stdenv.isDarwin) [
