@@ -45,11 +45,11 @@
     ++ lib.optionals (stdenv.isDarwin) [
       colima
       docker
-      element-desktop
       google-chrome
       iina
       iterm2
       rectangle
       xcodes
+      pkgs-unstable.element-desktop
     ];
 }

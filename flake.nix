@@ -125,6 +125,7 @@
               nixpkgs.overlays = [
                 (final: prev: {
                   git-format-staged = inputs.git-format-staged.packages.${system}.default;
+                  nodejs = prev.nodejs_22;
                 })
               ];
             }
