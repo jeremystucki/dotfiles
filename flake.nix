@@ -139,7 +139,9 @@
               nixpkgs.config = config;
               environment.shells = [pkgs.zsh];
               programs.zsh.enable = true;
+
               users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
+
               fonts.packages = [pkgs.jetbrains-mono];
 
               homebrew = {
@@ -159,6 +161,8 @@
                 extraSpecialArgs = {inherit pkgs-unstable hostConfiguration;};
                 sharedModules = [inputs.mac-app-util.homeManagerModules.default];
               };
+
+              security.pam.enableSudoTouchIdAuth = true;
             }
           ];
         };
