@@ -118,11 +118,6 @@
 
   programs.steam.enable = true;
 
-  programs.java = {
-    enable = true;
-    package = pkgs.openjdk17;
-  };
-
   programs._1password = {
     enable = true;
     package = pkgs-unstable._1password-cli;
