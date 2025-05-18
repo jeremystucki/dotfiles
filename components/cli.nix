@@ -50,6 +50,7 @@
       ngrok
       screen
       wol
+      xclip
     ];
 
   programs.bat.enable = true;
