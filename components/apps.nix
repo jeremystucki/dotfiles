@@ -48,6 +48,7 @@
       google-chrome
       iina
       iterm2
+      numi
       rectangle
       xcodes
       pkgs-unstable.element-desktop
