@@ -18,7 +18,7 @@ in {
     };
   };
 
-  programs.zsh.initExtra = ''
+  programs.zsh.initContent = ''
     source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
   '';
 
