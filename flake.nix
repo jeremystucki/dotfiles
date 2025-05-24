@@ -131,6 +131,7 @@
 
               system.stateVersion = 4;
               system.primaryUser = hostConfiguration.username;
+              ids.gids.nixbld = 350;
 
               nixpkgs.config = config;
               environment.shells = [pkgs.zsh];
