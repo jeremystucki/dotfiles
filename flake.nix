@@ -76,8 +76,9 @@
           hostConfiguration,
         }:
           inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit pkgs pkgs-unstable hostConfiguration;};
+            specialArgs = {inherit pkgs-unstable hostConfiguration;};
             modules = [
+              {nixpkgs.pkgs = pkgs;}
               ./common/nixos.nix
               nixSettings
               nixosModule
