@@ -36,7 +36,7 @@
       size = 1000000;
     };
 
-    initExtra =
+    initContent =
       ''
         setopt PROMPT_SUBST
 

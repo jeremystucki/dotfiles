@@ -5,7 +5,7 @@
     stack
   ];
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     userSettings = {
       haskell.serverExecutablePath = "\${HOME}/.nix-profile/bin/haskell-language-server";
     };

@@ -6,7 +6,6 @@
   home.packages = with pkgs;
     [
       obsidian
-      protonmail-desktop
       pkgs-unstable.discord
       pkgs-unstable.signal-desktop-bin
       pkgs-unstable.spotify
@@ -34,6 +33,7 @@
       mpv
       pdfarranger
       piper
+      protonmail-desktop
       telegram-desktop
       threema-desktop
       wireshark-qt

@@ -37,7 +37,7 @@
       tree
       units
       watchman
-      xsv
+      xan
       yt-dlp
       zip
     ]
@@ -61,8 +61,6 @@
 
   programs.zsh.shellAliases = {
     cat = "bat";
-    ls = "lsd -l";
-    lt = "lsd --tree";
   };
 
   programs.bottom = {

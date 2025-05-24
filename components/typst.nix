@@ -6,7 +6,7 @@
 
   programs.neovim.plugins = with pkgs-unstable.vimPlugins; [typst-vim];
 
-  programs.vscode = {
+  programs.vscode.profiles.default = {
     extensions = with pkgs-unstable.vscode-extensions; [
       myriad-dreamin.tinymist
       tomoki1207.pdf
