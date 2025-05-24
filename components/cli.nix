@@ -28,7 +28,6 @@
       ocrmypdf
       ollama
       pdfcpu
-      pkgs-unstable.nixfmt-rfc-style
       ranger
       ripgrep
       ruby
