@@ -138,6 +138,8 @@
               environment.shells = [pkgs.zsh];
               programs.zsh.enable = true;
 
+              services.tailscale.enable = true;
+
               users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
 
               fonts.packages = [pkgs.jetbrains-mono];
