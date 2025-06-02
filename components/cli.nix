@@ -18,6 +18,7 @@
       ffmpeg-full
       file
       fnm
+      google-cloud-sdk
       ijq
       libwebp
       mani
