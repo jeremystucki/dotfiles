@@ -147,7 +147,7 @@
 
               users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
 
-              fonts.packages = [pkgs.jetbrains-mono];
+              fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 
               homebrew = {
                 enable = true;
