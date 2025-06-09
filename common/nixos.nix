@@ -60,6 +60,9 @@
     };
   };
 
+  programs.hyprland.enable = true;
+  environment.systemPackages = with pkgs; [bibata-cursors kitty wofi hyprpaper hyprcursor waybar];
+
   services.openssh.enable = true;
   services.printing.enable = true;
   services.tailscale.enable = true;
