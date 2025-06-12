@@ -74,4 +74,10 @@
       updates.auto_update = true;
     };
   };
+
+  home.sessionVariables."RIPGREP_CONFIG_PATH" = builtins.toFile ".ripgreprc" ''
+    --hidden
+    --glob=!.git/*
+  '';
 }
+
