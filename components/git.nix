@@ -22,6 +22,8 @@ in {
     source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
   '';
 
+  programs.mergiraf.enable = true;
+
   programs.git = {
     enable = true;
     package = gitPackage;
@@ -55,6 +57,8 @@ in {
       status.short = true;
       commit.verbose = true;
       fetch.prune = true;
+
+      merge.conflictStyle = "diff3";
 
       rebase = {
         abbreviateCommands = true;
