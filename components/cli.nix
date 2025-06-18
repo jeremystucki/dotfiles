@@ -29,6 +29,7 @@
       ocrmypdf
       ollama
       pdfcpu
+      qrencode
       ranger
       ripgrep
       ruby
