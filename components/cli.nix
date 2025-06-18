@@ -44,6 +44,7 @@
     ]
     ++ lib.optionals (stdenv.isDarwin) [
       azure-cli
+      gnused
       pkgs-unstable.swiftformat
     ]
     ++ lib.optionals (!stdenv.isDarwin) [
