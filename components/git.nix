@@ -38,6 +38,8 @@ in {
       lg = "l --graph";
       s = "status";
       wip = "commit -m 'wip'";
+      fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -20 | xargs -o git commit --fixup";
+      cr = "!git branch --sort=-committerdate | fzf | tr -d '[:space:]' | xargs -o git checkout";
       ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
       apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";
     };
