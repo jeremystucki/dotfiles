@@ -54,6 +54,7 @@ in {
     extraConfig = {
       init.defaultBranch = "main";
       push.default = "current";
+      push.autoSetupRemote = true;
       pull.rebase = true;
       rerere.enabled = true;
       status.short = true;
