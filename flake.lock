@@ -23,11 +23,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713191584,
-        "narHash": "sha256-VvexkKvvRNrrljy5/nMmRV/jdSF41EndTyLyd36lGJU=",
+        "lastModified": 1750547878,
+        "narHash": "sha256-8LTvayYmM4IjKj249a//LIiMYTQJzEqhPOGmqbU78M0=",
         "owner": "bash",
         "repo": "color-scheme-sync",
-        "rev": "62afea686a2c62e7aea94d3a78907fe07b976d17",
+        "rev": "c077de7fc1d401fe98ff30a86971333b16081d39",
         "type": "github"
       },
       "original": {
@@ -203,11 +203,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749154018,
-        "narHash": "sha256-gjN3j7joRvT3a8Zgcylnd4NFsnXeDBumqiu4HmY1RIg=",
+        "lastModified": 1750792728,
+        "narHash": "sha256-Lh3dopA8DdY+ZoaAJPrtkZOZaFEJGSYjOdAYYgOPgE4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "7aae0ee71a17b19708b93b3ed448a1a0952bf111",
+        "rev": "366f00797b1efb70f2882d3da485e3c10fd3d557",
         "type": "github"
       },
       "original": {
@@ -259,11 +259,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1750232075,
-        "narHash": "sha256-ae5ChsNWNk/6dXhkQJUk9e42B3nJLYLKR2axa9aCwe8=",
+        "lastModified": 1750920244,
+        "narHash": "sha256-xnmAwSO5TD2+Xagdsdqb4YHgr8iYNVdLFxlEgdBcHb4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "6185b6bf8898d9a6d03decaef2b165b31aee4419",
+        "rev": "faafa2892b6ada2fea00b14b8040f3f7e3efd0b1",
         "type": "github"
       },
       "original": {
@@ -274,11 +274,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1750133334,
-        "narHash": "sha256-urV51uWH7fVnhIvsZIELIYalMYsyr2FCalvlRTzqWRw=",
+        "lastModified": 1750838302,
+        "narHash": "sha256-aVkL3/yu50oQzi2YuKo0ceiCypVZpZXYd2P2p1FMJM4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "36ab78dab7da2e4e27911007033713bab534187b",
+        "rev": "7284e2decc982b81a296ab35aa46e804baaa1cfe",
         "type": "github"
       },
       "original": {
