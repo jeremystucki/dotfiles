@@ -40,7 +40,6 @@
       wl-clipboard
       xsel
       zathura
-      pkgs-unstable.orca-slicer
     ]
     ++ lib.optionals (stdenv.isDarwin) [
       colima
