@@ -6,7 +6,6 @@
   home.packages = with pkgs;
     [
       asciinema
-      bat
       borgbackup
       caddy
       csvlens
