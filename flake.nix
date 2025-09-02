@@ -64,6 +64,8 @@
             modules = [
               {nixpkgs.pkgs = pkgs;}
               ./common/nixos.nix
+              ./common/desktop-gnome.nix
+              ./common/1password.nix
               ./common/nix-settings.nix
               nixosModule
               inputs.color-scheme-sync.nixosModules.default
