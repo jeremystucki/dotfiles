@@ -22,7 +22,7 @@
   '';
 
   systemd.user.services._1password = {
-    script = "${pkgs._1password-gui}/bin/1password --silent";
+    script = "${pkgs-unstable._1password-gui}/bin/1password --silent";
     after = ["graphical-session.target"];
     partOf = ["graphical-session.target"];
     wantedBy = ["graphical-session.target"];
