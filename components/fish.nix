@@ -30,7 +30,13 @@
           set -g __fish_git_prompt_show_informative_status 1
         end
         if not set -q __fish_git_prompt_hide_untrackedfiles
-          set -g __fish_git_prompt_hide_untrackedfiles 1
+          set -g __fish_git_prompt_hide_untrackedfiles 0
+        end
+        if not set -q __fish_git_prompt_showdirtystate
+          set -g __fish_git_prompt_showdirtystate 1
+        end
+        if not set -q __fish_git_prompt_showstagedfiles
+          set -g __fish_git_prompt_showstagedfiles 1
         end
         if not set -q __fish_git_prompt_color_branch
           set -g __fish_git_prompt_color_branch magenta --bold
