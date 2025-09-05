@@ -10,11 +10,6 @@
       # Environment variables
       set -gx EDITOR vi
       set -gx LESS -iR
-      
-      # Git prompt settings for __fish_git_prompt
-      set -gx __fish_git_prompt_showdirtystate 1
-      set -gx __fish_git_prompt_showuntrackedfiles 1
-      set -gx __fish_git_prompt_showcolorhints 1
 
       # Custom key bindings
       bind \cn clear-screen
