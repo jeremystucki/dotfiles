@@ -14,16 +14,17 @@
       # Custom key bindings
       bind \cn clear-screen
 
-      # Git prompt configuration - show all git states
+      # Git prompt configuration - show all git states with colors
       set -g __fish_git_prompt_hide_untrackedfiles 0
       set -g __fish_git_prompt_showdirtystate 1
       set -g __fish_git_prompt_showstagedfiles 1
+      set -g __fish_git_prompt_showcolorhints 1
       
       # Hide user@hostname for local sessions (non-SSH, non-root)
       if not set -q SSH_CLIENT; and not set -q SSH_CONNECTION; and test (id -u) -ne 0
         function fish_prompt
           # Show only the last folder with colors and add newline
-          echo -s (set_color $fish_color_cwd)(basename (pwd))(set_color normal) (fish_vcs_prompt) 
+          echo -s (set_color blue)(basename (pwd))(set_color normal) (fish_vcs_prompt) 
           echo -n "\$ "
         end
       end
