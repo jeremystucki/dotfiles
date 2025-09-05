@@ -59,10 +59,8 @@
   programs.jq.enable = true;
   programs.lsd.enable = true;
   programs.pandoc.enable = true;
-  
-  programs.fzf = {
-    enable = true;
-  };
+  programs.fzf.enable = true;
+  programs.zoxide.enable = true;
 
   programs.direnv = {
     enable = true;
@@ -78,10 +76,6 @@
       inline_height = 20;
       keymap_mode = "vim-insert";
     };
-  };
-  
-  programs.zoxide = {
-    enable = true;
   };
 
   home.shellAliases = lib.mkMerge [
