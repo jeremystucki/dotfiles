@@ -26,10 +26,17 @@
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
 
-    shellAliases = {
-      c = "clear -x";
-      clip = "xclip -selection c";
-      base64 = "base64 -w 0";
-    };
+    shellAliases = lib.mkMerge [
+      {
+        c = "clear -x";
+        base64 = "base64 -w 0";
+      }
+      (lib.optionalAttrs pkgs.stdenv.isDarwin {
+        clip = "pbcopy";
+      })
+      (lib.optionalAttrs pkgs.stdenv.isLinux {
+        clip = "xclip -selection c";
+      })
+    ];
   };
 }
