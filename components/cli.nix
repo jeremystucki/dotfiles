@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  lib,
   ...
 }: {
   home.packages = with pkgs;
@@ -41,12 +42,12 @@
       yt-dlp
       zip
     ]
-    ++ lib.optionals (stdenv.isDarwin) [
+    ++ lib.optionals (pkgs.stdenv.isDarwin) [
       azure-cli
       gnused
       pkgs-unstable.swiftformat
     ]
-    ++ lib.optionals (!stdenv.isDarwin) [
+    ++ lib.optionals (!pkgs.stdenv.isDarwin) [
       multipath-tools
       ngrok
       screen
@@ -83,9 +84,19 @@
     enable = true;
   };
 
-  home.shellAliases = {
-    cat = "bat";
-  };
+  home.shellAliases = lib.mkMerge [
+    {
+      cat = "bat";
+      c = "clear -x";
+      base64 = "${pkgs.coreutils}/bin/base64 -w 0";
+    }
+    (lib.optionalAttrs pkgs.stdenv.isDarwin {
+      clip = "pbcopy";
+    })
+    (lib.optionalAttrs pkgs.stdenv.isLinux {
+      clip = "xclip -selection c";
+    })
+  ];
 
   programs.bottom = {
     enable = true;
