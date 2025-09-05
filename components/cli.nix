@@ -61,7 +61,6 @@
   
   programs.fzf = {
     enable = true;
-    enableFishIntegration = true;
   };
 
   programs.direnv = {
@@ -78,12 +77,10 @@
       inline_height = 20;
       keymap_mode = "vim-insert";
     };
-    enableFishIntegration = true;
   };
   
   programs.zoxide = {
     enable = true;
-    enableFishIntegration = true;
   };
 
   home.shellAliases = {
