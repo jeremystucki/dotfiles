@@ -3,29 +3,6 @@
   lib,
   ...
 }: {
-  programs.fzf = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-
-  programs.direnv = {
-    enable = true;
-    enableFishIntegration = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.atuin = {
-    enable = true;
-    flags = ["--disable-up-arrow"];
-    settings = {
-      style = "compact";
-      show_help = false;
-      inline_height = 20;
-      keymap_mode = "vim-insert";
-    };
-    enableFishIntegration = true;
-  };
-
   programs.fish = {
     enable = true;
 
@@ -39,9 +16,8 @@
       set -gx __fish_git_prompt_showuntrackedfiles 1
       set -gx __fish_git_prompt_showcolorhints 1
 
-      # Custom key bindings (some may override fish defaults)
+      # Custom key bindings
       bind \cn clear-screen
-      bind \cv edit_command_line
 
       # fnm setup for Node.js version management
       ${pkgs.fnm}/bin/fnm env --use-on-cd --shell fish | source
@@ -55,7 +31,5 @@
       clip = "xclip -selection c";
       base64 = "base64 -w 0";
     };
-
-
   };
 }

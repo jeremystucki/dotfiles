@@ -18,8 +18,6 @@ in {
     };
   };
 
-
-
   programs.mergiraf.enable = true;
 
   programs.git = {

@@ -58,6 +58,30 @@
   programs.jq.enable = true;
   programs.lsd.enable = true;
   programs.pandoc.enable = true;
+  
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
+
+  programs.atuin = {
+    enable = true;
+    flags = ["--disable-up-arrow"];
+    settings = {
+      style = "compact";
+      show_help = false;
+      inline_height = 20;
+      keymap_mode = "vim-insert";
+    };
+    enableFishIntegration = true;
+  };
+  
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
