@@ -63,7 +63,7 @@
     enableFishIntegration = true;
   };
 
-  programs.fish.shellAliases = {
+  home.shellAliases = {
     cat = "bat";
   };
 
