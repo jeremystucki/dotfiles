@@ -6,9 +6,14 @@
   programs.fish = {
     enable = true;
 
+    functions = {
+      fish_greeting = {
+        description = "Disable greeting";
+        body = "";
+      };
+    };
+
     interactiveShellInit = ''
-      # Disable fish greeting
-      set --erase fish_greeting
       
       # Environment variables
       set -gx EDITOR vi
