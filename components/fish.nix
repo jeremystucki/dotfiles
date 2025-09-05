@@ -7,6 +7,9 @@
     enable = true;
 
     interactiveShellInit = ''
+      # Disable fish greeting
+      set --erase fish_greeting
+      
       # Environment variables
       set -gx EDITOR vi
       set -gx LESS -iR
