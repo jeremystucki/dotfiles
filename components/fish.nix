@@ -29,7 +29,7 @@
     shellAliases = lib.mkMerge [
       {
         c = "clear -x";
-        base64 = "base64 -w 0";
+        base64 = "${pkgs.coreutils}/bin/base64 -w 0";
       }
       (lib.optionalAttrs pkgs.stdenv.isDarwin {
         clip = "pbcopy";
