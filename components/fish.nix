@@ -23,8 +23,14 @@
       # Hide user@hostname for local sessions (non-SSH, non-root)
       if not set -q SSH_CLIENT; and not set -q SSH_CONNECTION; and test (id -u) -ne 0
         function fish_prompt
-          # Show only the last folder with colors and add newline
-          echo -s (set_color blue)(basename (pwd))(set_color normal) (fish_vcs_prompt) 
+          # Add newline before prompt for spacing
+          echo
+          # Show ~ for home directory, otherwise show last folder with colors
+          if test (pwd) = $HOME
+            echo -s (set_color blue)"~"(set_color normal) (fish_vcs_prompt)
+          else
+            echo -s (set_color blue)(basename (pwd))(set_color normal) (fish_vcs_prompt)
+          end
           echo -n "\$ "
         end
       end
