@@ -30,25 +30,18 @@
     enable = true;
 
     interactiveShellInit = ''
-      # History settings
-      set -U fish_history_save_timestamp 1
-      set -U fish_history fish_history
-      
       # Environment variables
       set -gx EDITOR vi
       set -gx LESS -iR
       
-      # Git prompt settings
+      # Git prompt settings for __fish_git_prompt
       set -gx __fish_git_prompt_showdirtystate 1
       set -gx __fish_git_prompt_showuntrackedfiles 1
       set -gx __fish_git_prompt_showcolorhints 1
 
-      # Key bindings
-      bind \ca beginning-of-line
-      bind \ce end-of-line
+      # Custom key bindings (some may override fish defaults)
       bind \cn clear-screen
       bind \cv edit_command_line
-      bind \e'[3~' delete-char
 
       # fnm setup for Node.js version management
       ${pkgs.fnm}/bin/fnm env --use-on-cd --shell fish | source

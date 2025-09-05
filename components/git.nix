@@ -18,9 +18,7 @@ in {
     };
   };
 
-  programs.fish.interactiveShellInit = ''
-    source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
-  '';
+
 
   programs.mergiraf.enable = true;
 
