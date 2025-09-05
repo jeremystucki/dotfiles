@@ -25,11 +25,11 @@
         function fish_prompt
           # Add newline before prompt for spacing
           echo
-          # Show ~ for home directory, otherwise show last folder with colors
+          # Show ~ for home directory, otherwise show last folder
           if test (pwd) = $HOME
-            echo -s (set_color blue)"~"(set_color normal) (fish_vcs_prompt)
+            echo "~"
           else
-            echo -s (set_color blue)(basename (pwd))(set_color normal) (fish_vcs_prompt)
+            echo -s (basename (pwd)) (fish_vcs_prompt)
           end
           echo -n "\$ "
         end
