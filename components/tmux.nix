@@ -62,16 +62,12 @@
     '';
   };
 
-  programs.zsh.initContent = ''
-    if [[ -n $TMUX ]]; then
-      autoload -Uz add-zsh-hook
-
-      tmux_report_cwd() {
-        tmux select-pane -t "$TMUX_PANE" -T "$(basename $PWD)"
-      }
-
-      add-zsh-hook chpwd tmux_report_cwd
+  programs.fish.interactiveShellInit = ''
+    if test -n "$TMUX"
+      function tmux_report_cwd --on-variable PWD
+        tmux select-pane -t "$TMUX_PANE" -T (basename $PWD)
+      end
       tmux_report_cwd
-    fi
+    end
   '';
 }

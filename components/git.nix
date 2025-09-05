@@ -18,7 +18,7 @@ in {
     };
   };
 
-  programs.zsh.initContent = ''
+  programs.fish.interactiveShellInit = ''
     source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
   '';
 

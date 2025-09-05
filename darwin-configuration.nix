@@ -16,8 +16,8 @@
   system.primaryUser = hostConfiguration.username;
   ids.gids.nixbld = 350;
 
-  environment.shells = [pkgs.zsh];
-  programs.zsh.enable = true;
+  environment.shells = [pkgs.fish];
+  programs.fish.enable = true;
 
   services.tailscale.enable = true;
 

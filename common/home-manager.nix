@@ -9,6 +9,7 @@
     /cli.nix
     /code.nix
     /databases.nix
+    /fish.nix
     /fonts.nix
     /git.nix
     /java.nix
@@ -16,7 +17,6 @@
     /tmux.nix
     /typst.nix
     /vim.nix
-    /zsh.nix
   ];
 
   home = {

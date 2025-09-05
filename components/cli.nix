@@ -58,9 +58,12 @@
   programs.jq.enable = true;
   programs.lsd.enable = true;
   programs.pandoc.enable = true;
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
-  programs.zsh.shellAliases = {
+  programs.fish.shellAliases = {
     cat = "bat";
   };
 
