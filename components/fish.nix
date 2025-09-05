@@ -3,7 +3,10 @@
   lib,
   ...
 }: {
-  programs.fzf.enable = true;
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   programs.direnv = {
     enable = true;
@@ -27,6 +30,10 @@
     enable = true;
 
     interactiveShellInit = ''
+      # History settings
+      set -U fish_history_save_timestamp 1
+      set -U fish_history fish_history
+      
       # Environment variables
       set -gx EDITOR vi
       set -gx LESS -iR
@@ -41,6 +48,7 @@
       bind \ce end-of-line
       bind \cn clear-screen
       bind \cv edit_command_line
+      bind \e'[3~' delete-char
 
       # fnm setup for Node.js version management
       ${pkgs.fnm}/bin/fnm env --use-on-cd --shell fish | source
