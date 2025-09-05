@@ -56,17 +56,6 @@
       base64 = "base64 -w 0";
     };
 
-    functions = {
-      fish_prompt = {
-        body = ''
-          set_color $fish_color_cwd
-          echo -n (prompt_pwd)
-          set_color normal
-          __fish_git_prompt
-          echo
-          echo -n '$ '
-        '';
-      };
-    };
+
   };
 }
