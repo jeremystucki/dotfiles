@@ -19,6 +19,8 @@
     /vim.nix
   ];
 
+  programs.fish.enable = true;
+
   home = {
     stateVersion = "23.05";
     username = hostConfiguration.username;

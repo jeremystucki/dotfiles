@@ -62,11 +62,18 @@
     '';
   };
 
-  programs.fish.interactiveShellInit = ''
-    if test -n "$TMUX"
-      function tmux_report_cwd --on-variable PWD
+  programs.fish.functions.tmux_report_cwd = {
+    description = "Report current directory to tmux when PWD changes";
+    onVariable = "PWD";
+    body = ''
+      if test -n "$TMUX"
         tmux select-pane -t "$TMUX_PANE" -T (basename $PWD)
       end
+    '';
+  };
+
+  programs.fish.interactiveShellInit = ''
+    if test -n "$TMUX"
       tmux_report_cwd
     end
   '';

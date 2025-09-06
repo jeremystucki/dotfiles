@@ -3,6 +3,4 @@
     "nix-command"
     "flakes"
   ];
-
-  programs.fish.enable = true;
 }
