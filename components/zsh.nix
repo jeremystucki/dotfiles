@@ -49,10 +49,6 @@
         export EDITOR=vi
         export LESS=-iR
 
-        alias c='clear -x'
-        alias clip='xclip -selection c'
-        alias base64='base64 -w 0'
-
         autoload edit-command-line
         zle -N edit-command-line
         bindkey '^v' edit-command-line

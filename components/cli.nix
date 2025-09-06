@@ -60,8 +60,15 @@
   programs.pandoc.enable = true;
   programs.zoxide.enable = true;
 
-  programs.zsh.shellAliases = {
+  home.shellAliases = {
     cat = "bat";
+    c = "clear -x";
+    g = "git";
+    base64 = "${pkgs.coreutils}/bin/base64 -w 0";
+    clip =
+      if pkgs.stdenv.isDarwin
+      then "pbcopy"
+      else "xclip -selection c";
   };
 
   programs.bottom = {
