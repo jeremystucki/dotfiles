@@ -41,7 +41,7 @@
       yt-dlp
       zip
     ]
-    ++ lib.optionals (stdenv.isDarwin) [
+    ++ lib.optionals stdenv.isDarwin [
       azure-cli
       gnused
       pkgs-unstable.swiftformat

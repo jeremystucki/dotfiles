@@ -22,10 +22,10 @@
 
   home = {
     stateVersion = "23.05";
-    username = hostConfiguration.username;
+    inherit (hostConfiguration) username;
 
     homeDirectory =
-      if (pkgs.stdenv.isDarwin)
+      if pkgs.stdenv.isDarwin
       then "/Users/${hostConfiguration.username}"
       else "/home/${hostConfiguration.username}";
   };

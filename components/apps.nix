@@ -41,7 +41,7 @@
       xsel
       zathura
     ]
-    ++ lib.optionals (stdenv.isDarwin) [
+    ++ lib.optionals stdenv.isDarwin [
       colima
       docker
       google-chrome
