@@ -17,7 +17,6 @@
   ids.gids.nixbld = 350;
 
   environment.shells = [pkgs.zsh];
-  programs.zsh.enable = true;
 
   services.tailscale.enable = true;
 
