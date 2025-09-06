@@ -16,11 +16,18 @@
   system.primaryUser = hostConfiguration.username;
   ids.gids.nixbld = 350;
 
-  environment.shells = [pkgs.zsh];
+  environment.shells = with pkgs; [zsh fish];
 
   services.tailscale.enable = true;
 
-  users.users.${hostConfiguration.username}.home = "/Users/${hostConfiguration.username}";
+  users.knownUsers = [hostConfiguration.username];
+  users.users.${hostConfiguration.username} = {
+    home = "/Users/${hostConfiguration.username}";
+    uid = 501;
+    shell = pkgs.fish;
+  };
+
+  programs.fish.enable = true;
 
   fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 

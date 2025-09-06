@@ -9,6 +9,7 @@
     /cli.nix
     /code.nix
     /databases.nix
+    /fish.nix
     /fonts.nix
     /git.nix
     /java.nix

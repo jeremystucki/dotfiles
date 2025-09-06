@@ -26,7 +26,7 @@
     ];
   };
 
-  users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.fish;
 
   networking = {
     networkmanager.enable = true;
