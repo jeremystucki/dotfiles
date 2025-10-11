@@ -5,12 +5,8 @@
   hostConfiguration,
   ...
 }: {
+  nix.enable = false;
   nix.settings.trusted-users = [hostConfiguration.username];
-
-  nix.gc = {
-    automatic = true;
-    options = "--delete-older-than 14d";
-  };
 
   system.stateVersion = 4;
   system.primaryUser = hostConfiguration.username;
