@@ -50,6 +50,9 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.daemon.settings.features.cdi = true;
+
   services.displayManager.autoLogin = {
     enable = true;
     user = hostConfiguration.username;
