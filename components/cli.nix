@@ -43,6 +43,7 @@
     ]
     ++ lib.optionals stdenv.isDarwin [
       azure-cli
+      fastlane
       gnused
       pkgs-unstable.swiftformat
     ]
