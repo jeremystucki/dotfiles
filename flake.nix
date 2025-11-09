@@ -50,8 +50,12 @@
     {
       nixosConfigurations = let
         system = "x86_64-linux";
-        pkgs = import inputs.nixpkgs {inherit system config;};
-        pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
+        pkgs = import inputs.nixpkgs {
+          inherit system config;
+        };
+        pkgs-unstable = import inputs.nixpkgs-unstable {
+          inherit system config;
+        };
         nixosConfig = {
           nixosModule,
           hostSpecificHomeManagerModule ? {},
