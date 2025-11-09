@@ -36,6 +36,7 @@
       tokei
       tree
       units
+      uv
       watchman
       xan
       yt-dlp

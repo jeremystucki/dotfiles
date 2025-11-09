@@ -85,4 +85,6 @@
   boot.kernelModules = ["vboxnetflt" "vboxnetadp"];
 
   environment.sessionVariables.TZDIR = "/etc/zoneinfo";
+
+  programs.nix-ld.enable = true;
 }
