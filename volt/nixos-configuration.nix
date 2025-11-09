@@ -62,10 +62,12 @@
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
-  environment.systemPackages = [pkgs.openrgb];
+  environment.systemPackages = [
+    # pkgs.openrgb
+  ];
 
   services.udev.packages = with pkgs; [
-    openrgb
+    # openrgb
     zsa-udev-rules
   ];
 
