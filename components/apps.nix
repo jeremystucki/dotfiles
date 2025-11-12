@@ -52,5 +52,6 @@
       swiftlint
       xcodes
       pkgs-unstable.element-desktop
+      pkgs-unstable.ghostty-bin
     ];
 }

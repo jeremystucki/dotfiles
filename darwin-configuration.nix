@@ -27,11 +27,6 @@
 
   fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
 
-  homebrew = {
-    enable = true;
-    casks = ["ghostty"];
-  };
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
