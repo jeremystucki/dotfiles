@@ -6,19 +6,19 @@ _: {
       layout = "us";
       variant = "";
     };
-
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
   };
 
+  services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
   services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  security.rtkit.enable = true;
 
   # Enable OpenGL
   hardware.graphics = {

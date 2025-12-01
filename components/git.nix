@@ -23,31 +23,25 @@ in {
   programs.git = {
     enable = true;
     package = gitPackage;
-    userName = "Jeremy Stucki";
 
-    lfs.enable = true;
+    settings = {
+      user.name = "Jeremy Stucki";
 
-    aliases = {
-      co = "checkout";
-      cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')";
-      l = "log --pretty=oneline --abbrev-commit";
-      lg = "l --graph";
-      s = "status";
-      wip = "commit -m 'wip'";
-      fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -20 | xargs -o git commit --fixup";
-      cr = "!git branch --sort=-committerdate | fzf | tr -d '[:space:]' | xargs -o git checkout";
-      ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
-      apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";
-    };
+      lfs.enable = true;
 
-    ignores =
-      [
-        ".direnv"
-        ".idea"
-      ]
-      ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [".DS_Store"];
+      alias = {
+        co = "checkout";
+        cm = "!git co $(git symbolic-ref refs/remotes/origin/HEAD | awk -F '/' '{print $NF}')";
+        l = "log --pretty=oneline --abbrev-commit";
+        lg = "l --graph";
+        s = "status";
+        wip = "commit -m 'wip'";
+        fixup = "!git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -20 | xargs -o git commit --fixup";
+        cr = "!git branch --sort=-committerdate | fzf | tr -d '[:space:]' | xargs -o git checkout";
+        ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi";
+        apply-ignore = "!apply-ignore() { git rm -r --cached . && git add . ;}; apply-ignore";
+      };
 
-    extraConfig = {
       init.defaultBranch = "main";
       push.default = "current";
       push.autoSetupRemote = true;
@@ -84,15 +78,6 @@ in {
       };
     };
 
-    delta = {
-      enable = true;
-      options = {
-        navigate = true;
-        side-by-side = true;
-        file-style = "bold yellow ul";
-      };
-    };
-
     includes = [
       {
         condition = "hasconfig:remote.*.url:git@github.com:*/**";
@@ -126,5 +111,21 @@ in {
         };
       }
     ];
+
+    ignores =
+      [
+        ".direnv"
+        ".idea"
+      ]
+      ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [".DS_Store"];
+  };
+
+  programs.delta = {
+    enable = true;
+    options = {
+      navigate = true;
+      side-by-side = true;
+      file-style = "bold yellow ul";
+    };
   };
 }

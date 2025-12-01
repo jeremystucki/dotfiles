@@ -9,9 +9,8 @@
       borgbackup
       caddy
       csvlens
-      delta
       dogdns
-      du-dust
+      dust
       entr
       fd
       ffmpeg-full
