@@ -77,6 +77,7 @@
               {
                 home-manager.users.${username}.imports = [
                   ./common/home-manager.nix
+                  ./common/apps.nix
                   ./components/alacritty.nix
                   ./components/haskell.nix
                   ./components/web.nix
@@ -104,6 +105,7 @@
         pkgs = import inputs.nixpkgs {inherit system config;};
         pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
         hostConfiguration = {inherit username;};
+        git-format-staged = inputs.git-format-staged.packages.${system}.default;
       in {
         "work-macbook" = inputs.darwin.lib.darwinSystem {
           inherit system;
@@ -111,7 +113,6 @@
             {
               nixpkgs.overlays = [
                 (final: prev: {
-                  git-format-staged = inputs.git-format-staged.packages.${system}.default;
                   nodejs = prev.nodejs_22;
                 })
               ];
@@ -121,9 +122,27 @@
             ./darwin-configuration.nix
             inputs.home-manager.darwinModules.home-manager
           ];
-          specialArgs = {inherit inputs hostConfiguration pkgs-unstable;};
+          specialArgs = {inherit inputs hostConfiguration pkgs-unstable git-format-staged;};
         };
       };
+
+      homeConfigurations."stefis-macbook" = let
+        system = "aarch64-darwin";
+        pkgs = import inputs.nixpkgs {inherit system config;};
+        pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
+        hostConfiguration = {inherit username;};
+        git-format-staged = inputs.git-format-staged.packages.${system}.default;
+      in
+        inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+
+          modules = [
+            ./common/home-manager.nix
+            ./components/dotnet.nix
+          ];
+
+          extraSpecialArgs = {inherit hostConfiguration pkgs-unstable git-format-staged;};
+        };
     }
     // inputs.flake-utils.lib.eachDefaultSystem (system: {
       formatter = inputs.nixpkgs.legacyPackages.${system}.alejandra;

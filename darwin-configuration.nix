@@ -32,6 +32,7 @@
     useUserPackages = true;
     users.${hostConfiguration.username}.imports = [
       ./common/home-manager.nix
+      ./common/apps.nix
       ./components/dotnet.nix
     ];
     extraSpecialArgs = {inherit pkgs-unstable hostConfiguration;};
