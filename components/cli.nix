@@ -8,6 +8,7 @@
       asciinema
       borgbackup
       caddy
+      claude-code
       csvlens
       dogdns
       dust
@@ -26,6 +27,7 @@
       nvd
       ocrmypdf
       ollama
+      opencode
       pdfcpu
       qrencode
       ranger
