@@ -111,11 +111,6 @@
           inherit system;
           modules = [
             {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  nodejs = prev.nodejs_22;
-                })
-              ];
               nixpkgs.config = config;
             }
             ./common/nix-settings.nix
