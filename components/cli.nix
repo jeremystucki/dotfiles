@@ -26,7 +26,6 @@
       nodePackages.svgo
       nvd
       ocrmypdf
-      ollama
       opencode
       pdfcpu
       qrencode
