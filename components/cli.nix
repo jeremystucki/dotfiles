@@ -39,6 +39,7 @@
       uv
       watchman
       xan
+      xmlstarlet
       yt-dlp
       zip
     ]
