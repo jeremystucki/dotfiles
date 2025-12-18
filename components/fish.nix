@@ -48,9 +48,9 @@
       ''
       + lib.optionalString pkgs.stdenv.isDarwin ''
         # Homebrew setup for macOS
-        if [[ -x /opt/homebrew/bin/brew ]]; then
-          eval "$(/opt/homebrew/bin/brew shellenv)"
-        fi
+        if test -x /opt/homebrew/bin/brew
+          eval (/opt/homebrew/bin/brew shellenv)
+        end
       '';
   };
 }
