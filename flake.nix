@@ -77,7 +77,7 @@
               {
                 home-manager.users.${username}.imports = [
                   ./common/home-manager.nix
-                  ./common/apps.nix
+                  ./components/apps.nix
                   ./components/alacritty.nix
                   ./components/haskell.nix
                   ./components/web.nix
