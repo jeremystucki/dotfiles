@@ -8,7 +8,7 @@
       asciinema
       borgbackup
       caddy
-      claude-code
+      pkgs-unstable.claude-code
       csvlens
       dogdns
       dust
