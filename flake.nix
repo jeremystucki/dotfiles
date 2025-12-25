@@ -46,16 +46,17 @@
       input-fonts.acceptLicense = true;
     };
     username = "jeremy";
+
+    # Helper to create pkgs and pkgs-unstable for a given system
+    mkPkgs = system: {
+      pkgs = import inputs.nixpkgs {inherit system config;};
+      pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
+    };
   in
     {
       nixosConfigurations = let
         system = "x86_64-linux";
-        pkgs = import inputs.nixpkgs {
-          inherit system config;
-        };
-        pkgs-unstable = import inputs.nixpkgs-unstable {
-          inherit system config;
-        };
+        inherit (mkPkgs system) pkgs pkgs-unstable;
         nixosConfig = {
           nixosModule,
           hostSpecificHomeManagerModule ? {},
@@ -100,8 +101,7 @@
 
       darwinConfigurations = let
         system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs {inherit system config;};
-        pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
+        inherit (mkPkgs system) pkgs pkgs-unstable;
         hostConfiguration = {
           inherit username;
         };
@@ -124,8 +124,7 @@
 
       homeConfigurations."stefis-macbook" = let
         system = "aarch64-darwin";
-        pkgs = import inputs.nixpkgs {inherit system config;};
-        pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
+        inherit (mkPkgs system) pkgs pkgs-unstable;
         hostConfiguration = {
           inherit username;
         };
