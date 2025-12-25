@@ -3,6 +3,7 @@
   pkgs-unstable,
   inputs,
   hostConfiguration,
+  git-format-staged,
   ...
 }: {
   nix.enable = false;
@@ -35,7 +36,7 @@
       ./components/apps.nix
       ./components/dotnet.nix
     ];
-    extraSpecialArgs = {inherit pkgs-unstable hostConfiguration;};
+    extraSpecialArgs = {inherit pkgs-unstable hostConfiguration git-format-staged;};
     sharedModules = [inputs.mac-app-util.homeManagerModules.default];
   };
 
