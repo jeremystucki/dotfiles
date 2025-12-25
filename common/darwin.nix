@@ -26,15 +26,11 @@
 
   programs.fish.enable = true;
 
-  fonts.packages = [pkgs.nerd-fonts.jetbrains-mono];
-
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${hostConfiguration.username}.imports = [
-      ./common/home-manager.nix
-      ./components/apps.nix
-      ./components/dotnet.nix
+      ./home-manager.nix
     ];
     extraSpecialArgs = {inherit pkgs-unstable hostConfiguration git-format-staged;};
     sharedModules = [inputs.mac-app-util.homeManagerModules.default];

@@ -61,12 +61,15 @@
           hostSpecificHomeManagerModule ? {},
           hostname,
         }: let
-          hostConfiguration = {inherit username hostname;};
+          hostConfiguration = {
+            inherit username hostname;
+          };
         in
           inputs.nixpkgs.lib.nixosSystem {
             specialArgs = {inherit pkgs-unstable hostConfiguration;};
             modules = [
               {nixpkgs.pkgs = pkgs;}
+              ./common/fonts.nix
               ./common/nixos.nix
               ./common/desktop-gnome.nix
               ./common/1password.nix
@@ -75,12 +78,8 @@
               inputs.color-scheme-sync.nixosModules.default
               inputs.home-manager.nixosModules.home-manager
               {
-                home-manager.users.${username}.imports = [
+                home-manager.users.${hostConfiguration.username}.imports = [
                   ./common/home-manager.nix
-                  ./components/apps.nix
-                  ./components/alacritty.nix
-                  ./components/haskell.nix
-                  ./components/web.nix
                   hostSpecificHomeManagerModule
                 ];
                 home-manager.useGlobalPkgs = true;
@@ -92,7 +91,6 @@
         "volt-nixos" = nixosConfig {
           nixosModule = ./volt/nixos-configuration.nix;
           hostname = "volt-nixos";
-          hostSpecificHomeManagerModule = ./volt/home-manager.nix;
         };
         "zephyr" = nixosConfig {
           nixosModule = ./zephyr/nixos-configuration.nix;
@@ -104,7 +102,9 @@
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {inherit system config;};
         pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
-        hostConfiguration = {inherit username;};
+        hostConfiguration = {
+          inherit username;
+        };
         git-format-staged = inputs.git-format-staged.packages.${system}.default;
       in {
         "work-macbook" = inputs.darwin.lib.darwinSystem {
@@ -113,8 +113,9 @@
             {
               nixpkgs.config = config;
             }
+            ./common/fonts.nix
             ./common/nix-settings.nix
-            ./darwin-configuration.nix
+            ./common/darwin.nix
             inputs.home-manager.darwinModules.home-manager
           ];
           specialArgs = {inherit inputs hostConfiguration pkgs-unstable git-format-staged;};
@@ -125,7 +126,9 @@
         system = "aarch64-darwin";
         pkgs = import inputs.nixpkgs {inherit system config;};
         pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
-        hostConfiguration = {inherit username;};
+        hostConfiguration = {
+          inherit username;
+        };
         git-format-staged = inputs.git-format-staged.packages.${system}.default;
       in
         inputs.home-manager.lib.homeManagerConfiguration {
@@ -133,7 +136,6 @@
 
           modules = [
             ./common/home-manager.nix
-            ./components/dotnet.nix
           ];
 
           extraSpecialArgs = {inherit hostConfiguration pkgs-unstable git-format-staged;};

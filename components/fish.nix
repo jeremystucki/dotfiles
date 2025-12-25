@@ -3,6 +3,8 @@
   lib,
   ...
 }: {
+  imports = [./shell-common.nix];
+
   programs.fish = {
     enable = true;
 
@@ -15,10 +17,6 @@
 
     interactiveShellInit =
       ''
-        # Environment variables
-        set -gx EDITOR vi
-        set -gx LESS -iR
-
         # Custom key bindings
         bind \cn clear-screen
 

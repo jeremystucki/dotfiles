@@ -3,26 +3,9 @@
   lib,
   ...
 }: {
+  imports = [./shell-common.nix];
+
   home.file."completion.zsh".source = ../resources/completion.zsh;
-
-  programs.fzf.enable = true;
-
-  programs.direnv = {
-    enable = true;
-    silent = true;
-    nix-direnv.enable = true;
-  };
-
-  programs.atuin = {
-    enable = true;
-    flags = ["--disable-up-arrow"];
-    settings = {
-      style = "compact";
-      show_help = false;
-      inline_height = 20;
-      keymap_mode = "vim-insert";
-    };
-  };
 
   programs.zsh = {
     enable = true;
@@ -47,8 +30,6 @@
         export GIT_PS1_SHOWCOLORHINTS=true
 
         export PS1=$'\n%1~$(__git_ps1)\n$ '
-        export EDITOR=vi
-        export LESS=-iR
 
         autoload edit-command-line
         zle -N edit-command-line

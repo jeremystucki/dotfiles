@@ -66,11 +66,6 @@
 
   hardware.i2c.enable = true;
 
-  fonts.packages = with pkgs; [
-    pkgs.nerd-fonts.jetbrains-mono
-    input-fonts
-  ];
-
   programs.steam.enable = true;
   programs.adb.enable = true;
 

@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  lib,
   ...
 }: {
   home.packages = with pkgs;
@@ -8,7 +9,7 @@
       obsidian
       pkgs-unstable.discord
       pkgs-unstable.signal-desktop-bin
-      pkgs-unstable.spotify
+      # pkgs-unstable.spotify
     ]
     ++ lib.optionals (!stdenv.isDarwin) [
       blanket
@@ -27,7 +28,6 @@
       hydrapaper
       imagemagick
       inkscape
-      jetbrains.datagrip
       killall
       libreoffice
       mpv
@@ -52,6 +52,5 @@
       swiftlint
       xcodes
       pkgs-unstable.element-desktop
-      pkgs-unstable.ghostty-bin
     ];
 }
