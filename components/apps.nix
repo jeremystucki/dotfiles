@@ -3,22 +3,25 @@
   pkgs-unstable,
   lib,
   ...
-}: {
+}: let
+  isLinux = !pkgs.stdenv.isDarwin;
+in {
+  programs.chromium.enable = isLinux;
+  programs.firefox.enable = isLinux;
+  programs.mpv.enable = isLinux;
+  programs.zathura.enable = isLinux;
+
   home.packages = with pkgs;
     [
       obsidian
       pkgs-unstable.discord
       pkgs-unstable.signal-desktop-bin
-      # pkgs-unstable.spotify
     ]
-    ++ lib.optionals (!stdenv.isDarwin) [
+    ++ lib.optionals isLinux [
       blanket
       cartridges
-      chromium
       ddcutil
       evolution
-      firefox
-      foot
       gnome-calendar
       gnome-characters
       gnome-contacts
@@ -30,7 +33,6 @@
       inkscape
       killall
       libreoffice
-      mpv
       pdfarranger
       piper
       protonmail-desktop
@@ -39,9 +41,8 @@
       wireshark-qt
       wl-clipboard
       xsel
-      zathura
     ]
-    ++ lib.optionals stdenv.isDarwin [
+    ++ lib.optionals pkgs.stdenv.isDarwin [
       colima
       docker
       google-chrome
