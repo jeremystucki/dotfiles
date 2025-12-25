@@ -26,7 +26,6 @@
       nodePackages.svgo
       nvd
       ocrmypdf
-      opencode
       pdfcpu
       qrencode
       ranger
@@ -42,6 +41,7 @@
       xmlstarlet
       yt-dlp
       zip
+      pkgs-unstable.opencode
     ]
     ++ lib.optionals stdenv.isDarwin [
       azure-cli
