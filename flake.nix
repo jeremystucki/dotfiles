@@ -97,6 +97,10 @@
           nixosModule = ./zephyr/nixos-configuration.nix;
           hostname = "zephyr";
         };
+        "niffty" = nixosConfig {
+          nixosModule = ./niffty/nixos-configuration.nix;
+          hostname = "niffty";
+        };
       };
 
       darwinConfigurations = let

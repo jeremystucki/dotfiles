@@ -1,0 +1,42 @@
+{
+  config,
+  pkgs,
+  hostConfiguration,
+  ...
+}: {
+  imports = [./nixos-hardware-configuration.nix];
+
+  boot.loader = {
+    timeout = 300;
+
+    efi.canTouchEfiVariables = true;
+
+    systemd-boot = {
+      enable = true;
+
+      extraInstallCommands = ''
+        ${pkgs.gnused}/bin/sed -i 's/default .*/default @saved/' /boot/loader/loader.conf
+      '';
+    };
+  };
+
+  networking.hostName = hostConfiguration.hostname;
+
+  virtualisation.docker.daemon.settings.features.cdi = true;
+
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = hostConfiguration.username;
+  };
+
+  environment.systemPackages = [
+    pkgs.openrgb
+  ];
+
+  services.udev.packages = with pkgs; [
+    openrgb
+    zsa-udev-rules
+  ];
+
+  hardware.bluetooth.settings.General.Experimental = true;
+}

@@ -7,6 +7,7 @@ jobs:
       matrix:
         configuration:
           - "nixosConfigurations.volt-nixos.config.system.build.toplevel"
+          - "nixosConfigurations.niffty.config.system.build.toplevel"
           - "nixosConfigurations.zephyr.config.system.build.toplevel"
           - "darwinConfigurations.work-macbook.system"
           - "homeConfigurations.stefis-macbook.activationPackage"
