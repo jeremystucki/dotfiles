@@ -14,6 +14,13 @@
     systemd-boot = {
       enable = true;
 
+      windows = {
+        "windows-11" = {
+          title = "Windows 11";
+          efiDeviceHandle = "FS2";
+        };
+      };
+
       extraInstallCommands = ''
         ${pkgs.gnused}/bin/sed -i 's/default .*/default @saved/' /boot/loader/loader.conf
       '';
