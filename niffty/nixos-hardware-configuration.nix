@@ -24,6 +24,11 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
+  fileSystems."/home/jeremy/Games" = {
+    device = "/dev/disk/by-uuid/ce69e72f-0041-434e-8c0e-daa3c64e704e";
+    fsType = "ext4";
+  };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/5b97c5e1-d53c-4161-94de-1e71e8dc938f"; }
     ];
