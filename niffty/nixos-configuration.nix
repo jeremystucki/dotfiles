@@ -46,4 +46,15 @@
   ];
 
   hardware.bluetooth.settings.General.Experimental = true;
+
+  # Fix NVMe power management - drives run hot without this
+  boot.kernelParams = [
+    "pcie_aspm=force"
+    "pcie_aspm.policy=powersupersave"
+  ];
+
+  # Enable runtime PM for NVMe devices so they can enter low-power states
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", ATTR{class}=="0x010802", ATTR{power/control}="auto"
+  '';
 }
