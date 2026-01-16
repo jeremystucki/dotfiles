@@ -7,7 +7,7 @@
   imports = [./nixos-hardware-configuration.nix];
 
   boot.loader = {
-    timeout = 300;
+    timeout = 30;
 
     efi.canTouchEfiVariables = true;
 
