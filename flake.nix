@@ -99,6 +99,7 @@
         };
         "niffty" = nixosConfig {
           nixosModule = ./niffty/nixos-configuration.nix;
+          hostSpecificHomeManagerModule = ./niffty/home-manager.nix;
           hostname = "niffty";
         };
       };
