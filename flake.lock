@@ -29,17 +29,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1767021379,
-        "narHash": "sha256-yBdHYaIlCk5PiKOxj1fXAvhLNRe/H7PvWfMD/DaBMJk=",
-        "owner": "bash",
-        "repo": "color-scheme-sync",
-        "rev": "6d0226489e86d5c82cf72f961d9205cfebb59caf",
-        "type": "github"
+        "lastModified": 1768382190,
+        "narHash": "sha256-wP9KP47S6O/8DOUhk2dpe4g8H1YnijUjHNqLT3y+bu8=",
+        "ref": "refs/heads/main",
+        "rev": "c5d203a153052b0b4107e9fb0f34782e7ef9a92d",
+        "revCount": 29,
+        "type": "git",
+        "url": "https://codeberg.org/tautropfli/color-scheme-sync.git"
       },
       "original": {
-        "owner": "bash",
-        "repo": "color-scheme-sync",
-        "type": "github"
+        "type": "git",
+        "url": "https://codeberg.org/tautropfli/color-scheme-sync.git"
       }
     },
     "crane": {
@@ -355,11 +355,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1767771933,
-        "narHash": "sha256-qHicsJ+d3Gd4APz+x/cawKqEoSV+UGsAQDHQKDzDaoc=",
+        "lastModified": 1768988455,
+        "narHash": "sha256-ewVzwWmAlDArEQ1EABi76girFPF2YcLFOJnC2L8dan0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "1480a2750cdedfa69a6cf05c0b336f900f1389d6",
+        "rev": "74f883a664d42c233e304a47dcc476c85209d860",
         "type": "github"
       },
       "original": {

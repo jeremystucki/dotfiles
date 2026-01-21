@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     color-scheme-sync = {
-      url = "github:bash/color-scheme-sync";
+      url = "git+https://codeberg.org/tautropfli/color-scheme-sync.git";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
