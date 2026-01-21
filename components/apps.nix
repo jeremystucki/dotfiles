@@ -36,6 +36,7 @@ in {
       pdfarranger
       piper
       protonmail-desktop
+      spotify
       telegram-desktop
       threema-desktop
       wireshark-qt
