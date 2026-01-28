@@ -1,10 +1,15 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   hostConfiguration,
   ...
 }: {
   imports = [./nixos-hardware-configuration.nix];
+
+  # Use latest Mesa from nixpkgs-unstable for better RDNA 4 (RX 9070) support
+  hardware.graphics.package = pkgs-unstable.mesa;
+  hardware.graphics.package32 = pkgs-unstable.pkgsi686Linux.mesa;
 
   boot.loader = {
     timeout = 30;
