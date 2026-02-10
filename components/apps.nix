@@ -46,13 +46,13 @@ in {
     ++ lib.optionals pkgs.stdenv.isDarwin [
       colima
       docker
-      google-chrome
+      # google-chrome
       iina
       iterm2
       numi
       rectangle
       swiftlint
       xcodes
-      pkgs-unstable.element-desktop
+      # pkgs-unstable.element-desktop
     ];
 }
