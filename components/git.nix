@@ -28,10 +28,10 @@ in {
     enable = true;
     package = gitPackage;
 
+    lfs.enable = true;
+
     settings = {
       user.name = "Jeremy Stucki";
-
-      lfs.enable = true;
 
       alias = {
         co = "checkout";
