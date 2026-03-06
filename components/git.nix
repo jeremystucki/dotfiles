@@ -119,7 +119,6 @@ in {
     ignores =
       [
         ".direnv"
-        ".idea"
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [".DS_Store"];
   };
