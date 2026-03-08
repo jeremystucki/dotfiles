@@ -52,13 +52,9 @@
 
   hardware.bluetooth.settings.General.Experimental = true;
 
-  # Fix NVMe power management - drives run hot without this
-  boot.kernelParams = [
-    "pcie_aspm=force"
-    "pcie_aspm.policy=powersupersave"
-  ];
-
   # Enable runtime PM for NVMe devices so they can enter low-power states
+  # (scoped to NVMe controllers only — global ASPM params were removed because
+  # powersupersave caused the RX 9070 GPU to not wake from screen blanking)
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="pci", ATTR{class}=="0x010802", ATTR{power/control}="auto"
   '';
