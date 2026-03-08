@@ -11,6 +11,9 @@
   hardware.graphics.package = pkgs-unstable.mesa;
   hardware.graphics.package32 = pkgs-unstable.pkgsi686Linux.mesa;
 
+  # Allow voltage/clock control for AMDGPU (needed by LACT)
+  hardware.amdgpu.overdrive.enable = true;
+
   boot.loader = {
     timeout = 30;
 
@@ -40,6 +43,9 @@
     enable = true;
     user = hostConfiguration.username;
   };
+
+  # LACT for GPU management/undervolting (lactd daemon applies settings at boot)
+  services.lact.enable = true;
 
   environment.systemPackages = [
     pkgs.openrgb
