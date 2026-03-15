@@ -42,6 +42,7 @@ in {
       wireshark-qt
       wl-clipboard
       xsel
+      pkgs-unstable.rpi-imager
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
       colima
