@@ -15,7 +15,7 @@ in {
     [
       obsidian
       pkgs-unstable.discord
-      pkgs-unstable.signal-desktop-bin
+      pkgs-unstable.signal-desktop
     ]
     ++ lib.optionals isLinux [
       blanket
