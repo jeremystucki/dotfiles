@@ -45,7 +45,7 @@ in {
       pkgs-unstable.rpi-imager
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
-      colima
+      pkgs-unstable.colima
       docker
       # google-chrome
       iina
