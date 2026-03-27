@@ -2,6 +2,7 @@
 # This module is imported by both fish.nix and zsh.nix
 {
   pkgs,
+  pkgs-unstable,
   lib,
   ...
 }: {
@@ -18,6 +19,7 @@
 
   programs.direnv = {
     enable = true;
+    package = pkgs-unstable.direnv;
     silent = true;
     nix-direnv.enable = true;
   };

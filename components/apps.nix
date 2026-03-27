@@ -7,9 +7,13 @@
   isLinux = !pkgs.stdenv.isDarwin;
 in {
   programs.chromium.enable = isLinux;
-  programs.firefox.enable = isLinux;
   programs.mpv.enable = isLinux;
   programs.zathura.enable = isLinux;
+
+  programs.firefox = {
+    enable = isLinux;
+    package = pkgs-unstable.firefox;
+  };
 
   home.packages = with pkgs;
     [
