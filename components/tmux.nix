@@ -4,7 +4,7 @@
     mouse = true;
     keyMode = "vi";
     plugins = with pkgs.tmuxPlugins; [
-      copycat
+      fzf-tmux-url
       resurrect
       vim-tmux-navigator
       {
