@@ -5,7 +5,6 @@
     keyMode = "vi";
     terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
-      fzf-tmux-url
       resurrect
       vim-tmux-navigator
       {
@@ -22,6 +21,13 @@
           set -g @catppuccin_window_status_style "rounded"
           set -g @catppuccin_window_current_text " #T"
           set -g @catppuccin_window_text " #T"
+        '';
+      }
+      {
+        plugin = fingers;
+        extraConfig = ''
+          set -g @fingers-key C-u
+          set -g @fingers-main-action ':open:'
         '';
       }
       {
