@@ -3,6 +3,7 @@
     enable = true;
     mouse = true;
     keyMode = "vi";
+    terminal = "tmux-256color";
     plugins = with pkgs.tmuxPlugins; [
       fzf-tmux-url
       resurrect
