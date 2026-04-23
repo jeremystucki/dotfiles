@@ -30,11 +30,8 @@
     mac-app-util = {
       url = "github:hraban/mac-app-util";
       inputs.systems.follows = "systems";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # Deduplicate nixpkgs from transitive eval/formatter-only deps.
-      inputs.cl-nix-lite.inputs.nixpkgs.follows = "nixpkgs";
-      inputs.cl-nix-lite.inputs.treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-      inputs.treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
+      # This does not work due to broken packages
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     git-format-staged = {
       url = "github:hallettj/git-format-staged";
