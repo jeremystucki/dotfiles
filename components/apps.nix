@@ -25,7 +25,6 @@ in {
       blanket
       cartridges
       ddcutil
-      evolution
       gnome-calendar
       gnome-characters
       gnome-contacts
