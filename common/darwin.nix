@@ -1,6 +1,7 @@
 {
   pkgs,
   pkgs-unstable,
+  lib,
   inputs,
   hostConfiguration,
   git-format-staged,
@@ -12,6 +13,21 @@
   system.stateVersion = 4;
   system.primaryUser = hostConfiguration.username;
   ids.gids.nixbld = 350;
+
+  # Workaround: fish 4.2.1 in nixpkgs ships with an invalid ad-hoc signature
+  # on aarch64-darwin, so the kernel refuses to exec it. Re-sign in postFixup.
+  nixpkgs.overlays = [
+    (_: prev: {
+      fish = prev.fish.overrideAttrs (old: {
+        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [prev.darwin.sigtool];
+        postFixup =
+          (old.postFixup or "")
+          + ''
+            codesign --force --sign - $out/bin/fish
+          '';
+      });
+    })
+  ];
 
   environment.shells = with pkgs; [zsh fish];
 
