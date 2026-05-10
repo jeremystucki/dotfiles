@@ -24,7 +24,7 @@ in {
     ++ lib.optionals isLinux [
       blanket
       cartridges
-      ddcutil
+      pkgs-unstable.ddcutil
       gnome-calendar
       gnome-characters
       gnome-contacts
