@@ -17,8 +17,8 @@ in {
 
   home.packages = with pkgs;
     [
-      obsidian
       pkgs-unstable.discord
+      pkgs-unstable.obsidian
       pkgs-unstable.signal-desktop
     ]
     ++ lib.optionals isLinux [
