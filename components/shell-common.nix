@@ -7,7 +7,6 @@
   ...
 }: {
   home.sessionVariables = {
-    EDITOR = "vi";
     LESS = "-iR";
   };
 
