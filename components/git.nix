@@ -22,7 +22,10 @@ in {
     source ${gitPackage}/share/bash-completion/completions/git-prompt.sh
   '';
 
-  programs.mergiraf.enable = true;
+  programs.mergiraf = {
+    enable = true;
+    enableGitIntegration = true;
+  };
 
   programs.git = {
     enable = true;

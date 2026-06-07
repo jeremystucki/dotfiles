@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     nodejs
     yarn
-    nodePackages.pnpm
+    pnpm
     jetbrains.webstorm
   ];
 }
