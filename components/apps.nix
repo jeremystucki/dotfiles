@@ -43,7 +43,7 @@ in {
       spotify
       telegram-desktop
       threema-desktop
-      wireshark-qt
+      wireshark
       wl-clipboard
       xsel
       pkgs-unstable.rpi-imager

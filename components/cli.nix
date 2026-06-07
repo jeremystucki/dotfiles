@@ -10,7 +10,7 @@
       caddy
       pkgs-unstable.claude-code
       csvlens
-      dogdns
+      doggo
       dust
       entr
       fd
@@ -23,7 +23,7 @@
       mani
       miller
       nmap
-      nodePackages.svgo
+      svgo
       nvd
       ocrmypdf
       pdfcpu

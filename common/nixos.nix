@@ -67,7 +67,6 @@
   hardware.i2c.enable = true;
 
   programs.steam.enable = true;
-  programs.adb.enable = true;
 
   systemd.user.services.tmux = {
     script = "${pkgs.tmux}/bin/tmux new-session -d";
