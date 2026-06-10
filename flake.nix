@@ -97,7 +97,6 @@
         "zephyr" = nixosConfig {
           nixosModule = ./zephyr/nixos-configuration.nix;
           hostname = "zephyr";
-          hostSpecificHomeManagerModule = ./zephyr/home-manager.nix;
         };
         "niffty" = nixosConfig {
           nixosModule = ./niffty/nixos-configuration.nix;
