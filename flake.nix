@@ -81,6 +81,7 @@
               {
                 home-manager.users.${hostConfiguration.username}.imports = [
                   ./common/home-manager.nix
+                  ./common/gnome-extensions.nix
                   hostSpecificHomeManagerModule
                 ];
                 home-manager.useGlobalPkgs = true;

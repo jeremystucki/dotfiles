@@ -22,20 +22,6 @@
     fi
   '';
 in {
-  home.packages = [
-    pkgs.gnomeExtensions.no-overview
-  ];
-
-  dconf = {
-    enable = true;
-    settings."org/gnome/shell" = {
-      disable-user-extensions = false;
-      enabled-extensions = [
-        pkgs.gnomeExtensions.no-overview.extensionUuid
-      ];
-    };
-  };
-
   xdg.configFile."autostart/steam-bigpicture-tv.desktop".text = ''
     [Desktop Entry]
     Type=Application
