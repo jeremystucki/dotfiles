@@ -3,7 +3,7 @@
   hostConfiguration,
   ...
 }: {
-  imports = [./nixos-hardware-configuration.nix];
+  imports = [./hardware-configuration.nix];
 
   networking.hostName = hostConfiguration.hostname;
 
