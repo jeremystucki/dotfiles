@@ -2,6 +2,7 @@
   pkgs,
   pkgs-unstable,
   lib,
+  config,
   ...
 }: let
   isLinux = !pkgs.stdenv.isDarwin;
@@ -13,6 +14,7 @@ in {
   programs.firefox = {
     enable = isLinux;
     package = pkgs-unstable.firefox;
+    programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 
   home.packages = with pkgs;
