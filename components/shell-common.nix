@@ -27,6 +27,7 @@
     enable = true;
     flags = ["--disable-up-arrow"];
     settings = {
+      sync_address = "http://piltover.hawk-typhon.ts.net:8888";
       style = "compact";
       show_help = false;
       inline_height = 20;
