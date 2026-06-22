@@ -14,7 +14,7 @@ in {
   programs.firefox = {
     enable = isLinux;
     package = pkgs-unstable.firefox;
-    programs.firefox.configPath = "${config.xdg.configHome}/mozilla/firefox";
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 
   home.packages = with pkgs;
