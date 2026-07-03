@@ -9,6 +9,7 @@
       borgbackup
       caddy
       pkgs-unstable.claude-code
+      pkgs-unstable.ccusage
       csvlens
       doggo
       dust
