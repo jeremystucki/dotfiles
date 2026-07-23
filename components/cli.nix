@@ -36,6 +36,7 @@
       tokei
       tree
       units
+      unzip
       uv
       watchman
       xan
