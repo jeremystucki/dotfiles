@@ -31,7 +31,10 @@
 
   environment.shells = with pkgs; [zsh fish];
 
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    package = pkgs-unstable.tailscale;
+  };
 
   users.knownUsers = [hostConfiguration.username];
   users.users.${hostConfiguration.username} = {

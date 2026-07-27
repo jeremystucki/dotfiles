@@ -46,7 +46,11 @@
 
   services.openssh.enable = true;
   services.printing.enable = true;
-  services.tailscale.enable = true;
+
+  services.tailscale = {
+    enable = true;
+    package = pkgs-unstable.tailscale;
+  };
 
   services.openssh.settings.Macs = [
     "hmac-sha2-512-etm@openssh.com"
