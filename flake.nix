@@ -160,25 +160,6 @@
             };
           };
         };
-
-      homeConfigurations."stefis-macbook" =
-        let
-          system = "aarch64-darwin";
-          inherit (mkPkgs system) pkgs pkgs-unstable;
-          hostConfiguration = {
-            inherit username;
-          };
-          git-format-staged = inputs.git-format-staged.packages.${system}.default;
-        in
-        inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-
-          modules = [
-            ./common/home-manager.nix
-          ];
-
-          extraSpecialArgs = { inherit hostConfiguration pkgs-unstable git-format-staged; };
-        };
     }
     // inputs.flake-utils.lib.eachDefaultSystem (system: {
       formatter = inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree;
