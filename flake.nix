@@ -112,51 +112,39 @@
         let
           system = "aarch64-darwin";
           inherit (mkPkgs system) pkgs pkgs-unstable;
-          hostConfiguration = {
-            inherit username;
-          };
           git-format-staged = inputs.git-format-staged.packages.${system}.default;
+          darwinConfig =
+            { }:
+            let
+              hostConfiguration = {
+                inherit username;
+              };
+            in
+            inputs.darwin.lib.darwinSystem {
+              inherit system;
+              modules = [
+                {
+                  nixpkgs.config = config;
+                }
+                ./common/fonts.nix
+                ./common/nix-settings.nix
+                ./common/darwin.nix
+                inputs.home-manager.darwinModules.home-manager
+              ];
+              specialArgs = {
+                inherit
+                  inputs
+                  hostConfiguration
+                  pkgs-unstable
+                  git-format-staged
+                  ;
+              };
+            };
         in
         {
-          "macbook" = inputs.darwin.lib.darwinSystem {
-            inherit system;
-            modules = [
-              {
-                nixpkgs.config = config;
-              }
-              ./common/fonts.nix
-              ./common/nix-settings.nix
-              ./common/darwin.nix
-              inputs.home-manager.darwinModules.home-manager
-            ];
-            specialArgs = {
-              inherit
-                inputs
-                hostConfiguration
-                pkgs-unstable
-                git-format-staged
-                ;
-            };
+          "macbook" = darwinConfig {
           };
-          "work-macbook" = inputs.darwin.lib.darwinSystem {
-            inherit system;
-            modules = [
-              {
-                nixpkgs.config = config;
-              }
-              ./common/fonts.nix
-              ./common/nix-settings.nix
-              ./common/darwin.nix
-              inputs.home-manager.darwinModules.home-manager
-            ];
-            specialArgs = {
-              inherit
-                inputs
-                hostConfiguration
-                pkgs-unstable
-                git-format-staged
-                ;
-            };
+          "work-macbook" = darwinConfig {
           };
         };
     }
