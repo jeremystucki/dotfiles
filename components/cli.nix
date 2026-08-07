@@ -43,7 +43,7 @@
       watchman
       xan
       xmlstarlet
-      yt-dlp
+      pkgs-unstable.yt-dlp
       zip
       pkgs-unstable.opencode
     ]
