@@ -46,8 +46,6 @@
       input-fonts.acceptLicense = true;
     };
     username = "jeremy";
-
-    # Helper to create pkgs and pkgs-unstable for a given system
     mkPkgs = system: {
       pkgs = import inputs.nixpkgs {inherit system config;};
       pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
