@@ -6,9 +6,10 @@
   hostConfiguration,
   git-format-staged,
   ...
-}: {
+}:
+{
   nix.enable = false;
-  nix.settings.trusted-users = [hostConfiguration.username];
+  nix.settings.trusted-users = [ hostConfiguration.username ];
 
   system.stateVersion = 4;
   system.primaryUser = hostConfiguration.username;
@@ -19,24 +20,25 @@
   nixpkgs.overlays = [
     (_: prev: {
       fish = prev.fish.overrideAttrs (old: {
-        nativeBuildInputs = (old.nativeBuildInputs or []) ++ [prev.darwin.sigtool];
-        postFixup =
-          (old.postFixup or "")
-          + ''
-            codesign --force --sign - $out/bin/fish
-          '';
+        nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [ prev.darwin.sigtool ];
+        postFixup = (old.postFixup or "") + ''
+          codesign --force --sign - $out/bin/fish
+        '';
       });
     })
   ];
 
-  environment.shells = with pkgs; [zsh fish];
+  environment.shells = with pkgs; [
+    zsh
+    fish
+  ];
 
   services.tailscale = {
     enable = true;
     package = pkgs-unstable.tailscale;
   };
 
-  users.knownUsers = [hostConfiguration.username];
+  users.knownUsers = [ hostConfiguration.username ];
   users.users.${hostConfiguration.username} = {
     home = "/Users/${hostConfiguration.username}";
     uid = 501;
@@ -51,8 +53,8 @@
     users.${hostConfiguration.username}.imports = [
       ./home-manager.nix
     ];
-    extraSpecialArgs = {inherit pkgs-unstable hostConfiguration git-format-staged;};
-    sharedModules = [inputs.mac-app-util.homeManagerModules.default];
+    extraSpecialArgs = { inherit pkgs-unstable hostConfiguration git-format-staged; };
+    sharedModules = [ inputs.mac-app-util.homeManagerModules.default ];
   };
 
   security.pam.services.sudo_local = {

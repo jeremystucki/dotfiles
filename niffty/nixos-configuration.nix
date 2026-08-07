@@ -4,8 +4,9 @@
   pkgs-unstable,
   hostConfiguration,
   ...
-}: {
-  imports = [./nixos-hardware-configuration.nix];
+}:
+{
+  imports = [ ./nixos-hardware-configuration.nix ];
 
   # Use latest Mesa from nixpkgs-unstable for better RDNA 4 (RX 9070) support
   hardware.graphics.package = pkgs-unstable.mesa;

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.file.".config/nvim/colors/theme.vim".source = ../resources/theme.vim;
 
   programs.neovim = {

@@ -40,113 +40,136 @@
     };
   };
 
-  outputs = inputs: let
-    config = {
-      allowUnfree = true;
-      input-fonts.acceptLicense = true;
-    };
-    username = "jeremy";
-    mkPkgs = system: {
-      pkgs = import inputs.nixpkgs {inherit system config;};
-      pkgs-unstable = import inputs.nixpkgs-unstable {inherit system config;};
-    };
-  in
+  outputs =
+    inputs:
+    let
+      config = {
+        allowUnfree = true;
+        input-fonts.acceptLicense = true;
+      };
+      username = "jeremy";
+      mkPkgs = system: {
+        pkgs = import inputs.nixpkgs { inherit system config; };
+        pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
+      };
+    in
     {
-      nixosConfigurations = let
-        system = "x86_64-linux";
-        inherit (mkPkgs system) pkgs pkgs-unstable;
-        nixosConfig = {
-          nixosModule,
-          hostSpecificHomeManagerModule ? {},
-          hostname,
-        }: let
-          hostConfiguration = {
-            inherit username hostname;
-          };
+      nixosConfigurations =
+        let
+          system = "x86_64-linux";
+          inherit (mkPkgs system) pkgs pkgs-unstable;
+          nixosConfig =
+            {
+              nixosModule,
+              hostSpecificHomeManagerModule ? { },
+              hostname,
+            }:
+            let
+              hostConfiguration = {
+                inherit username hostname;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              specialArgs = { inherit pkgs-unstable hostConfiguration; };
+              modules = [
+                { nixpkgs.pkgs = pkgs; }
+                ./common/fonts.nix
+                ./common/nixos.nix
+                ./common/desktop-gnome.nix
+                ./common/1password.nix
+                ./common/nix-settings.nix
+                nixosModule
+                inputs.color-scheme-sync.nixosModules.default
+                inputs.home-manager.nixosModules.home-manager
+                {
+                  home-manager.users.${hostConfiguration.username}.imports = [
+                    ./common/home-manager.nix
+                    ./common/gnome-extensions.nix
+                    hostSpecificHomeManagerModule
+                  ];
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.extraSpecialArgs = { inherit pkgs-unstable hostConfiguration; };
+                }
+              ];
+            };
         in
-          inputs.nixpkgs.lib.nixosSystem {
-            specialArgs = {inherit pkgs-unstable hostConfiguration;};
-            modules = [
-              {nixpkgs.pkgs = pkgs;}
-              ./common/fonts.nix
-              ./common/nixos.nix
-              ./common/desktop-gnome.nix
-              ./common/1password.nix
-              ./common/nix-settings.nix
-              nixosModule
-              inputs.color-scheme-sync.nixosModules.default
-              inputs.home-manager.nixosModules.home-manager
-              {
-                home-manager.users.${hostConfiguration.username}.imports = [
-                  ./common/home-manager.nix
-                  ./common/gnome-extensions.nix
-                  hostSpecificHomeManagerModule
-                ];
-                home-manager.useGlobalPkgs = true;
-                home-manager.extraSpecialArgs = {inherit pkgs-unstable hostConfiguration;};
-              }
-            ];
+        {
+          "volt-nixos" = nixosConfig {
+            nixosModule = ./volt/nixos-configuration.nix;
+            hostname = "volt-nixos";
           };
-      in {
-        "volt-nixos" = nixosConfig {
-          nixosModule = ./volt/nixos-configuration.nix;
-          hostname = "volt-nixos";
+          "zephyr" = nixosConfig {
+            nixosModule = ./zephyr/nixos-configuration.nix;
+            hostname = "zephyr";
+          };
+          "niffty" = nixosConfig {
+            nixosModule = ./niffty/nixos-configuration.nix;
+            hostSpecificHomeManagerModule = ./niffty/home-manager.nix;
+            hostname = "niffty";
+          };
         };
-        "zephyr" = nixosConfig {
-          nixosModule = ./zephyr/nixos-configuration.nix;
-          hostname = "zephyr";
-        };
-        "niffty" = nixosConfig {
-          nixosModule = ./niffty/nixos-configuration.nix;
-          hostSpecificHomeManagerModule = ./niffty/home-manager.nix;
-          hostname = "niffty";
-        };
-      };
 
-      darwinConfigurations = let
-        system = "aarch64-darwin";
-        inherit (mkPkgs system) pkgs pkgs-unstable;
-        hostConfiguration = {
-          inherit username;
+      darwinConfigurations =
+        let
+          system = "aarch64-darwin";
+          inherit (mkPkgs system) pkgs pkgs-unstable;
+          hostConfiguration = {
+            inherit username;
+          };
+          git-format-staged = inputs.git-format-staged.packages.${system}.default;
+        in
+        {
+          "macbook" = inputs.darwin.lib.darwinSystem {
+            inherit system;
+            modules = [
+              {
+                nixpkgs.config = config;
+              }
+              ./common/fonts.nix
+              ./common/nix-settings.nix
+              ./common/darwin.nix
+              inputs.home-manager.darwinModules.home-manager
+            ];
+            specialArgs = {
+              inherit
+                inputs
+                hostConfiguration
+                pkgs-unstable
+                git-format-staged
+                ;
+            };
+          };
+          "work-macbook" = inputs.darwin.lib.darwinSystem {
+            inherit system;
+            modules = [
+              {
+                nixpkgs.config = config;
+              }
+              ./common/fonts.nix
+              ./common/nix-settings.nix
+              ./common/darwin.nix
+              inputs.home-manager.darwinModules.home-manager
+            ];
+            specialArgs = {
+              inherit
+                inputs
+                hostConfiguration
+                pkgs-unstable
+                git-format-staged
+                ;
+            };
+          };
         };
-        git-format-staged = inputs.git-format-staged.packages.${system}.default;
-      in {
-        "macbook" = inputs.darwin.lib.darwinSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.config = config;
-            }
-            ./common/fonts.nix
-            ./common/nix-settings.nix
-            ./common/darwin.nix
-            inputs.home-manager.darwinModules.home-manager
-          ];
-          specialArgs = {inherit inputs hostConfiguration pkgs-unstable git-format-staged;};
-        };
-        "work-macbook" = inputs.darwin.lib.darwinSystem {
-          inherit system;
-          modules = [
-            {
-              nixpkgs.config = config;
-            }
-            ./common/fonts.nix
-            ./common/nix-settings.nix
-            ./common/darwin.nix
-            inputs.home-manager.darwinModules.home-manager
-          ];
-          specialArgs = {inherit inputs hostConfiguration pkgs-unstable git-format-staged;};
-        };
-      };
 
-      homeConfigurations."stefis-macbook" = let
-        system = "aarch64-darwin";
-        inherit (mkPkgs system) pkgs pkgs-unstable;
-        hostConfiguration = {
-          inherit username;
-        };
-        git-format-staged = inputs.git-format-staged.packages.${system}.default;
-      in
+      homeConfigurations."stefis-macbook" =
+        let
+          system = "aarch64-darwin";
+          inherit (mkPkgs system) pkgs pkgs-unstable;
+          hostConfiguration = {
+            inherit username;
+          };
+          git-format-staged = inputs.git-format-staged.packages.${system}.default;
+        in
         inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
 
@@ -154,10 +177,10 @@
             ./common/home-manager.nix
           ];
 
-          extraSpecialArgs = {inherit hostConfiguration pkgs-unstable git-format-staged;};
+          extraSpecialArgs = { inherit hostConfiguration pkgs-unstable git-format-staged; };
         };
     }
     // inputs.flake-utils.lib.eachDefaultSystem (system: {
-      formatter = inputs.nixpkgs.legacyPackages.${system}.alejandra;
+      formatter = inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree;
     });
 }

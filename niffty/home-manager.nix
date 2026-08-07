@@ -1,4 +1,5 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   steam-bigpicture-tv-check = pkgs.writeShellScript "steam-bigpicture-tv-check" ''
     sleep 10
 
@@ -21,7 +22,8 @@
       steam -bigpicture &
     fi
   '';
-in {
+in
+{
   xdg.configFile."autostart/steam-bigpicture-tv.desktop".text = ''
     [Desktop Entry]
     Type=Application

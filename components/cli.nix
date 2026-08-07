@@ -2,8 +2,10 @@
   pkgs,
   pkgs-unstable,
   ...
-}: {
-  home.packages = with pkgs;
+}:
+{
+  home.packages =
+    with pkgs;
     [
       asciinema
       borgbackup
@@ -70,10 +72,7 @@
     c = "clear -x";
     g = "git";
     base64 = "${pkgs.coreutils}/bin/base64 -w 0";
-    clip =
-      if pkgs.stdenv.isDarwin
-      then "pbcopy"
-      else "xclip -selection c";
+    clip = if pkgs.stdenv.isDarwin then "pbcopy" else "xclip -selection c";
   };
 
   programs.bottom = {

@@ -5,7 +5,8 @@
   pkgs-unstable,
   lib,
   ...
-}: {
+}:
+{
   home.sessionVariables = {
     LESS = "-iR";
   };
@@ -25,7 +26,7 @@
 
   programs.atuin = {
     enable = true;
-    flags = ["--disable-up-arrow"];
+    flags = [ "--disable-up-arrow" ];
     settings = {
       sync_address = "http://piltover.hawk-typhon.ts.net:8888";
       style = "compact";

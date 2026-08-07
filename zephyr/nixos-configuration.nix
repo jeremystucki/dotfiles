@@ -2,8 +2,9 @@
   pkgs,
   hostConfiguration,
   ...
-}: {
-  imports = [./hardware-configuration.nix];
+}:
+{
+  imports = [ ./hardware-configuration.nix ];
 
   networking.hostName = hostConfiguration.hostname;
 
@@ -42,7 +43,7 @@
       };
     };
 
-    supportedFilesystems = ["ntfs"];
+    supportedFilesystems = [ "ntfs" ];
   };
 
   services.fprintd.enable = true;

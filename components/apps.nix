@@ -4,9 +4,11 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   isLinux = !pkgs.stdenv.isDarwin;
-in {
+in
+{
   programs.chromium.enable = isLinux;
   programs.mpv.enable = isLinux;
   programs.zathura.enable = isLinux;
@@ -17,7 +19,8 @@ in {
     configPath = "${config.xdg.configHome}/mozilla/firefox";
   };
 
-  home.packages = with pkgs;
+  home.packages =
+    with pkgs;
     [
       pkgs-unstable.discord
       pkgs-unstable.obsidian

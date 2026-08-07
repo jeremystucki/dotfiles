@@ -2,7 +2,8 @@
   pkgs,
   hostConfiguration,
   ...
-}: {
+}:
+{
   imports = map (x: ../components + x) [
     /android.nix
     /apps.nix
@@ -28,9 +29,10 @@
     inherit (hostConfiguration) username;
 
     homeDirectory =
-      if pkgs.stdenv.isDarwin
-      then "/Users/${hostConfiguration.username}"
-      else "/home/${hostConfiguration.username}";
+      if pkgs.stdenv.isDarwin then
+        "/Users/${hostConfiguration.username}"
+      else
+        "/home/${hostConfiguration.username}";
   };
 
   programs.home-manager.enable = true;

@@ -3,8 +3,9 @@
   pkgs,
   pkgs-unstable,
   ...
-}: {
-  home.packages = [pkgs.nil];
+}:
+{
+  home.packages = [ pkgs.nil ];
 
   programs.vscode = {
     enable = true;
