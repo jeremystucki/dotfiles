@@ -114,7 +114,7 @@
           inherit (mkPkgs system) pkgs pkgs-unstable;
           git-format-staged = inputs.git-format-staged.packages.${system}.default;
           darwinConfig =
-            { }:
+            _:
             let
               hostConfiguration = {
                 inherit username;
