@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  lib,
   inputs,
   hostConfiguration,
   git-format-staged,
