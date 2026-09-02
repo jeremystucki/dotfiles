@@ -43,6 +43,7 @@ in
       libreoffice
       pdfarranger
       piper
+      prismlauncher
       protonmail-desktop
       qdiskinfo
       spotify
