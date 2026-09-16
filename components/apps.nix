@@ -63,7 +63,6 @@ in
       numi
       rectangle
       swiftlint
-      xcodes
       # pkgs-unstable.element-desktop
     ];
 }
