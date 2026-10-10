@@ -15,6 +15,13 @@
     nixpkgs-unstable = {
       url = "github:nixos/nixpkgs/nixpkgs-unstable";
     };
+    nixos-unstable = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixos-unstable";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,28 +54,29 @@
         input-fonts.acceptLicense = true;
       };
       username = "jeremy";
-      mkPkgs = system: {
-        pkgs = import inputs.nixpkgs { inherit system config; };
-        pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
-      };
     in
     {
       nixosConfigurations =
         let
           system = "x86_64-linux";
-          inherit (mkPkgs system) pkgs pkgs-unstable;
+          pkgs-stable = import inputs.nixpkgs { inherit system config; };
+          pkgs-unstable = import inputs.nixos-unstable { inherit system config; };
           nixosConfig =
             {
               nixosModule,
               hostSpecificHomeManagerModule ? { },
               hostname,
+              unstable ? false,
             }:
             let
               hostConfiguration = {
                 inherit username hostname;
               };
+              nixpkgs = if unstable then inputs.nixos-unstable else inputs.nixpkgs;
+              home-manager = if unstable then inputs.home-manager-unstable else inputs.home-manager;
+              pkgs = if unstable then pkgs-unstable else pkgs-stable;
             in
-            inputs.nixpkgs.lib.nixosSystem {
+            nixpkgs.lib.nixosSystem {
               specialArgs = { inherit pkgs-unstable hostConfiguration; };
               modules = [
                 { nixpkgs.pkgs = pkgs; }
@@ -79,7 +87,7 @@
                 ./common/nix-settings.nix
                 nixosModule
                 inputs.color-scheme-sync.nixosModules.default
-                inputs.home-manager.nixosModules.home-manager
+                home-manager.nixosModules.home-manager
                 {
                   home-manager.users.${hostConfiguration.username}.imports = [
                     ./common/home-manager.nix
@@ -105,13 +113,14 @@
             nixosModule = ./niffty/nixos-configuration.nix;
             hostSpecificHomeManagerModule = ./niffty/home-manager.nix;
             hostname = "niffty";
+            unstable = true;
           };
         };
 
       darwinConfigurations =
         let
           system = "aarch64-darwin";
-          inherit (mkPkgs system) pkgs pkgs-unstable;
+          pkgs-unstable = import inputs.nixpkgs-unstable { inherit system config; };
           git-format-staged = inputs.git-format-staged.packages.${system}.default;
           darwinConfig =
             _:
