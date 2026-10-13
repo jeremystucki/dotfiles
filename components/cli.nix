@@ -40,7 +40,6 @@
       units
       unzip
       uv
-      watchman
       xan
       xmlstarlet
       pkgs-unstable.yt-dlp
