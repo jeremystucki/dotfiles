@@ -44,7 +44,7 @@
       xmlstarlet
       pkgs-unstable.yt-dlp
       zip
-      pkgs-unstable.opencode
+      # pkgs-unstable.opencode
     ]
     ++ lib.optionals stdenv.hostPlatform.isDarwin [
       azure-cli
