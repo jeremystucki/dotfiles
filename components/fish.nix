@@ -44,7 +44,7 @@
       # fnm setup for Node.js version management
       ${pkgs.fnm}/bin/fnm env --use-on-cd --shell fish | source
     ''
-    + lib.optionalString pkgs.stdenv.isDarwin ''
+    + lib.optionalString pkgs.stdenv.hostPlatform.isDarwin ''
       # Homebrew setup for macOS
       if test -x /opt/homebrew/bin/brew
         eval (/opt/homebrew/bin/brew shellenv)

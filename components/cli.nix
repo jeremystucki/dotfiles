@@ -46,13 +46,13 @@
       zip
       pkgs-unstable.opencode
     ]
-    ++ lib.optionals stdenv.isDarwin [
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
       azure-cli
       fastlane
       gnused
       pkgs-unstable.swiftformat
     ]
-    ++ lib.optionals (!stdenv.isDarwin) [
+    ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
       multipath-tools
       ngrok
       screen
@@ -71,7 +71,7 @@
     c = "clear -x";
     g = "git";
     base64 = "${pkgs.coreutils}/bin/base64 -w 0";
-    clip = if pkgs.stdenv.isDarwin then "pbcopy" else "xclip -selection c";
+    clip = if pkgs.stdenv.hostPlatform.isDarwin then "pbcopy" else "xclip -selection c";
   };
 
   programs.bottom = {

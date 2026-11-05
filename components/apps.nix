@@ -6,7 +6,7 @@
   ...
 }:
 let
-  isLinux = !pkgs.stdenv.isDarwin;
+  isLinux = !pkgs.stdenv.hostPlatform.isDarwin;
 in
 {
   programs.chromium.enable = isLinux;
@@ -54,7 +54,7 @@ in
       xsel
       pkgs-unstable.rpi-imager
     ]
-    ++ lib.optionals pkgs.stdenv.isDarwin [
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
       pkgs-unstable.colima
       docker
       # google-chrome

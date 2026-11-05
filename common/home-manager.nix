@@ -29,7 +29,7 @@
     inherit (hostConfiguration) username;
 
     homeDirectory =
-      if pkgs.stdenv.isDarwin then
+      if pkgs.stdenv.hostPlatform.isDarwin then
         "/Users/${hostConfiguration.username}"
       else
         "/home/${hostConfiguration.username}";
