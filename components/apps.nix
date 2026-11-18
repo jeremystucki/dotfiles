@@ -41,6 +41,7 @@ in
       inkscape
       killall
       libreoffice
+      makemkv
       pdfarranger
       piper
       prismlauncher
